@@ -1,0 +1,77 @@
+.header {
+  padding: 10px 60px;
+  color: white;
+  background: #774ed6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.header ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.header ul :not(:last-child) {
+  margin-right: 30px;
+}
+
+.header ul li {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 32px;
+}
+
+.header ul li a {
+  text-decoration: none;
+  height: 30px;
+  padding-bottom: 2px;
+  color: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 3px solid #774ed6;
+}
+
+.header ul li a.active {
+  border-bottom: 3px solid #cfabf1;
+}
+
+.header ul li .icon {
+  font-size: 25px;
+  margin: 0;
+  margin-right: 5px;
+}
+
+.header ul li .button {
+  cursor: pointer;
+  color: inherit;
+  font-size: inherit;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  padding-left: 5px;
+}
+/*# sourceMappingURL=Header.module.css.map */

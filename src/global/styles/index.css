@@ -1,7 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,100&display=swap");
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+body {
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+.app {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=index.css.map */

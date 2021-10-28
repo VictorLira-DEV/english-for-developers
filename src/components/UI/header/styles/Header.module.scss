@@ -1,0 +1,52 @@
+.header{
+    padding: 10px 60px;
+    color: white;
+    background: rgb(119, 78, 214);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    ul{
+        list-style: none;
+        display: flex;
+        align-items: flex-end;
+        & :not(:last-child){
+            margin-right: 30px;
+        }
+        li{
+            cursor: pointer;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 32px;
+            a{
+                text-decoration: none;
+                height: 30px;
+                padding-bottom: 2px;
+                color: inherit;
+                display: flex;
+                align-items: center;
+                border-bottom: 3px solid rgb(119, 78, 214);
+                &.active{
+                    border-bottom: 3px solid rgb(207, 171, 241);
+                }
+            }
+           
+            .icon{
+                font-size: 25px;
+                margin: 0;
+                margin-right: 5px;
+            }
+            .button{
+                cursor: pointer;
+                color: inherit;
+                font-size: inherit;
+                background:none ;
+                border: none;
+                border-radius: 4px;
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
