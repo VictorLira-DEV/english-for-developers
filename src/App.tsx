@@ -1,5 +1,5 @@
 import Home from './pages/home/Home';
-import Header from './components/UI/header/Header';
+import Header from './components/header/Header';
 import './global/styles/index.css';
 import { Route, Switch } from 'react-router-dom';
 import Expressions from './pages/expressions/Expressions';
@@ -7,7 +7,7 @@ import Logout from './pages/logout/Logout';
 import PhrasalVerbs from './pages/phrasalVerbs/PhrasalVerbs';
 import Login from './pages/login/Login';
 
-function App() {
+function App() {  
 
   return (
     <div className="app">

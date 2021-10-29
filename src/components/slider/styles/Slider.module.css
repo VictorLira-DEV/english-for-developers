@@ -1,0 +1,55 @@
+.slider {
+  width: 400px;
+  height: 100%;
+  border: 1px solid black;
+  position: relative;
+  border-radius: 5px;
+}
+
+.slider .controls {
+  position: absolute;
+  bottom: 50%;
+  width: 100%;
+  z-index: 4;
+  bottom: 32%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px;
+  bottom: 50%;
+  -webkit-transform: translateY(50%);
+          transform: translateY(50%);
+}
+
+.slider .controls button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+  width: 50px;
+  height: 50px;
+}
+
+.slider .slide-content {
+  background: #233b5d;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  height: 504px;
+}
+
+.slider .slide-content .slider_item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  height: 505px;
+}
+/*# sourceMappingURL=Slider.module.css.map */

@@ -1,7 +1,7 @@
 .header {
-  padding: 10px 60px;
-  color: white;
-  background: #774ed6;
+  padding: 20px 60px;
+  color: black;
+  border-bottom: 1px solid #ccc;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -52,11 +52,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: 3px solid #774ed6;
+  border-bottom: 3px solid transparent;
 }
 
 .header ul li a.active {
-  border-bottom: 3px solid #cfabf1;
+  border-bottom: 3px solid #161616;
 }
 
 .header ul li .icon {

@@ -1,0 +1,206 @@
+.login {
+  background: #d3d2d2;
+  height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: auto;
+  background: #233b5d;
+  border-radius: 5px;
+}
+
+.login .wrapper .slider {
+  width: 350px;
+  position: relative;
+}
+
+.login .wrapper .slider .control {
+  position: absolute;
+  z-index: 3;
+}
+
+.login .wrapper .slider .slider-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: red;
+  border: 2px solid black;
+}
+
+.login .wrapper form {
+  width: 400px;
+  border: 1px solid #ccc;
+  padding: 30px 40px 40px 40px;
+  background: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+}
+
+.login .wrapper form h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.login .wrapper form .form-control {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 35px;
+}
+
+.login .wrapper form .form-control .inputWrapper {
+  border: 2px solid white;
+  border-bottom-color: #b1b1b1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.login .wrapper form .form-control .inputWrapper.focus {
+  border: 2px solid #5fd2ff;
+  background: #e0f1f8;
+}
+
+.login .wrapper form .form-control .inputWrapper .icon {
+  width: 30px;
+  font-size: 20px;
+  color: #797979;
+}
+
+.login .wrapper form .form-control .inputWrapper input {
+  padding: 10px;
+  width: 93%;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  background: transparent;
+}
+
+.login .wrapper form .form-control .inputWrapper small {
+  position: absolute;
+  bottom: -22px;
+}
+
+.login .wrapper form p:nth-of-type(1) {
+  text-align: center;
+  margin-top: 20px;
+  height: 20px;
+}
+
+.login .wrapper form p:nth-of-type(1)::after {
+  content: "";
+  display: inline-block;
+  width: 40%;
+  margin: 0 0 3px 10px;
+  height: 2px;
+  background: #ccc;
+}
+
+.login .wrapper form p:nth-of-type(1)::before {
+  content: "";
+  display: inline-block;
+  margin: 0 10px 3px 0px;
+  width: 40%;
+  height: 2px;
+  background: #ccc;
+}
+
+.login .wrapper form p:nth-of-type(2) {
+  margin-top: 20px;
+  color: #3957ff;
+  cursor: pointer;
+  height: 30px;
+}
+
+.login .wrapper form p:nth-of-type(2):hover {
+  margin-bottom: 0;
+}
+
+.login .wrapper form p:nth-of-type(2):hover::after {
+  content: "";
+  display: block;
+  margin: 5px auto 0 auto;
+  width: 150px;
+  height: 2px;
+  background: #c3cbfc;
+}
+
+.login .wrapper form .btn {
+  border: none;
+  font-size: inherit;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.login .wrapper form .btn.login {
+  color: white;
+  width: 100%;
+  background: #027fef;
+  height: 40px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.login .wrapper form .btn.login :last-child {
+  font-size: 18px;
+  position: absolute;
+  right: 10px;
+  -webkit-transform: translateY(-2%);
+          transform: translateY(-2%);
+}
+
+.login .wrapper form .btn.login:hover {
+  background: #3b9df3;
+}
+
+.login .wrapper form .btn.create-account {
+  margin-top: 20px;
+  color: white;
+  height: 40px;
+  background: #6aa343;
+  width: 100%;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  position: relative;
+}
+
+.login .wrapper form .btn.create-account :last-child {
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  right: 10px;
+}
+
+.login .wrapper form .btn.create-account:hover {
+  background: #79b651;
+}
+/*# sourceMappingURL=Login.module.css.map */

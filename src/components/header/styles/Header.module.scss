@@ -1,8 +1,7 @@
 .header{
-    padding: 10px 60px;
-    color: white;
-    background: rgb(119, 78, 214);
-
+    padding: 20px 60px;
+    color: black;
+    border-bottom: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -26,9 +25,9 @@
                 color: inherit;
                 display: flex;
                 align-items: center;
-                border-bottom: 3px solid rgb(119, 78, 214);
+                border-bottom: 3px solid transparent;
                 &.active{
-                    border-bottom: 3px solid rgb(207, 171, 241);
+                    border-bottom: 3px solid rgb(22, 22, 22);
                 }
             }
            
