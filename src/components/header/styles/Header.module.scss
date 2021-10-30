@@ -1,10 +1,16 @@
 .header{
-    padding: 20px 60px;
-    color: black;
-    border-bottom: 1px solid #ccc;
+    padding: 10px 60px;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    background: rgb(35, 59, 93);
+    h1{
+        font-weight: 600;
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+
     ul{
         list-style: none;
         display: flex;
@@ -27,7 +33,7 @@
                 align-items: center;
                 border-bottom: 3px solid transparent;
                 &.active{
-                    border-bottom: 3px solid rgb(22, 22, 22);
+                    border-bottom: 3px solid white;
                 }
             }
            

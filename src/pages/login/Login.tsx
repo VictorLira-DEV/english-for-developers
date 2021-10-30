@@ -7,7 +7,9 @@ import { AiOutlinePlusCircle } from "react-icons/ai";
 import React, { useState, useEffect } from "react";
 import Slider from "../../components/slider/Slider";
 import Input from "../../components/input/Input";
-
+import { Link} from 'react-router-dom';
+import Footer from '../../components/footer/Footer'
+ 
 const Login = () => {
     const [focus, setFocus] = useState({
         email: false,
@@ -52,6 +54,7 @@ const Login = () => {
     let btn_login = `${classes.btn} ${classes.login}`;
 
     return (
+        <>
         <div className={classes.login}>
             <div className={classes.wrapper}>
                 <Slider />
@@ -87,13 +90,17 @@ const Login = () => {
                         login <BsArrowRightCircle />
                     </Button>
                     <p>or</p>
-                    <Button className={btn_signup}>
-                        sign up <AiOutlinePlusCircle />
-                    </Button>
+                    <Link to="/signup">
+                        <Button className={btn_signup}>
+                            sign up <AiOutlinePlusCircle />
+                        </Button>
+                    </Link>
                     <p>Forgot Password ?</p>
                 </form>
             </div>
         </div>
+        <Footer className={classes.footer}/>
+        </>
     );
 };
 

@@ -1,10 +1,9 @@
 .login {
-    background: rgb(211, 210, 210);
-    height: 90vh;
+    background: linear-gradient(rgb(35, 59, 93), rgb(88, 129, 187));
     display: flex;
     justify-content: center;
     align-items: center;
-
+    height: calc(100vh - (58px + 98px));
     .wrapper {
         display: flex;
         height: auto;
@@ -22,7 +21,6 @@
                 width: 100%;
                 height: 100%;
                 background: red;
-                border: 2px solid black;
             }
         }
 
@@ -39,8 +37,8 @@
                 text-align: center;
             }
             .form-control {
-                display: flex;
-                flex-direction: column;
+                // display: flex;
+                // flex-direction: column;
                 padding-bottom: 35px;
 
                 .inputWrapper {
@@ -154,7 +152,6 @@
                     background: rgb(106, 163, 67);
                     width: 100%;
                     justify-self: center;
-                    // background: rgb(114, 185, 73);
                     position: relative;
                     & :last-child {
                         color: white;
@@ -166,8 +163,21 @@
                     &:hover {
                         background: rgb(121, 182, 81);
                     }
+
+                    a{
+                        text-decoration: none;
+                        color: inherit;
+                    }
                 }
             }
         }
     }
+}
+
+.footer{
+    padding: 30px 60px;
+    background: linear-gradient(rgb(88, 129, 187) ,rgb(62, 91, 131));
+    color: white;
+    bottom: 0;
+    width: 100%;
 }

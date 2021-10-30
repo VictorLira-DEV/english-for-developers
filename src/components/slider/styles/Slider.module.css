@@ -1,9 +1,9 @@
 .slider {
   width: 400px;
   height: 100%;
-  border: 1px solid black;
   position: relative;
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .slider .controls {

@@ -15,7 +15,7 @@ const Header = () => {
 
     return (
         <header className={classes.header}>
-            <h1>Header</h1>
+            <h1>English for devs</h1>
             <nav>
                 <ul>
                     <li>

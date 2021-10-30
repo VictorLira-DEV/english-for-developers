@@ -1,8 +1,8 @@
 import React from "react";
 interface IInput {
-    placeholder: string;
-    className: string;
-    type: string;
+    placeholder?: string;
+    className?: string;
+    type?: string;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
 }

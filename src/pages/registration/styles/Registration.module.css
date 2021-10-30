@@ -1,0 +1,96 @@
+.signup-container {
+  width: 100vw;
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow: hidden;
+  background: -webkit-gradient(linear, left top, left bottom, from(#233b5d), to(#83d6d6));
+  background: linear-gradient(#233b5d, #83d6d6);
+  max-width: 1440px;
+  padding: 40px 20px;
+  height: calc(100vh - 98px);
+}
+
+.signup-container img {
+  width: 500px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.signup-container .form {
+  width: 400px;
+  border: 1px solid #ccc;
+  padding: 30px 40px 40px 40px;
+  background: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-radius: 4px;
+  -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+          box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.signup-container .form h1 {
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.signup-container .form .form-control {
+  padding-bottom: 40px;
+  color: #797979;
+}
+
+.signup-container .form .form-control input {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+}
+
+.signup-container .form .form-control input:focus {
+  background: #e0f1f8;
+  outline-color: #5fd2ff;
+}
+
+.signup-container .form button {
+  border: none;
+  font-size: inherit;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 14px;
+  letter-spacing: 1px;
+  width: 100%;
+  color: white;
+  width: 100%;
+  background: #027fef;
+  height: 40px;
+  margin-top: 20px;
+}
+
+.signup-container .form button:hover {
+  background: #3b9df3;
+}
+
+.footer {
+  padding: 30px 60px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#83d6d6), to(#3d6399));
+  background: linear-gradient(#83d6d6, #3d6399);
+  color: white;
+}
+/*# sourceMappingURL=Registration.module.css.map */

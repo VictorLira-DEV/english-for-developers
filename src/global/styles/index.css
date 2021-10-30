@@ -14,5 +14,6 @@ body {
 .app {
   max-width: 1440px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 /*# sourceMappingURL=index.css.map */

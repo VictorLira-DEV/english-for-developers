@@ -6,6 +6,8 @@ import Expressions from './pages/expressions/Expressions';
 import Logout from './pages/logout/Logout';
 import PhrasalVerbs from './pages/phrasalVerbs/PhrasalVerbs';
 import Login from './pages/login/Login';
+import Registration from './pages/registration/Registration';
+import Footer from './components/footer/Footer';
 
 function App() {  
 
@@ -24,6 +26,9 @@ function App() {
         </Route>
         <Route path="/login" >
           <Login />
+        </Route>
+        <Route path="/signup" >
+          <Registration />
         </Route>
         <Route path="/logout" >
           <Logout />

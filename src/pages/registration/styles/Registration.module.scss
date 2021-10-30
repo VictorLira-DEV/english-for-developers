@@ -1,0 +1,79 @@
+.signup-container {
+    width: 100vw;
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    // background: rgb(189, 255, 255);
+    background: linear-gradient(rgb(35, 59, 93), rgb(131, 214, 214));
+    max-width: 1440px;
+    padding: 40px 20px;
+    height: calc(100vh - 98px) ;
+
+    img {
+        width: 500px;
+        align-self: flex-end;
+    }
+    .form {
+        width: 400px;
+        border: 1px solid #ccc;
+        padding: 30px 40px 40px 40px;
+        background: white;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        border-radius: 4px;
+        box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+        align-self: flex-end;
+        h1 {
+            font-size: 1.6rem;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-control {
+            padding-bottom: 40px;
+            color: rgb(121, 121, 121);
+            input {
+                display: block;
+                padding: 10px;
+                width: 100%;
+                border: 1px solid #ccc;
+                margin-top: 5px;
+
+                &:focus {
+                    background: rgb(224, 241, 248);
+                    outline-color: rgb(95, 210, 255);
+                }
+            }
+        }
+
+        button {
+            border: none;
+            font-size: inherit;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+            transition: 0.3s ease-in-out;
+            text-transform: uppercase;
+            font-weight: bolder;
+            font-size: 14px;
+            letter-spacing: 1px;
+            width: 100%;
+            color: white;
+            width: 100%;
+            background: rgb(2, 127, 239);
+            height: 40px;
+            margin-top: 20px;
+            &:hover {
+                background: rgb(59, 157, 243);
+            }
+        }
+    }
+}
+
+.footer {
+    padding: 30px 60px;
+    background: linear-gradient(rgb(131, 214, 214), rgb(61, 99, 153));
+    color: white;
+}

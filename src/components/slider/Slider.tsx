@@ -5,6 +5,8 @@ import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
 import testimonial_1 from "../../assets/testimonial-1.jpg";
 
+
+
 const Slider = () => {
     const [slider, setSlider] = useState({
         n1: 0,
@@ -66,14 +68,14 @@ const Slider = () => {
         }
     };
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            sliderTimer();
-        }, 3000);
-        return () => {
-            clearInterval(timer);
-        };
-    }, [slider]);
+    // useEffect(() => {
+    //     const timer = setInterval(() => {
+    //         sliderTimer();
+    //     }, 3000);
+    //     return () => {
+    //         clearInterval(timer);
+    //     };
+    // }, [slider]);
 
     //hardcoded slider because the "src" is not comming from  a API
     let slider_1 = {
