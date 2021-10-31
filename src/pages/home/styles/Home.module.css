@@ -1,28 +1,12 @@
-.section {
-  padding: 100px 20px;
-  line-height: 3;
-}
-
-.section {
-  -webkit-transition: opacity 1s, -webkit-transform 1s ease-in-out;
-  transition: opacity 1s, -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, opacity 1s;
-  transition: transform 1s ease-in-out, opacity 1s, -webkit-transform 1s ease-in-out;
-}
-
-.section.section--hidden {
-  -webkit-transition: opacity 1s, -webkit-transform 1s ease-in-out;
-  transition: opacity 1s, -webkit-transform 1s ease-in-out;
-  transition: transform 1s ease-in-out, opacity 1s;
-  transition: transform 1s ease-in-out, opacity 1s, -webkit-transform 1s ease-in-out;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
-}
-
 .container {
   height: calc(100vh - 58px);
   background: #094a82;
   color: white;
+  position: relative;
+}
+
+.container.sticky-header---active {
+  height: calc(100vh);
 }
 
 .container .home {
@@ -116,7 +100,7 @@
 }
 
 .container section {
-  padding: 100px 60px;
+  padding: 200px 60px;
 }
 
 .container section .section {

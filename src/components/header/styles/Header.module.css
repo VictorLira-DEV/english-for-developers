@@ -13,6 +13,13 @@
   background: #094a82;
 }
 
+.header.sticky {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  background: rgba(9, 74, 130, 0.6);
+}
+
 .header h1 {
   font-weight: 600;
   letter-spacing: 1px;

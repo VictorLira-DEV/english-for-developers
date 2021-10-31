@@ -1,4 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
+import { StickyHeaderContext } from "../../context/sticky-header/stickyHeader";
 import classes from "./styles/Home.module.css";
 import Button from "../../components/button/Button";
 import Footer from "../../components/footer/Footer";
@@ -18,7 +19,7 @@ const Home = () => {
     const options = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.40, //porcentagem do viewport
+        threshold: 0.4, //porcentagem do viewport
     };
 
     useEffect(() => {
@@ -36,9 +37,40 @@ const Home = () => {
         scrollIntoView.current?.scrollIntoView({ behavior: "smooth" });
     };
 
+    //stycky header
+    const headerCTX = useContext(StickyHeaderContext);
+    const headerFunction = (entries: any) => {
+        const [entry] = entries;
+        headerCTX.intersectingFunction(entry.isIntersecting);
+    };
+
+    const headerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.9, //porcentagem do viewport
+    };
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            headerFunction,
+            headerOptions
+        );
+        if (containterRef.current) observer.observe(containterRef.current);
+
+        return () => {
+            if (containterRef.current)
+                observer.unobserve(containterRef.current);
+        };
+    }, [headerFunction, headerOptions]);
+
     return (
         <React.Fragment>
-            <div className={classes.container}>
+            <div
+                className={`${classes.container} ${
+                    headerCTX.isIntersectingValue &&
+                    classes["sticky-header---active"]
+                }`}
+            >
                 <div className={classes.home}>
                     <img src="./adventure.svg" />
                     <div>

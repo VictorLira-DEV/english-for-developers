@@ -1,21 +1,11 @@
-.section {
-    padding: 100px 20px;
-    line-height: 3;
-}
-
-.section {
-    transition: transform 1s ease-in-out, opacity 1s;
-
-    &.section--hidden {
-        transition: transform 1s ease-in-out, opacity 1s;
-        transform: translateX(100%);
-    }
-}
-
 .container {
     height: calc(100vh - 58px);
     background: rgb(9, 74, 130);
     color: white;
+    position: relative;
+    &.sticky-header---active{
+        height: calc(100vh);
+    }
     .home {
         display: flex;
         height: 100%;
@@ -82,7 +72,7 @@
     }
 
     section {
-        padding: 100px 60px;
+        padding: 200px 60px;
         .section {
             display: flex;
             justify-content: space-between;
