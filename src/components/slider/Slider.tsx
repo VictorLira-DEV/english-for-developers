@@ -5,8 +5,6 @@ import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
 import testimonial_1 from "../../assets/testimonial-1.jpg";
 
-
-
 const Slider = () => {
     const [slider, setSlider] = useState({
         n1: 0,
@@ -14,7 +12,7 @@ const Slider = () => {
         n3: -200,
     });
 
-    const moveToRight = (event: React.FormEvent) => {
+    const moveToLeft = (event: React.FormEvent) => {
         event.preventDefault();
         setSlider((prev) => {
             const previous = { ...prev };
@@ -26,7 +24,7 @@ const Slider = () => {
         });
     };
 
-    const moveToLeft = (event: React.FormEvent) => {
+    const moveToRight = (event: React.FormEvent) => {
         setSlider((prev) => {
             const previous = { ...prev };
             return {

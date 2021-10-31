@@ -1,4 +1,4 @@
-import Input from "../../components/input/Input";
+import Input from "../../components/header/input/Input";
 import classes from "./styles/Registration.module.css";
 import Button from "../../components/button/Button";
 import Footer from "../../components/footer/Footer";
@@ -9,7 +9,7 @@ const Registration = () => {
         <div className={classes["signup-container"]}>
             <img  src="./1.svg" />
             <form className={classes.form}>
-                <h1> Create account </h1>
+                <h1> Register </h1>
                 <div className={classes["form-control"]}>
                     <label className={classes.label}>Username</label>
                     <Input type="text" />
@@ -26,7 +26,7 @@ const Registration = () => {
                     <label className={classes.label}>Password confirm</label>
                     <Input type="password" />
                 </div>
-                <Button>Sign up</Button>
+                <Button>Submit</Button>
             </form>
             <img  src="./social.svg" />
         </div>

@@ -1,0 +1,20 @@
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: white;
+    width: 100%;
+    #copyright{
+        margin: 0 3px 0 10px;
+    }
+    .social-media{
+        margin-left: 20px;
+        font-size: 30px;
+        cursor: pointer;
+        & :first-child{
+            font-size: 33px;
+            margin-right: 10px;
+        }
+    }
+}

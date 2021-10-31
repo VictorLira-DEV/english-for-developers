@@ -3,20 +3,21 @@
     overflow-x: hidden;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     overflow: hidden;
     // background: rgb(189, 255, 255);
-    background: linear-gradient(rgb(35, 59, 93), rgb(131, 214, 214));
+    background: linear-gradient(rgb(9, 74, 130), rgb(131, 214, 214));
     max-width: 1440px;
     padding: 40px 20px;
     height: calc(100vh - 98px) ;
 
     img {
-        width: 500px;
+        width: 30%;
         align-self: flex-end;
     }
     .form {
         width: 400px;
+        min-width: 400px;
         border: 1px solid #ccc;
         padding: 30px 40px 40px 40px;
         background: white;
@@ -75,5 +76,4 @@
 .footer {
     padding: 30px 60px;
     background: linear-gradient(rgb(131, 214, 214), rgb(61, 99, 153));
-    color: white;
 }

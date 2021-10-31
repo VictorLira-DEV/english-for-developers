@@ -7,13 +7,12 @@ import Logout from './pages/logout/Logout';
 import PhrasalVerbs from './pages/phrasalVerbs/PhrasalVerbs';
 import Login from './pages/login/Login';
 import Registration from './pages/registration/Registration';
-import Footer from './components/footer/Footer';
+import {useRef} from 'react'
 
 function App() {  
-
   return (
     <div className="app">
-      <Header />
+      <Header/>
       <Switch>
         <Route path="/" exact >
           <Home />

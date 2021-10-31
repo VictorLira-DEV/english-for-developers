@@ -1,6 +1,6 @@
 .login {
-  background: -webkit-gradient(linear, left top, left bottom, from(#233b5d), to(#5881bb));
-  background: linear-gradient(#233b5d, #5881bb);
+  background: -webkit-gradient(linear, left top, left bottom, from(#094a82), to(#5881bb));
+  background: linear-gradient(#094a82, #5881bb);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,8 +206,5 @@
   padding: 30px 60px;
   background: -webkit-gradient(linear, left top, left bottom, from(#5881bb), to(#3e5b83));
   background: linear-gradient(#5881bb, #3e5b83);
-  color: white;
-  bottom: 0;
-  width: 100%;
 }
 /*# sourceMappingURL=Login.module.css.map */

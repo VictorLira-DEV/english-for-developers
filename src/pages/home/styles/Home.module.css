@@ -1,0 +1,202 @@
+.section {
+  padding: 100px 20px;
+  line-height: 3;
+}
+
+.section {
+  -webkit-transition: opacity 1s, -webkit-transform 1s ease-in-out;
+  transition: opacity 1s, -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, opacity 1s;
+  transition: transform 1s ease-in-out, opacity 1s, -webkit-transform 1s ease-in-out;
+}
+
+.section.section--hidden {
+  -webkit-transition: opacity 1s, -webkit-transform 1s ease-in-out;
+  transition: opacity 1s, -webkit-transform 1s ease-in-out;
+  transition: transform 1s ease-in-out, opacity 1s;
+  transition: transform 1s ease-in-out, opacity 1s, -webkit-transform 1s ease-in-out;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.container {
+  height: calc(100vh - 58px);
+  background: #094a82;
+  color: white;
+}
+
+.container .home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 40px 60px;
+  position: relative;
+}
+
+.container .home #arrow {
+  position: absolute;
+  width: 70px;
+  right: 50%;
+  -webkit-transform: translate(50%);
+          transform: translate(50%);
+  bottom: -30px;
+}
+
+.container .home img {
+  width: 40%;
+}
+
+.container .home h1 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.container .home h1 span {
+  color: #12d8c1;
+}
+
+.container .home h1 span:last-child {
+  color: #f5939e;
+}
+
+.container .home .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .home .buttons button {
+  padding: 10px;
+  width: 300px;
+  border: none;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  cursor: pointer;
+  color: white;
+  -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.container .home .buttons button.about {
+  margin: 40px 0 20px 0;
+  background: #58cc02;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.container .home .buttons button.about:hover {
+  background: #7cfd19;
+}
+
+.container .home .buttons button.signup {
+  background: #1899d6;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.container .home .buttons button.signup:hover {
+  background: #2eb8f8;
+}
+
+.container section {
+  padding: 100px 60px;
+}
+
+.container section .section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container section .section .section-item {
+  width: 350px;
+  -webkit-box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.3);
+          box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+}
+
+.container section .section .section-item.section-1__hidden {
+  -webkit-transform: translateX(-200%);
+          transform: translateX(-200%);
+  opacity: 0;
+}
+
+.container section .section .section-item.section-2__hidden {
+  -webkit-transform: translateX(300%);
+          transform: translateX(300%);
+  opacity: 0;
+}
+
+.container section .section .section-item.section-3__hidden {
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+  opacity: 0;
+}
+
+.container section .section .section-item img {
+  width: 100%;
+}
+
+.container section .section .section-item .section-text {
+  color: black;
+  margin-top: -19px;
+  padding: 20px;
+  line-height: 1.5;
+}
+
+.container section .section .section-item .section-text.text--1 {
+  border: 1px solid #e1365e;
+}
+
+.container section .section .section-item .section-text.text--1 h2 {
+  color: #e1365e;
+}
+
+.container section .section .section-item .section-text.text--2 {
+  border: 1px solid #0ce2f9;
+}
+
+.container section .section .section-item .section-text.text--2 h2 {
+  color: #0ce2f9;
+}
+
+.container section .section .section-item .section-text.text--3 {
+  border: 1px solid #7b57f6;
+}
+
+.container section .section .section-item .section-text.text--3 h2 {
+  color: #7b57f6;
+}
+
+.footer {
+  padding: 15px 60px;
+  background: #0b5ba0;
+  color: white;
+  bottom: 0;
+  width: 100%;
+}
+/*# sourceMappingURL=Home.module.css.map */
