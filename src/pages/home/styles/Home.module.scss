@@ -57,6 +57,7 @@
                     transition: 0.4s ease-in-out;
                     &:hover {
                         background: #7cfd19;
+                        transform: scale(110%);
                     }
                 }
 
@@ -65,6 +66,7 @@
                     transition: 0.4s ease-in-out;
                     &:hover {
                         background: #2eb8f8;
+                        transform: scale(110%, 110%);
                     }
                 }
             }
@@ -81,7 +83,8 @@
                 width: 350px;
                 box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.3);
                 transition: 0.7s ease-in-out;
-
+                border-radius: 5px;
+                overflow: hidden;
                 &.section-1__hidden {
                     transform: translateX(-200%);
                     opacity: 0;
@@ -100,7 +103,7 @@
                 }
 
                 .section-text {
-                    color: black;
+                    color: rgb(136, 136, 136);
                     margin-top: -19px;
                     padding: 20px;
                     line-height: 1.5;

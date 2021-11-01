@@ -6,10 +6,10 @@ import { BsArrowRightCircle } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import React, { useState, useEffect } from "react";
 import Slider from "../../components/slider/Slider";
-import Input from "../../components/header/input/Input";
-import { Link} from 'react-router-dom';
-import Footer from '../../components/footer/Footer'
- 
+import Input from "../../components/input/Input";
+import { Link } from "react-router-dom";
+import Footer from "../../components/footer/Footer";
+
 const Login = () => {
     const [focus, setFocus] = useState({
         email: false,
@@ -42,8 +42,8 @@ const Login = () => {
     };
 
     const submitHandler = (event: React.FormEvent) => {
-        event.preventDefault()
-    }
+        event.preventDefault();
+    };
 
     //dynamic styles
     let emailInput = `${classes.inputWrapper} ${focus.email && classes.focus}`;
@@ -55,51 +55,51 @@ const Login = () => {
 
     return (
         <>
-        <div className={classes.login}>
-            <div className={classes.wrapper}>
-                <Slider />
-                <form className={classes.form} onSubmit={submitHandler}>
-                    <h2> Login </h2>
-                    <div className={classes["form-control"]}>
-                        <div className={emailInput}>
-                            <MdOutlineEmail className={classes.icon} />
-                            <Input
-                                type="email"
-                                placeholder="E-mail"
-                                className={classes.focus}
-                                onMouseEnter={emailMouseEnterHandler}
-                                onMouseLeave={emailMouseLeaveHandler}
-                            />
-                            {/* <small>error message</small> */}
+            <div className={classes.login}>
+                <div className={classes.wrapper}>
+                    <Slider />
+                    <form className={classes.form} onSubmit={submitHandler}>
+                        <h2> Login </h2>
+                        <div className={classes["form-control"]}>
+                            <div className={emailInput}>
+                                <MdOutlineEmail className={classes.icon} />
+                                <Input
+                                    type="email"
+                                    placeholder="E-mail"
+                                    className={classes.focus}
+                                    onMouseEnter={emailMouseEnterHandler}
+                                    onMouseLeave={emailMouseLeaveHandler}
+                                />
+                                {/* <small>error message</small> */}
+                            </div>
                         </div>
-                    </div>
-                    <div className={classes["form-control"]}>
-                        <div className={passwordInput}>
-                            <RiLockPasswordLine className={classes.icon} />
-                            <Input
-                                type="password"
-                                placeholder="Password"
-                                className={classes.focus}
-                                onMouseEnter={passwordEnterHandler}
-                                onMouseLeave={passwordLeaveHandler}
-                            />
-                            {/* <small>error message</small> */}
+                        <div className={classes["form-control"]}>
+                            <div className={passwordInput}>
+                                <RiLockPasswordLine className={classes.icon} />
+                                <Input
+                                    type="password"
+                                    placeholder="Password"
+                                    className={classes.focus}
+                                    onMouseEnter={passwordEnterHandler}
+                                    onMouseLeave={passwordLeaveHandler}
+                                />
+                                {/* <small>error message</small> */}
+                            </div>
                         </div>
-                    </div>
-                    <Button className={btn_login}>
-                        login <BsArrowRightCircle />
-                    </Button>
-                    <p>or</p>
-                    <Link to="/signup">
-                        <Button className={btn_signup}>
-                            sign up <AiOutlinePlusCircle />
+                        <Button className={btn_login}>
+                            login <BsArrowRightCircle />
                         </Button>
-                    </Link>
-                    <p>Forgot Password ?</p>
-                </form>
+                        <p>or</p>
+                        <Link to="/signup">
+                            <Button className={btn_signup}>
+                                sign up <AiOutlinePlusCircle />
+                            </Button>
+                        </Link>
+                        <p>Forgot Password ?</p>
+                    </form>
+                </div>
             </div>
-        </div>
-        <Footer className={classes.footer}/>
+            <Footer className={classes.footer} />
         </>
     );
 };

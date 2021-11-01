@@ -87,6 +87,8 @@
 
 .container .home .buttons button.about:hover {
   background: #7cfd19;
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
 }
 
 .container .home .buttons button.signup {
@@ -97,6 +99,8 @@
 
 .container .home .buttons button.signup:hover {
   background: #2eb8f8;
+  -webkit-transform: scale(110%, 110%);
+          transform: scale(110%, 110%);
 }
 
 .container section {
@@ -121,6 +125,8 @@
           box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.3);
   -webkit-transition: 0.7s ease-in-out;
   transition: 0.7s ease-in-out;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .container section .section .section-item.section-1__hidden {
@@ -146,7 +152,7 @@
 }
 
 .container section .section .section-item .section-text {
-  color: black;
+  color: #888888;
   margin-top: -19px;
   padding: 20px;
   line-height: 1.5;

@@ -15,5 +15,6 @@ body {
   max-width: 1440px;
   margin: 0 auto;
   overflow-x: hidden;
+  position: relative;
 }
 /*# sourceMappingURL=index.css.map */

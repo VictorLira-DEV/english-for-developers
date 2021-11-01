@@ -18,13 +18,17 @@
 }
 
 .footer .social-media {
-  margin-left: 20px;
   font-size: 30px;
-  cursor: pointer;
 }
 
-.footer .social-media :first-child {
-  font-size: 33px;
-  margin-right: 10px;
+.footer .social-media a {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer .social-media a:first-child {
+  margin: 0 5px 0 20px;
+  font-size: 32px;
 }
 /*# sourceMappingURL=Footer.module.css.map */

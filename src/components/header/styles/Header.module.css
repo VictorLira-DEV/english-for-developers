@@ -16,7 +16,8 @@
 .header.sticky {
   position: fixed;
   width: 100%;
-  z-index: 10;
+  max-width: 1440px;
+  z-index: -1;
   background: rgba(9, 74, 130, 0.6);
 }
 
@@ -66,6 +67,12 @@
       -ms-flex-align: center;
           align-items: center;
   border-bottom: 3px solid transparent;
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.header ul li a:hover {
+  color: #dfdddd;
 }
 
 .header ul li a.active {
