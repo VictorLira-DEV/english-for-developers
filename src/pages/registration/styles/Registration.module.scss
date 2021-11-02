@@ -35,13 +35,16 @@
         .form-control {
             padding-bottom: 40px;
             color: rgb(121, 121, 121);
-            input {
+            .input {
                 display: block;
                 padding: 10px;
                 width: 100%;
                 border: 1px solid #ccc;
                 margin-top: 5px;
-
+                &.invalid{
+                    background: rgb(255, 228, 228);
+                    border: 1px solid red;
+                }
                 &:focus {
                     background: rgb(224, 241, 248);
                     outline-color: rgb(95, 210, 255);

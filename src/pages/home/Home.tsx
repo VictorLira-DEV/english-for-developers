@@ -40,6 +40,8 @@ const Home = () => {
     //stycky header
     const headerCTX = useContext(StickyHeaderContext);
     useEffect(() => {
+        let containerRefCopy = containterRef.current
+        
         const headerFunction = (entries: any) => {
             const [entry] = entries;
             headerCTX.intersectingFunction(entry.isIntersecting);
@@ -55,7 +57,6 @@ const Home = () => {
             headerFunction,
             headerOptions
         );
-        let containerRefCopy = containterRef.current
         if (containerRefCopy) observer.observe(containerRefCopy);
 
         return () => {

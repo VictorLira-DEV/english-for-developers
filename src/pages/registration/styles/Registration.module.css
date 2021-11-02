@@ -50,7 +50,7 @@
   color: #797979;
 }
 
-.signup-container .form .form-control input {
+.signup-container .form .form-control .input {
   display: block;
   padding: 10px;
   width: 100%;
@@ -58,7 +58,12 @@
   margin-top: 5px;
 }
 
-.signup-container .form .form-control input:focus {
+.signup-container .form .form-control .input.invalid {
+  background: #ffe4e4;
+  border: 1px solid red;
+}
+
+.signup-container .form .form-control .input:focus {
   background: #e0f1f8;
   outline-color: #5fd2ff;
 }

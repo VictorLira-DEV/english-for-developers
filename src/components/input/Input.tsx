@@ -1,10 +1,13 @@
 import React from "react";
+
 interface IInput {
     placeholder?: string;
     className?: string;
     type: string;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
+    onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
+    onBlur?: () => void 
 }
 
 const Input = (props: IInput) => {
@@ -15,6 +18,8 @@ const Input = (props: IInput) => {
             type={props.type}
             onMouseEnter={props.onMouseEnter}
             onMouseLeave={props.onMouseLeave}
+            onChange={props.onChange}
+            onBlur={props.onBlur}
         />
     );
 };
