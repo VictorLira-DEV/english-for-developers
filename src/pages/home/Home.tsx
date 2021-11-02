@@ -10,27 +10,27 @@ const Home = () => {
     const [isVisisble, setIsVisible] = useState(false);
     const scrollIntoView = useRef<HTMLDivElement>(null);
 
-    const callbackFunction = (entries: any) => {
-        const [entry] = entries;
-        setIsVisible(entry.isIntersecting);
-        console.log(isVisisble);
-    };
-
-    const options = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.4, //porcentagem do viewport
-    };
-
     useEffect(() => {
+        const callbackFunction = (entries: any) => {
+            const [entry] = entries;
+            setIsVisible(entry.isIntersecting);
+        };
+    
+        const options = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.4, //porcentagem do viewport
+        };
+
         const observer = new IntersectionObserver(callbackFunction, options);
-        if (containterRef.current) observer.observe(containterRef.current);
+        const  containterRefCopy = containterRef.current
+        if (containterRefCopy) observer.observe(containterRefCopy);
 
         return () => {
-            if (containterRef.current)
-                observer.unobserve(containterRef.current);
+            if (containterRefCopy)
+                observer.unobserve(containterRefCopy);
         };
-    }, [containterRef, options]);
+    }, []);
 
     const scroll = (e: React.FormEvent) => {
         e.preventDefault();
@@ -39,29 +39,30 @@ const Home = () => {
 
     //stycky header
     const headerCTX = useContext(StickyHeaderContext);
-    const headerFunction = (entries: any) => {
-        const [entry] = entries;
-        headerCTX.intersectingFunction(entry.isIntersecting);
-    };
-
-    const headerOptions = {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.9, //porcentagem do viewport
-    };
-
     useEffect(() => {
+        const headerFunction = (entries: any) => {
+            const [entry] = entries;
+            headerCTX.intersectingFunction(entry.isIntersecting);
+        };
+    
+        const headerOptions = {
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.9, //porcentagem do viewport
+        };
+
         const observer = new IntersectionObserver(
             headerFunction,
             headerOptions
         );
-        if (containterRef.current) observer.observe(containterRef.current);
+        let containerRefCopy = containterRef.current
+        if (containerRefCopy) observer.observe(containerRefCopy);
 
         return () => {
-            if (containterRef.current)
-                observer.unobserve(containterRef.current);
+            if (containerRefCopy)
+                observer.unobserve(containerRefCopy);
         };
-    }, [headerFunction, headerOptions]);
+    }, [headerCTX]);
 
     return (
         <React.Fragment>
@@ -72,7 +73,7 @@ const Home = () => {
                 }`}
             >
                 <div className={classes.home}>
-                    <img src="./adventure.svg" />
+                    <img src="./adventure.svg" alt="adventureBG" />
                     <div>
                         <h1>
                             Aprenda os phrasal verbs e as expressões mais usadas
@@ -95,7 +96,7 @@ const Home = () => {
                             </Link>
                         </div>
                     </div>
-                    <img id={classes.arrow} src="./arrow.png" />
+                    <img id={classes.arrow} src="./arrow.png" alt="arrow" />
                 </div>
                 <section ref={scrollIntoView} id="scroll">
                     <div ref={containterRef} className={classes["section"]}>
@@ -104,7 +105,7 @@ const Home = () => {
                                 !isVisisble && classes["section-1__hidden"]
                             } `}
                         >
-                            <img src="./viagem.jpg" />
+                            <img src="./viagem.jpg" alt="tripBG" />
                             <div
                                 className={`${classes["section-text"]} ${classes["text--1"]} `}
                             >
@@ -124,7 +125,7 @@ const Home = () => {
                                 !isVisisble && classes["section-2__hidden"]
                             } `}
                         >
-                            <img src="./promotion.png" />
+                            <img src="./promotion.png" alt="propmotionBg" />
                             <div
                                 className={`${classes["section-text"]} ${classes["text--2"]}`}
                             >
@@ -144,7 +145,7 @@ const Home = () => {
                                 !isVisisble && classes["section-3__hidden"]
                             } `}
                         >
-                            <img src="./viagem.jpg" />
+                            <img src="./viagem.jpg" alt="trip" />
                             <div
                                 className={`${classes["section-text"]} ${classes["text--3"]}`}
                             >

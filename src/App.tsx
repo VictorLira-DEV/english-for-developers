@@ -9,6 +9,7 @@ import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 
 function App() {
+    console.log('haha')
     return (
         <div className="app">
             <Header />

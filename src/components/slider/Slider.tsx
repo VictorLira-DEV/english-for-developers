@@ -4,6 +4,7 @@ import SliderItem from "./Slider-item/SliderItem";
 import { BsArrowRight } from "react-icons/bs";
 import { BsArrowLeft } from "react-icons/bs";
 import testimonial_1 from "../../assets/testimonial-1.jpg";
+import Button from '../button/Button'
 
 const Slider = () => {
     const [slider, setSlider] = useState({
@@ -66,14 +67,14 @@ const Slider = () => {
         }
     };
 
-    // useEffect(() => {
-    //     const timer = setInterval(() => {
-    //         sliderTimer();
-    //     }, 3000);
-    //     return () => {
-    //         clearInterval(timer);
-    //     };
-    // }, [slider]);
+    useEffect(() => {
+        const timer = setInterval(() => {
+            sliderTimer();
+        }, 3000);
+        return () => {
+            clearInterval(timer);
+        };
+    }, [slider]);
 
     //hardcoded slider because the "src" is not comming from  a API
     let slider_1 = {
@@ -87,12 +88,12 @@ const Slider = () => {
     return (
         <div className={classes.slider}>
             <div className={classes.controls}>
-                <button id="left" onClick={moveToLeft}>
+                <Button id="left" onClick={moveToLeft}>
                     <BsArrowLeft />
-                </button>
-                <button id="right" onClick={moveToRight}>
+                </Button>
+                <Button id="right" onClick={moveToRight}>
                     <BsArrowRight />
-                </button>
+                </Button>
             </div>
             <div className={classes["slide-content"]}>
                 <SliderItem

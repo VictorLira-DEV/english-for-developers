@@ -7,18 +7,14 @@
 
 .pageList .pages {
   text-align: center;
-  line-height: 49px;
   background: #094a82;
   border: 1px solid #fdfafa;
+  text-decoration: none;
+  padding: 15px 15px;
+  color: white;
 }
 
 .pageList .pages.active {
   background: #3d8fd6;
-}
-
-.pageList .pages a {
-  color: white;
-  text-decoration: none;
-  padding: 16px 15px;
 }
 /*# sourceMappingURL=Pagination.module.css.map */

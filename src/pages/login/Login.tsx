@@ -4,7 +4,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Slider from "../../components/slider/Slider";
 import Input from "../../components/input/Input";
 import { Link } from "react-router-dom";
@@ -54,7 +54,7 @@ const Login = () => {
     let btn_login = `${classes.btn} ${classes.login}`;
 
     return (
-        <>
+        <React.Fragment>
             <div className={classes.login}>
                 <div className={classes.wrapper}>
                     <Slider />
@@ -100,7 +100,7 @@ const Login = () => {
                 </div>
             </div>
             <Footer className={classes.footer} />
-        </>
+        </React.Fragment>
     );
 };
 

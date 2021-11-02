@@ -20,7 +20,7 @@ const SliderItem = (props: ISliderItem) => {
         >
             <FaQuoteLeft id={classes["quotes-mark"]} />
             <div className={classes.profile}>
-                <img src={props.src} />
+                <img src={props.src} alt="testimimonial-profile" />
                 <div>
                     {starNumbers.map(() => {
                         return <AiFillStar className={classes.stars} />;

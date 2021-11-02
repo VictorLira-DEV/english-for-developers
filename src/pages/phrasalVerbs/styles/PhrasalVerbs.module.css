@@ -27,50 +27,21 @@
   top: -45px;
 }
 
-.container .verbs-list .navigatin-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-top: 60px;
-}
-
-.container .verbs-list .navigatin-wrapper .pages {
-  height: 51px;
-  width: 41px;
-  text-align: center;
-  line-height: 50px;
-  border: 1px solid #fdfafa;
-  background: #094a82;
-}
-
-.container .verbs-list .navigatin-wrapper .pages.pages-dots {
-  color: white;
-  font-size: 20px;
-  height: 51px;
-  width: 41px;
-  cursor: pointer;
-}
-
-.container .verbs-list .navigatin-wrapper .pages button {
-  background: none;
-  color: white;
-  border: none;
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-}
-
 .container .footer {
   position: absolute;
   bottom: 0;
   background: #0b5ba0;
   color: white;
   padding: 15px;
+}
+
+.pages {
+  height: 51px;
+  width: 41px;
+  text-align: center;
+  line-height: 50px;
+  border: 1px solid #fdfafa;
+  background: #094a82;
+  color: white;
 }
 /*# sourceMappingURL=PhrasalVerbs.module.css.map */

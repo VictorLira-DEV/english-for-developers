@@ -2,12 +2,13 @@ import Input from "../../components/input/Input";
 import classes from "./styles/Registration.module.css";
 import Button from "../../components/button/Button";
 import Footer from "../../components/footer/Footer";
+import React from 'react'
 
 const Registration = () => {
     return (
-        <>
+        <React.Fragment>
             <div className={classes["signup-container"]}>
-                <img src="./1.svg" />
+                <img src="./1.svg" alt="background" />
                 <form className={classes.form}>
                     <h1> Register </h1>
                     <div className={classes["form-control"]}>
@@ -30,10 +31,10 @@ const Registration = () => {
                     </div>
                     <Button>Submit</Button>
                 </form>
-                <img src="./social.svg" />
+                <img src="./social.svg" alt="social" />
             </div>
             <Footer className={classes.footer} />
-        </>
+        </React.Fragment>
     );
 };
 

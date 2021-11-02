@@ -1,4 +1,4 @@
-import classes from "./styles/Pagination.module.css";   
+import classes from "./styles/Pagination.module.css";
 
 interface IPagination {
     postsPerPage: number;
@@ -10,7 +10,6 @@ interface IPagination {
 }
 
 const Pagination = (props: IPagination) => {
-    
     const pageNumbers = [];
 
     for (
@@ -22,30 +21,28 @@ const Pagination = (props: IPagination) => {
     }
 
     return (
-        <nav>
-            <ul className={classes.pageList}>
-                {pageNumbers.map((number) => {
-
-                    if(number < props.maxPageNumberLimit+1 &&  number > props.minPageNumberLimit){
-                        return (
-                            <li
-                                key={number}
-                                className={`${classes.pages} ${
-                                    number === props.currentPage && classes.active
-                                }`}
-                            >
-                                <a href="#" onClick={() => props.paginate(number)}>
-                                    {number}
-                                </a>
-                            </li>
-                        );
-                    }else{
-                        return null
-                    }
-                    
-                })}
-            </ul>
-        </nav>
+        <ul className={classes.pageList}>
+            {pageNumbers.map((number) => {
+                if (
+                    number < props.maxPageNumberLimit + 1 &&
+                    number > props.minPageNumberLimit
+                ) {
+                    return (
+                        <li
+                            key={number}
+                            className={`${classes.pages} ${
+                                number === props.currentPage && classes.active
+                            }`}
+                            onClick={() => props.paginate(number)}
+                        >
+                            {number}
+                        </li>
+                    );
+                } else {
+                    return null;
+                }
+            })}
+        </ul>
     );
 };
 
