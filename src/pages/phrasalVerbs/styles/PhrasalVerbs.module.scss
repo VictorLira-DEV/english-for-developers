@@ -1,6 +1,8 @@
 .container{
     overflow-y: hidden;
-    padding: 100px 50px;
+    padding: 100px 0 200px 0;
+    min-height: 100vh;
+    position: relative;
     .verbs-list{
         position: relative;
         width: 700px;
@@ -8,7 +10,7 @@
         list-style: none;
         transition: .3s ease-in-out;
         border-top: 1px dashed rgb(146, 145, 145);
-        button:first-of-type{
+        .btn-title{
             border-top-left-radius: 20px;
             border: none;
             background: rgb(250, 187, 187);
@@ -19,5 +21,50 @@
             right: 0;
             top: -45px;
         }
+
+        .navigatin-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+
+            .pages{
+                // padding: 15px;
+                height: 51px;
+                width: 41px;
+                text-align: center;
+                line-height: 50px;
+                border: 1px solid rgb(253, 250, 250);
+                background: rgb(9, 74, 130);
+                &.pages-dots{
+                    color: white;
+                    font-size: 20px;
+                    height: 51px;
+                    width: 41px;
+                    cursor: pointer;
+                }
+
+                button{
+                    background: none;
+                    color: white;
+                    border: none;
+                    height: 100%;
+                    width: 100%;
+                    cursor: pointer;
+                }
+
+
+            }
+        }
+
+        
+    }
+
+    .footer{
+        position: absolute;
+        bottom: 0;
+        background: rgb(11, 91, 160);
+        color: white;
+        padding: 15px;
     }
 }

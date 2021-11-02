@@ -12,13 +12,14 @@ interface IListItem {
     example_2: string;
     translation_1: string;
     translation_2: string;
+    phrasalverb: string
 }
 
 const ListItem = (props: IListItem) => {
     return (
         <div>
             <li className={classes.english}>
-                <div className={classes["phrasal-verb"]}>To look foward to</div>
+                <div className={classes["phrasal-verb"]}>{props.phrasalverb}</div>
                 <div className={classes["english-example"]}>
                     <div className={classes["english-text-examples"]}>
                         <p> (1) {props.example_1} </p>
