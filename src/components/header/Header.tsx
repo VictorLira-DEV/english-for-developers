@@ -3,9 +3,11 @@ import { NavLink } from "react-router-dom";
 import React, {useContext} from "react";
 import { StickyHeaderContext } from "../../context/sticky-header/stickyHeader";
 import { IoIosContact } from "react-icons/io";
+import { AuthContext } from "../../context/auth-context/auth-context";
 
 const Header = () => {
     const headerCtx = useContext(StickyHeaderContext);
+    const authCtx =  useContext(AuthContext)
 
     // const loginHandler = (event: React.FormEvent) => {
     //     event.preventDefault();
@@ -14,6 +16,8 @@ const Header = () => {
     // const logoutHandler = (event: React.FormEvent) => {
     //     event.preventDefault();
     // };
+
+    const isLoggedIn = authCtx.isLoggedIn;
 
     return (
         <header className={`${classes.header} ${headerCtx.isIntersectingValue === true && classes.sticky}`}>
@@ -33,24 +37,30 @@ const Header = () => {
                             Phrasal verbs
                         </NavLink>
                     </li>
-                    <li>
+                    
+                  { isLoggedIn && <li>
                         <NavLink
                             to="/expressions"
                             activeClassName={classes.active}
                         >
                             Expressions
                         </NavLink>
-                    </li>
-                    <li>
+                    </li>}
+                  {!isLoggedIn && <li>
                         <NavLink to="/login" activeClassName={classes.active}>
                             <IoIosContact className={classes.icon} /> Login
                         </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/logout" activeClassName={classes.active}>
+                    </li>}
+                   {isLoggedIn && <li>
+                      <NavLink to="/logout" activeClassName={classes.active}>
                             Logout
                         </NavLink>
-                    </li>
+                    </li>}
+                    {isLoggedIn && <li>
+                      <NavLink to="/profile" activeClassName={classes.active}>
+                            Profile
+                        </NavLink>
+                    </li>}
                 </ul>
             </nav>
         </header>

@@ -78,7 +78,7 @@ const Home = () => {
                             Aprenda os phrasal verbs e as expressões mais usadas
                             do inglês, de forma
                             <span> totalmente gratuita </span>, será necessário
-                            o
+                            o{" "}
                             <span>
                                 cadastro para ter acesso ao material sobre
                                 "expressões"

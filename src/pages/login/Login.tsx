@@ -4,7 +4,8 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../context/auth-context/auth-context";
 import Slider from "../../components/slider/Slider";
 import Input from "../../components/input/Input";
 import { Link } from "react-router-dom";
@@ -14,6 +15,7 @@ import useInput from "../../hooks/use-input/useInput";
 const Login = () => {
     const [formIsValid, setFormIsValid] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const authCtx = useContext(AuthContext);
     const [focus, setFocus] = useState({
         email: false,
         password: false,
@@ -101,22 +103,27 @@ const Login = () => {
                     returnSecureToken: true,
                 }),
             }
-        ).then((res) => {
-            setIsLoading(false);
-            if (res.ok) {
-                console.log(res);
-            } else {
-                console.log(res);
-                res.json().then((data) => {
-                    let errorMessage = "Authentication failed";
-                    console.log(data.error.message.includes("PASSWORD"));
-                    if (data && data.error && data.error.message) {
-                        errorMessage = data.error.message;
-                    }
-                    alert(errorMessage);
-                });
-            }
-        });
+        )
+            .then((res) => {
+                setIsLoading(false);
+                if (res.ok) {
+                    return res.json();
+                } else {
+                    return res.json().then((data) => {
+                        let errorMessage = "Authentication failed";
+                        // if (data && data.error && data.error.message) {
+                        //     errorMessage = data.error.message;
+                        // }
+                        throw new Error(errorMessage);
+                    });
+                }
+            })
+            .then((data) => {
+                authCtx.login(data.idToken);
+            })
+            .catch((err) => {
+                alert(err.message);
+            });
     };
 
     //dynamic styles

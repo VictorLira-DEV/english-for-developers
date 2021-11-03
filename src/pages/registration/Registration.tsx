@@ -114,12 +114,11 @@ const Registration = () => {
         ).then((res) => {
             setIsLoading(false);
             if (res.ok) {
-                console.log(res);
+                return res.json();
             } else {
-                console.log(res);
                 res.json().then((data) => {
                     let errorMessage = "Authentication failed";
-                    console.log(data.error.message.includes("PASSWORD"));
+
                     if (data && data.error && data.error.message) {
                         errorMessage = data.error.message;
                     }

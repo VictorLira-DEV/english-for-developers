@@ -1,15 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './global/styles/index.css';
-import { BrowserRouter } from 'react-router-dom'
-import StickyHeaderProvider from './context/sticky-header/stickyHeader';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./global/styles/index.css";
+import { BrowserRouter } from "react-router-dom";
+import StickyHeaderProvider from "./context/sticky-header/stickyHeader";
+import AuthContextProvider from "./context/auth-context/auth-context";
+import App from "./App";
 
 ReactDOM.render(
-  <StickyHeaderProvider>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  </StickyHeaderProvider>,
-  document.getElementById('root')
+    <AuthContextProvider>
+        <StickyHeaderProvider>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </StickyHeaderProvider>
+    </AuthContextProvider>,
+    document.getElementById("root")
 );
