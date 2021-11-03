@@ -48,6 +48,7 @@
 .signup-container .form .form-control {
   padding-bottom: 40px;
   color: #797979;
+  position: relative;
 }
 
 .signup-container .form .form-control .input {
@@ -66,6 +67,11 @@
 .signup-container .form .form-control .input:focus {
   background: #e0f1f8;
   outline-color: #5fd2ff;
+}
+
+.signup-container .form .form-control small {
+  color: red;
+  position: absolute;
 }
 
 .signup-container .form button {
@@ -91,6 +97,11 @@
 
 .signup-container .form button:hover {
   background: #3b9df3;
+}
+
+.signup-container .form button.invalid {
+  background: #c2c2c2;
+  cursor: not-allowed;
 }
 
 .footer {

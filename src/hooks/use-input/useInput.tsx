@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const useInput = (validate: (a: string) => boolean) => {
+const useInput = (validate: (a: string) => {isValid: boolean, errorMessage: string}) => {
     const [enteredValue, setEnteredValue] = useState("");
     const [isTouched, setIsTouched] = useState(false);
 
-    const valueIsValid = validate(enteredValue);
-    const hasError = !valueIsValid && isTouched;
+    const {isValid, errorMessage} = validate(enteredValue);
+    const hasError = !isValid && isTouched;
 
     const valueChangeHandler = (event: React.FormEvent<HTMLInputElement>) => {
         setEnteredValue(event.currentTarget.value);
@@ -23,7 +23,8 @@ const useInput = (validate: (a: string) => boolean) => {
 
     return {
         value: enteredValue,
-        isValid: valueIsValid, 
+        isValid: isValid, 
+        errorMessage: errorMessage,
         hasError: hasError,
         valueChangeHandler,
         inputBlurHandler,

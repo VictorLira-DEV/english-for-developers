@@ -35,6 +35,7 @@
         .form-control {
             padding-bottom: 40px;
             color: rgb(121, 121, 121);
+            position: relative;
             .input {
                 display: block;
                 padding: 10px;
@@ -49,6 +50,10 @@
                     background: rgb(224, 241, 248);
                     outline-color: rgb(95, 210, 255);
                 }
+            }
+            small{
+                color: red;
+                position: absolute;
             }
         }
 
@@ -71,6 +76,11 @@
             margin-top: 20px;
             &:hover {
                 background: rgb(59, 157, 243);
+            }
+
+            &.invalid{
+                background: rgb(194, 194, 194);
+                cursor: not-allowed ;
             }
         }
     }
