@@ -4,17 +4,54 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { MdOutlineEmail } from "react-icons/md";
 import { BsArrowRightCircle } from "react-icons/bs";
 import { AiOutlinePlusCircle } from "react-icons/ai";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "../../components/slider/Slider";
 import Input from "../../components/input/Input";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
+import useInput from "../../hooks/use-input/useInput";
 
 const Login = () => {
+    const [formIsValid, setFormIsValid] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [focus, setFocus] = useState({
         email: false,
         password: false,
     });
+
+    //EMAIL
+    const validateEmail = (value: string) => {
+        return {
+            isValid: value.trim().includes("@"),
+            errorMessage: "Invalid E-mail",
+        };
+    };
+    const {
+        value: enteredEmail,
+        errorMessage: emailErrorMessage,
+        hasError: enteredEmailHasError,
+        valueChangeHandler: emailChangeHandler,
+        inputBlurHandler: emailBlurHandler,
+        isValid: emailIsValid,
+        reset: resetEmailInput,
+    } = useInput(validateEmail);
+
+    //PASSWORD
+    const validatePassword = (value: string) => {
+        return {
+            isValid: value.trim().length > 5,
+            errorMessage: "Password should be at least 6 characters",
+        };
+    };
+    const {
+        value: enteredPassword,
+        errorMessage: passwordErrorMessage,
+        hasError: passwordHasError,
+        valueChangeHandler: passwordChangeHandler,
+        inputBlurHandler: passwordBlurHandler,
+        isValid: passwordIsValid,
+        reset: resetPasswordInput,
+    } = useInput(validatePassword);
 
     const emailMouseEnterHandler = () => {
         setFocus(() => {
@@ -41,17 +78,58 @@ const Login = () => {
         });
     };
 
+    useEffect(() => {
+        setFormIsValid(emailIsValid && passwordIsValid);
+        console.log(formIsValid);
+    }, [emailIsValid, passwordIsValid]);
+
     const submitHandler = (event: React.FormEvent) => {
         event.preventDefault();
+
+        if (formIsValid !== true) return;
+
+        setIsLoading(true);
+
+        fetch(
+            "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
+            {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    email: enteredEmail,
+                    password: enteredPassword,
+                    returnSecureToken: true,
+                }),
+            }
+        ).then((res) => {
+            setIsLoading(false);
+            if (res.ok) {
+                console.log(res);
+            } else {
+                console.log(res);
+                res.json().then((data) => {
+                    let errorMessage = "Authentication failed";
+                    console.log(data.error.message.includes("PASSWORD"));
+                    if (data && data.error && data.error.message) {
+                        errorMessage = data.error.message;
+                    }
+                    alert(errorMessage);
+                });
+            }
+        });
     };
 
     //dynamic styles
-    let emailInput = `${classes.inputWrapper} ${focus.email && classes.focus}`;
+    let emailInput = `${classes.inputWrapper} ${
+        enteredEmailHasError && classes.invalid
+    } ${focus.email && classes.focus}`;
     let passwordInput = `${classes.inputWrapper} ${
-        focus.password && classes.focus
-    }`;
+        passwordHasError && classes.invalid
+    } ${focus.password && classes.focus}`;
     let btn_signup = `${classes.btn} ${classes["create-account"]}`;
-    let btn_login = `${classes.btn} ${classes.login}`;
+    let btn_login = `${classes.btn} ${classes.login} ${
+        !formIsValid && classes.invalidBtn
+    }`;
 
     return (
         <React.Fragment>
@@ -66,11 +144,15 @@ const Login = () => {
                                 <Input
                                     type="email"
                                     placeholder="E-mail"
-                                    className={classes.focus}
+                                    className={`${classes.focus} ${classes.invalid}`}
                                     onMouseEnter={emailMouseEnterHandler}
                                     onMouseLeave={emailMouseLeaveHandler}
+                                    onChange={emailChangeHandler}
+                                    onBlur={emailBlurHandler}
                                 />
-                                {/* <small>error message</small> */}
+                                {enteredEmailHasError && (
+                                    <small> {emailErrorMessage} </small>
+                                )}
                             </div>
                         </div>
                         <div className={classes["form-control"]}>
@@ -82,11 +164,15 @@ const Login = () => {
                                     className={classes.focus}
                                     onMouseEnter={passwordEnterHandler}
                                     onMouseLeave={passwordLeaveHandler}
+                                    onChange={passwordChangeHandler}
+                                    onBlur={passwordBlurHandler}
                                 />
-                                {/* <small>error message</small> */}
+                                {passwordHasError && (
+                                    <small> {passwordErrorMessage} </small>
+                                )}
                             </div>
                         </div>
-                        <Button className={btn_login}>
+                        <Button className={`${btn_login}`}>
                             login <BsArrowRightCircle />
                         </Button>
                         <p>or</p>

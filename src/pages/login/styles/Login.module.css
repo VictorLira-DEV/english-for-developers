@@ -70,6 +70,18 @@
           align-items: center;
 }
 
+.login .wrapper form .form-control .inputWrapper.invalid {
+  border-bottom-color: #f78484;
+}
+
+.login .wrapper form .form-control .inputWrapper.invalid .icon {
+  color: #f78484;
+}
+
+.login .wrapper form .form-control .inputWrapper.invalid small {
+  color: red;
+}
+
 .login .wrapper form .form-control .inputWrapper.focus {
   border: 2px solid #5fd2ff;
   background: #e0f1f8;
@@ -161,6 +173,15 @@
   height: 40px;
   margin-top: 20px;
   position: relative;
+}
+
+.login .wrapper form .btn.login.invalidBtn {
+  background: #c2c2c2;
+  cursor: not-allowed;
+}
+
+.login .wrapper form .btn.login.invalidBtn:hover {
+  background: #c2c2c2;
 }
 
 .login .wrapper form .btn.login :last-child {

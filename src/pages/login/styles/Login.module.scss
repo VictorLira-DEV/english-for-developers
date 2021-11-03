@@ -47,6 +47,16 @@
                     display: flex;
                     position: relative;
                     align-items: center;
+                    &.invalid{
+                        border-bottom-color: rgb(247, 132, 132);
+                        .icon{
+                            color: rgb(247, 132, 132);
+                        }
+
+                        small{
+                            color: red;
+                        }
+                    }
 
                     &.focus {
                         border: 2px solid rgb(95, 210, 255);
@@ -133,6 +143,14 @@
                     height: 40px;
                     margin-top: 20px;
                     position: relative;
+                    &.invalidBtn{
+                        background: rgb(194, 194, 194);
+                        cursor: not-allowed ;
+                        &:hover{
+                            background: rgb(194, 194, 194);
+                        }
+                    }
+
                     & :last-child {
                         font-size: 18px;
                         position: absolute;

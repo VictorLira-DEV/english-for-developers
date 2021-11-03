@@ -15,7 +15,7 @@ const Home = () => {
             const [entry] = entries;
             setIsVisible(entry.isIntersecting);
         };
-    
+
         const options = {
             root: null,
             rootMargin: "0px",
@@ -23,12 +23,11 @@ const Home = () => {
         };
 
         const observer = new IntersectionObserver(callbackFunction, options);
-        const  containterRefCopy = containterRef.current
+        const containterRefCopy = containterRef.current;
         if (containterRefCopy) observer.observe(containterRefCopy);
 
         return () => {
-            if (containterRefCopy)
-                observer.unobserve(containterRefCopy);
+            if (containterRefCopy) observer.unobserve(containterRefCopy);
         };
     }, []);
 
@@ -40,13 +39,13 @@ const Home = () => {
     //stycky header
     const headerCTX = useContext(StickyHeaderContext);
     useEffect(() => {
-        let containerRefCopy = containterRef.current
-        
+        let containerRefCopy = containterRef.current;
+
         const headerFunction = (entries: any) => {
             const [entry] = entries;
             headerCTX.intersectingFunction(entry.isIntersecting);
         };
-    
+
         const headerOptions = {
             root: null,
             rootMargin: "0px",
@@ -60,8 +59,7 @@ const Home = () => {
         if (containerRefCopy) observer.observe(containerRefCopy);
 
         return () => {
-            if (containerRefCopy)
-                observer.unobserve(containerRefCopy);
+            if (containerRefCopy) observer.unobserve(containerRefCopy);
         };
     }, [headerCTX]);
 
