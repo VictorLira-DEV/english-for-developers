@@ -84,14 +84,12 @@ const Login = () => {
 
     useEffect(() => {
         setFormIsValid(emailIsValid && passwordIsValid);
-        console.log(formIsValid);
     }, [emailIsValid, passwordIsValid]);
 
     const submitHandler = (event: React.FormEvent) => {
         event.preventDefault();
 
         if (formIsValid !== true) return;
-
         setIsLoading(true);
 
         fetch(
@@ -121,7 +119,9 @@ const Login = () => {
                 }
             })
             .then((data) => {
-                authCtx.login(data.idToken);
+                const expirationTime = new Date(new Date().getTime() + (+data.expiresIn * 1000))
+
+                authCtx.login(data.idToken, expirationTime.toISOString());
                 history.replace('/')
             })
             .catch((err) => {
