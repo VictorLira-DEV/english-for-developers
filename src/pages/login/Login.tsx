@@ -11,9 +11,11 @@ import Input from "../../components/input/Input";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import useInput from "../../hooks/use-input/useInput";
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
     const [formIsValid, setFormIsValid] = useState(false);
+    const history = useHistory();
     const [isLoading, setIsLoading] = useState(false);
     const authCtx = useContext(AuthContext);
     const [focus, setFocus] = useState({
@@ -120,6 +122,7 @@ const Login = () => {
             })
             .then((data) => {
                 authCtx.login(data.idToken);
+                history.replace('/')
             })
             .catch((err) => {
                 alert(err.message);

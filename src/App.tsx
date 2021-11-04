@@ -3,14 +3,17 @@ import Header from "./components/header/Header";
 import "./global/styles/index.css";
 import { Route, Switch, Redirect } from "react-router-dom";
 import Expressions from "./pages/expressions/Expressions";
-import Logout from "./pages/logout/Logout";
 import PhrasalVerbs from "./pages/phrasalVerbs/PhrasalVerbs";
 import Login from "./pages/login/Login";
 import Registration from "./pages/registration/Registration";
 import Profile from "./pages/profile/Profile";
+import { useContext } from 'react';
+import { AuthContext } from "./context/auth-context/auth-context";
 
 function App() {
-    console.log("haha");
+    const authCtx = useContext(AuthContext);
+
+
     return (
         <div className="app">
             <Header />
@@ -21,21 +24,18 @@ function App() {
                 <Route path="/phrasal-verbs">
                     <PhrasalVerbs />
                 </Route>
-                <Route path="/expressions">
+               { authCtx.isLoggedIn && <Route path="/expressions">
                     <Expressions />
-                </Route>
-                <Route path="/login">
+                </Route>}
+               { !authCtx.isLoggedIn && <Route path="/login">
                     <Login />
-                </Route>
+                </Route>}
                 <Route path="/signup">
                     <Registration />
                 </Route>
-                <Route path="/logout">
-                    <Logout />
-                </Route>
-                <Route path="/profile">
+                { authCtx.isLoggedIn && <Route path="/profile">
                     <Profile />
-                </Route>
+                </Route>}
                 <Route path="*">
                     <Redirect to="/" />
                 </Route>

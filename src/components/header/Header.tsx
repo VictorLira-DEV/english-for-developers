@@ -1,5 +1,5 @@
 import classes from "./styles/Header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import React, {useContext} from "react";
 import { StickyHeaderContext } from "../../context/sticky-header/stickyHeader";
 import { IoIosContact } from "react-icons/io";
@@ -8,6 +8,7 @@ import { AuthContext } from "../../context/auth-context/auth-context";
 const Header = () => {
     const headerCtx = useContext(StickyHeaderContext);
     const authCtx =  useContext(AuthContext)
+    const history = useHistory()
 
     // const loginHandler = (event: React.FormEvent) => {
     //     event.preventDefault();
@@ -18,6 +19,10 @@ const Header = () => {
     // };
 
     const isLoggedIn = authCtx.isLoggedIn;
+    const logoutHandler = () => {
+        authCtx.logout();
+        history.replace('/login')
+    }
 
     return (
         <header className={`${classes.header} ${headerCtx.isIntersectingValue === true && classes.sticky}`}>
@@ -51,7 +56,7 @@ const Header = () => {
                             <IoIosContact className={classes.icon} /> Login
                         </NavLink>
                     </li>}
-                   {isLoggedIn && <li>
+                   {isLoggedIn && <li onClick={logoutHandler}>
                       <NavLink to="/logout" activeClassName={classes.active}>
                             Logout
                         </NavLink>
