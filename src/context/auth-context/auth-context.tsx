@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { calculateRemainingTime, retrieveStoredToken } from '../../helper/helper-functions/helperFunctions'
 
 interface IAuthContext {
     token: string | null;
@@ -12,32 +13,6 @@ interface IProps {
 }
 
 let logoutTimer: any;
-
-const calculateRemainingTime = (expirationTime: any) => {
-    const currentTime = new Date().getTime();
-    const adjExpirationTime = new Date(expirationTime).getTime();
-
-    const remainigDuration = adjExpirationTime - currentTime;
-    return remainigDuration
-}
-
-const retrieveStoredToken = () => {
-    const storedToken = localStorage.getItem('token');
-    const storedExpirationDate = localStorage.getItem('expirationTime');
-
-    const remainingTime = calculateRemainingTime(storedExpirationDate);
-
-    if(remainingTime <= 60000){
-        localStorage.removeItem('expirationTime');
-        localStorage.removeItem('token');
-        return null
-    }
-
-    return {
-        token: storedToken,
-        duration: remainingTime
-    } ;
-}
 
 export const AuthContext = React.createContext({} as IAuthContext);
 const AuthContextProvider = (props: IProps) => {

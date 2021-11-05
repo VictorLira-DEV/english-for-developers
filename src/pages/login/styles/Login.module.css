@@ -111,6 +111,7 @@
   text-align: center;
   margin-top: 20px;
   height: 20px;
+  color: #757575;
 }
 
 .login .wrapper form p:nth-of-type(1)::after {

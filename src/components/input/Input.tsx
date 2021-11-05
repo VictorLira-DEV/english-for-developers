@@ -4,6 +4,7 @@ interface IInput {
     placeholder?: string;
     className?: string;
     type: string;
+    value: string;
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
     onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
@@ -20,6 +21,7 @@ const Input = (props: IInput) => {
             onMouseLeave={props.onMouseLeave}
             onChange={props.onChange}
             onBlur={props.onBlur}
+            value={props.value}
         />
     );
 };

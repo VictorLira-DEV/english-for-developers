@@ -4,12 +4,13 @@ import Button from "../../components/button/Button";
 import Footer from "../../components/footer/Footer";
 import React, { useState, useEffect } from "react";
 import useInput from "../../hooks/use-input/useInput";
+import { useHistory } from "react-router-dom";
 import Axios from "axios";
 
 const Registration = () => {
-    console.log("haha");
     const [formIsValid, setFormIsValid] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
 
     //USERNAME
     const usernameValidation = (value: string) => {
@@ -61,6 +62,7 @@ const Registration = () => {
         hasError: passswordHasError,
         inputBlurHandler: passwordBlurHandler,
         valueChangeHandler: passwordChangeHandler,
+        reset: resetPasswordInput,
     } = useInput(passwordValidation);
 
     //PASSWORD CHECK
@@ -72,6 +74,7 @@ const Registration = () => {
         hasError: passwordCheckHasError,
         inputBlurHandler: passwordCheckBlurHandler,
         valueChangeHandler: passwordCheckChangeHandler,
+        reset: resetPasswordCheckInput,
     } = useInput(passwordCheckValidation);
 
     function passwordCheckValidation(value: string) {
@@ -100,32 +103,28 @@ const Registration = () => {
         if (formIsValid !== true) return;
         setIsLoading(true);
 
-        fetch(
-            "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    email: enteredEmail,
-                    password: enteredPassword,
-                    returnSecureToken: true,
-                }),
-            }
-        ).then((res) => {
-            setIsLoading(false);
-            if (res.ok) {
-                return res.json();
-            } else {
-                res.json().then((data) => {
-                    let errorMessage = "Authentication failed";
-
-                    if (data && data.error && data.error.message) {
-                        errorMessage = data.error.message;
-                    }
-                    alert(errorMessage);
-                });
-            }
-        });
+        //Axios
+        Axios({
+            method: "post",
+            url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
+            data: {
+                email: enteredEmail,
+                password: enteredPassword,
+                returnSecureToken: true,
+            },
+        })
+            .then((response) => {
+                setIsLoading(false);
+                resetNameInput();
+                resetEmailInput();
+                resetPasswordInput();
+                resetPasswordCheckInput();
+                // history.replace('/login')
+            })
+            .catch((error) => {
+                setIsLoading(false);
+                alert("error");
+            });
     };
 
     //classes
@@ -148,7 +147,7 @@ const Registration = () => {
             <div className={classes["signup-container"]}>
                 <img src="./1.svg" alt="background" />
                 <form onSubmit={formSubmitHandler} className={classes.form}>
-                    <h1> Register </h1>
+                    <h1> Create account </h1>
                     <div className={classes["form-control"]}>
                         <label className={classes.label}>Username</label>
                         <Input
@@ -156,6 +155,7 @@ const Registration = () => {
                             type="text"
                             onChange={usernameChangeHandler}
                             onBlur={usernameBlurHander}
+                            value={enteredUsername}
                         />
                         <small>
                             {usernameHasError && usernameErrorMessage}{" "}
@@ -168,6 +168,7 @@ const Registration = () => {
                             type="email"
                             onChange={emailChangeHandler}
                             onBlur={emailBlurHandler}
+                            value={enteredEmail}
                         />
                         <small>{emailHasError && emailErrorMessage} </small>
                     </div>
@@ -178,6 +179,7 @@ const Registration = () => {
                             type="password"
                             onBlur={passwordBlurHandler}
                             onChange={passwordChangeHandler}
+                            value={enteredPassword}
                         />
                         <small>
                             {passswordHasError && passwordErrorMessage}{" "}
@@ -192,6 +194,7 @@ const Registration = () => {
                             type="password"
                             onChange={passwordCheckChangeHandler}
                             onBlur={passwordCheckBlurHandler}
+                            value={enteredPasswordCheck}
                         />
                         <small>
                             {passwordCheckHasError && passwordCheckErrorMessage}{" "}

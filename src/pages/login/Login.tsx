@@ -11,7 +11,8 @@ import Input from "../../components/input/Input";
 import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import useInput from "../../hooks/use-input/useInput";
-import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
+import Axios from "axios";
 
 const Login = () => {
     const [formIsValid, setFormIsValid] = useState(false);
@@ -92,40 +93,34 @@ const Login = () => {
         if (formIsValid !== true) return;
         setIsLoading(true);
 
-        fetch(
-            "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
-            {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    email: enteredEmail,
-                    password: enteredPassword,
-                    returnSecureToken: true,
-                }),
-            }
-        )
-            .then((res) => {
+        Axios({
+            method: "post",
+            url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
+            data: {
+                email: enteredEmail,
+                password: enteredPassword,
+                returnSecureToken: true,
+            },
+            headers: { "Content-Type": "application/json" },
+        })
+            .then((response) => {
                 setIsLoading(false);
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return res.json().then((data) => {
-                        let errorMessage = "Authentication failed";
-                        // if (data && data.error && data.error.message) {
-                        //     errorMessage = data.error.message;
-                        // }
-                        throw new Error(errorMessage);
-                    });
-                }
-            })
-            .then((data) => {
-                const expirationTime = new Date(new Date().getTime() + (+data.expiresIn * 1000))
+                console.log(response.data);
+                const expirationTime = new Date(
+                    new Date().getTime() + +response.data.expiresIn * 1000
+                );
 
-                authCtx.login(data.idToken, expirationTime.toISOString());
-                history.replace('/')
+                authCtx.login(
+                    response.data.idToken,
+                    expirationTime.toISOString()
+                );
+                history.replace("/");
+                resetEmailInput();
+                resetPasswordInput();
             })
             .catch((err) => {
-                alert(err.message);
+                setIsLoading(false);
+                alert("falha na authenticação");
             });
     };
 
@@ -159,6 +154,7 @@ const Login = () => {
                                     onMouseLeave={emailMouseLeaveHandler}
                                     onChange={emailChangeHandler}
                                     onBlur={emailBlurHandler}
+                                    value={enteredEmail}
                                 />
                                 {enteredEmailHasError && (
                                     <small> {emailErrorMessage} </small>
@@ -176,6 +172,7 @@ const Login = () => {
                                     onMouseLeave={passwordLeaveHandler}
                                     onChange={passwordChangeHandler}
                                     onBlur={passwordBlurHandler}
+                                    value={enteredPassword}
                                 />
                                 {passwordHasError && (
                                     <small> {passwordErrorMessage} </small>
@@ -183,7 +180,16 @@ const Login = () => {
                             </div>
                         </div>
                         <Button className={`${btn_login}`}>
-                            login <BsArrowRightCircle />
+                            {!isLoading && (
+                                <>
+                                    login <BsArrowRightCircle />
+                                </>
+                            )}
+                            {isLoading && (
+                                <>
+                                    Loading... <BsArrowRightCircle />
+                                </>
+                            )}
                         </Button>
                         <p>or</p>
                         <Link to="/signup">
@@ -191,7 +197,6 @@ const Login = () => {
                                 sign up <AiOutlinePlusCircle />
                             </Button>
                         </Link>
-                        <p>Forgot Password ?</p>
                     </form>
                 </div>
             </div>

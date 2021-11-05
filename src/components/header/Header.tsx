@@ -56,14 +56,14 @@ const Header = () => {
                             <IoIosContact className={classes.icon} /> Login
                         </NavLink>
                     </li>}
-                   {isLoggedIn && <li onClick={logoutHandler}>
-                      <NavLink to="/logout" activeClassName={classes.active}>
-                            Logout
-                        </NavLink>
-                    </li>}
                     {isLoggedIn && <li>
                       <NavLink to="/profile" activeClassName={classes.active}>
                             Profile
+                        </NavLink>
+                    </li>}
+                    {isLoggedIn && <li onClick={logoutHandler}>
+                      <NavLink to="/logout" activeClassName={classes.active}>
+                            Logout
                         </NavLink>
                     </li>}
                 </ul>
