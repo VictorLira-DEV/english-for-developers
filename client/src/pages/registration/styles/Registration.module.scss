@@ -10,6 +10,7 @@
     max-width: 1440px;
     padding: 40px 20px;
     height: calc(100vh - 98px) ;
+    // filter: blur(2px);
 
     img {
         width: 30%;
@@ -91,3 +92,4 @@
     padding: 30px 60px;
     background: linear-gradient(rgb(131, 214, 214), rgb(61, 99, 153));
 }
+

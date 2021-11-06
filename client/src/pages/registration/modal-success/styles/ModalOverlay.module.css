@@ -1,0 +1,77 @@
+.modal_content {
+  width: 400px;
+  height: 300px;
+}
+
+.modal_content .success {
+  background: #47caa2;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  color: white;
+}
+
+.modal_content .success #success_icon {
+  font-size: 70px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.modal_content .success #close_icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 30px;
+  color: white;
+}
+
+.modal_content .success_message {
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #4d5059;
+}
+
+.modal_content .success_message .main_message {
+  font-size: 30px;
+}
+
+.modal_content .success_message .second_message {
+  margin: 10px 0 20px 0;
+}
+
+.modal_content .success_message button {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  background: #f1b612;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.modal_content .success_message button:hover {
+  background: #dda610;
+}
+/*# sourceMappingURL=ModalOverlay.module.css.map */

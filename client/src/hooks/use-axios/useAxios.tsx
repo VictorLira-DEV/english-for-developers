@@ -21,6 +21,7 @@ const useAxios = () => {
             headers: arg.headers ? arg.headers : {},
         })
             .then((response) => {
+                setHasError(false)
                 setIsLoading(false);
                 apply(response);
             })
@@ -33,7 +34,8 @@ const useAxios = () => {
     return {
         sendRequest,
         isLoading,
-        hasError
+        hasError,
+        setHasError
     };
 };
 

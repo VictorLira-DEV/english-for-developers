@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./styles/PhrasalVerbs.module.css";
 import { phrasalVerbs_api } from "./allVerbs/AllVerbs";
 import Footer from "../../components/footer/Footer";
@@ -96,30 +96,34 @@ const PhrasalVerbs = () => {
     }
 
     return (
-        <div className={classes.container}>
-            <ul className={classes["verbs-list"]}>
-                <Button className={classes["btn-title"]}>Phrasal Verbs</Button>
-                <ListItemWrapper
-                    currentPosts={currentPosts}
-                    currentTransationId={currentTransationId}
-                    displayTranslation={displayTranslation}
-                    hideTranslation={hideTranslation}
-                />
-                <PaginationWrapper
-                    minPageNumberLimit={minPageNumberLimit}
-                    maxPageNumberLimit={maxPageNumberLimit}
-                    currentPage={currentPage}
-                    pageDecrementBtn={pageDecrementBtn}
-                    pageIncrementBtn={pageIncrementBtn}
-                    postPerPage={postPerPage}
-                    totalPosts={phrasalVerbs_api.length}
-                    prevPageHandler={prevPageHandler}
-                    paginate={paginate}
-                    nextPageHandler={nextPageHandler}
-                />
-            </ul>
-            <Footer className={classes.footer} />
-        </div>
+        <React.Fragment>
+            <div className={classes.container}>
+                <ul className={classes["verbs-list"]}>
+                    <Button className={classes["btn-title"]}>
+                        Phrasal Verbs
+                    </Button>
+                    <ListItemWrapper
+                        currentPosts={currentPosts}
+                        currentTransationId={currentTransationId}
+                        displayTranslation={displayTranslation}
+                        hideTranslation={hideTranslation}
+                    />
+                    <PaginationWrapper
+                        minPageNumberLimit={minPageNumberLimit}
+                        maxPageNumberLimit={maxPageNumberLimit}
+                        currentPage={currentPage}
+                        pageDecrementBtn={pageDecrementBtn}
+                        pageIncrementBtn={pageIncrementBtn}
+                        postPerPage={postPerPage}
+                        totalPosts={phrasalVerbs_api.length}
+                        prevPageHandler={prevPageHandler}
+                        paginate={paginate}
+                        nextPageHandler={nextPageHandler}
+                    />
+                </ul>
+                <Footer className={classes.footer} />
+            </div>
+        </React.Fragment>
     );
 };
 

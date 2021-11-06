@@ -6,12 +6,15 @@ import React, { useState, useEffect } from "react";
 import useInput from "../../hooks/use-input/useInput";
 import { useHistory } from "react-router-dom";
 import useAxios from "../../hooks/use-axios/useAxios";
+import ModalSuccess from "./modal-success/ModalSuccess";
+import ModalError from "./modal-error/ModalError";
 
 const Registration = () => {
     const [formIsValid, setFormIsValid] = useState(false);
+    const [displayModal, setDisplayModal] = useState(false)
     const history = useHistory();
     const { sendRequest, isLoading, hasError } = useAxios();
-
+    console.log(hasError)
     //USERNAME
     const usernameValidation = (value: string) => {
         return {
@@ -104,16 +107,7 @@ const Registration = () => {
         // setIsLoading(true);
 
         const receiveData = (data: any) => {
-            if (hasError) {
-                alert('Auth failed')
-                return;
-            }
-
-            resetNameInput();
-            resetEmailInput();
-            resetPasswordInput();
-            resetPasswordCheckInput();
-            history.replace("/login");
+            
         };
         sendRequest(
             {
@@ -127,7 +121,26 @@ const Registration = () => {
             },
             receiveData
         );
+        setDisplayModal(true)
     };
+
+    const clearInputField = () => {
+        resetNameInput();
+        resetEmailInput();
+        resetPasswordInput();
+        resetPasswordCheckInput();
+    }
+
+    //closeModal
+    const closeModal = (event: React.FormEvent) => {
+        event.preventDefault();
+        setDisplayModal(false)
+
+        if(hasError) return
+        clearInputField()
+        history.replace("/login");
+
+    }
 
     //classes
     const usernameClasses = `${classes.input} ${
@@ -146,6 +159,8 @@ const Registration = () => {
 
     return (
         <React.Fragment>
+            {!hasError && displayModal && !isLoading && <ModalSuccess onCloseModal={closeModal}  onBackdropClick={closeModal}/>}
+            {hasError && displayModal && !isLoading &&  <ModalError onBackdropClick={closeModal} onCloseModal={closeModal} />}
             <div className={classes["signup-container"]}>
                 <img src="./1.svg" alt="background" />
                 <form onSubmit={formSubmitHandler} className={classes.form}>
