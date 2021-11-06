@@ -22,8 +22,8 @@ const ListItem = (props: IListItem) => {
                 <div className={classes["phrasal-verb"]}>{props.phrasalverb}</div>
                 <div className={classes["english-example"]}>
                     <div className={classes["english-text-examples"]}>
-                        <p> (1) {props.example_1} </p>
-                        <p> (2) {props.example_2} </p>
+                        <p> {props.example_1} </p>
+                        <p> {props.example_2} </p>
                     </div>
                     {props.id !== props.currentId && (
                         <MdOutlineKeyboardArrowDown
@@ -47,8 +47,8 @@ const ListItem = (props: IListItem) => {
                     props.id !== props.currentId && classes.hide
                 }`}
             >
-                <p> (1) {props.translation_1}</p>
-                <p> (2) {props.translation_2} </p>
+                <p> {props.translation_1}</p>
+                <p> {props.translation_2} </p>
             </li>
         </div>
     );

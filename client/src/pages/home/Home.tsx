@@ -4,11 +4,13 @@ import classes from "./styles/Home.module.css";
 import Button from "../../components/button/Button";
 import Footer from "../../components/footer/Footer";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../context/auth-context/auth-context";
 
 const Home = () => {
     const containterRef = useRef(null);
     const [isVisisble, setIsVisible] = useState(false);
     const scrollIntoView = useRef<HTMLDivElement>(null);
+    const authCtx =  useContext(AuthContext)
 
     useEffect(() => {
         const callbackFunction = (entries: any) => {
@@ -88,11 +90,11 @@ const Home = () => {
                             <Button onClick={scroll} className={classes.about}>
                                 Sobre
                             </Button>
-                            <Link to="/login">
+                            { !authCtx.isLoggedIn && <Link to="/login">
                                 <Button className={classes.signup}>
                                     Ja tenho um conta
                                 </Button>
-                            </Link>
+                            </Link>}
                         </div>
                     </div>
                     <img id={classes.arrow} src="./arrow.png" alt="arrow" />

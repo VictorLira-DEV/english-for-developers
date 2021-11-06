@@ -10,14 +10,6 @@ const Header = () => {
     const authCtx =  useContext(AuthContext)
     const history = useHistory()
 
-    // const loginHandler = (event: React.FormEvent) => {
-    //     event.preventDefault();
-    // };
-
-    // const logoutHandler = (event: React.FormEvent) => {
-    //     event.preventDefault();
-    // };
-
     const isLoggedIn = authCtx.isLoggedIn;
     const logoutHandler = () => {
         authCtx.logout();
@@ -48,22 +40,22 @@ const Header = () => {
                             to="/expressions"
                             activeClassName={classes.active}
                         >
-                            Expressions
+                            Expressões
                         </NavLink>
                     </li>}
                   {!isLoggedIn && <li>
                         <NavLink to="/login" activeClassName={classes.active}>
-                            <IoIosContact className={classes.icon} /> Login
+                            <IoIosContact className={classes.icon} /> Entrar
                         </NavLink>
                     </li>}
                     {isLoggedIn && <li>
                       <NavLink to="/profile" activeClassName={classes.active}>
-                            Profile
+                            Perfil
                         </NavLink>
                     </li>}
                     {isLoggedIn && <li onClick={logoutHandler}>
                       <NavLink to="/logout" activeClassName={classes.active}>
-                            Logout
+                            Sair
                         </NavLink>
                     </li>}
                 </ul>

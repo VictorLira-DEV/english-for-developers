@@ -5,18 +5,18 @@ import Footer from "../../components/footer/Footer";
 import React, { useState, useEffect } from "react";
 import useInput from "../../hooks/use-input/useInput";
 import { useHistory } from "react-router-dom";
-import Axios from "axios";
+import useAxios from "../../hooks/use-axios/useAxios";
 
 const Registration = () => {
     const [formIsValid, setFormIsValid] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
+    const { sendRequest, isLoading, hasError } = useAxios();
 
     //USERNAME
     const usernameValidation = (value: string) => {
         return {
-            isValid: value.trim().length > 4,
-            errorMessage: "Username should be at least 6 characters",
+            isValid: value.trim().length > 7,
+            errorMessage: "Username deve conter pelo menos 8 caracteres",
         };
     };
 
@@ -34,7 +34,7 @@ const Registration = () => {
     const emailValidation = (value: string) => {
         return {
             isValid: value.trim().includes("@"),
-            errorMessage: "Invalid E-mail",
+            errorMessage: "E-mail invalido",
         };
     };
 
@@ -51,8 +51,8 @@ const Registration = () => {
     //PASSWORD
     const passwordValidation = (value: string) => {
         return {
-            isValid: value.trim().length > 5,
-            errorMessage: "Password should be at least 6 characters",
+            isValid: value.trim().length > 7,
+            errorMessage: "A senha deve conter pelo menos 8 caracteres",
         };
     };
     const {
@@ -80,7 +80,7 @@ const Registration = () => {
     function passwordCheckValidation(value: string) {
         return {
             isValid: value === enteredPassword,
-            errorMessage: "Password does not match",
+            errorMessage: "As senhas não são iguais",
         };
     }
 
@@ -101,30 +101,32 @@ const Registration = () => {
     const formSubmitHandler = (event: React.FormEvent) => {
         event.preventDefault();
         if (formIsValid !== true) return;
-        setIsLoading(true);
+        // setIsLoading(true);
 
-        //Axios
-        Axios({
-            method: "post",
-            url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
-            data: {
-                email: enteredEmail,
-                password: enteredPassword,
-                returnSecureToken: true,
+        const receiveData = (data: any) => {
+            if (hasError) {
+                alert('Auth failed')
+                return;
+            }
+
+            resetNameInput();
+            resetEmailInput();
+            resetPasswordInput();
+            resetPasswordCheckInput();
+            history.replace("/login");
+        };
+        sendRequest(
+            {
+                method: "post",
+                url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
+                data: {
+                    email: enteredEmail,
+                    password: enteredPassword,
+                    returnSecureToken: true,
+                },
             },
-        })
-            .then((response) => {
-                setIsLoading(false);
-                resetNameInput();
-                resetEmailInput();
-                resetPasswordInput();
-                resetPasswordCheckInput();
-                // history.replace('/login')
-            })
-            .catch((error) => {
-                setIsLoading(false);
-                alert("error");
-            });
+            receiveData
+        );
     };
 
     //classes

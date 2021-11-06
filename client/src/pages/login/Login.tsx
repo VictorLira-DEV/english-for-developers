@@ -12,13 +12,13 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/footer/Footer";
 import useInput from "../../hooks/use-input/useInput";
 import { useHistory } from "react-router-dom";
-import Axios from "axios";
+import useAxios from "../../hooks/use-axios/useAxios";
 
 const Login = () => {
     const [formIsValid, setFormIsValid] = useState(false);
     const history = useHistory();
-    const [isLoading, setIsLoading] = useState(false);
     const authCtx = useContext(AuthContext);
+    const { sendRequest, isLoading, hasError } = useAxios();
     const [focus, setFocus] = useState({
         email: false,
         password: false,
@@ -28,7 +28,7 @@ const Login = () => {
     const validateEmail = (value: string) => {
         return {
             isValid: value.trim().includes("@"),
-            errorMessage: "Invalid E-mail",
+            errorMessage: "E-mail invalido",
         };
     };
     const {
@@ -45,7 +45,7 @@ const Login = () => {
     const validatePassword = (value: string) => {
         return {
             isValid: value.trim().length > 5,
-            errorMessage: "Password should be at least 6 characters",
+            errorMessage: "A senha deve conter pelo menos 6 caracteres",
         };
     };
     const {
@@ -91,37 +91,37 @@ const Login = () => {
         event.preventDefault();
 
         if (formIsValid !== true) return;
-        setIsLoading(true);
 
-        Axios({
-            method: "post",
-            url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
-            data: {
-                email: enteredEmail,
-                password: enteredPassword,
-                returnSecureToken: true,
+        if (hasError) {
+            alert("Ocorreu algo de errado tente mais tarde");
+            return;
+        }
+        const receiveData = async (response: any) => {
+            let expiresIn = await response.data.expiresIn;
+            let idToken = await response.data.idToken;
+
+            const expirationTime = new Date(
+                new Date().getTime() + +expiresIn * 1000
+            );
+
+            authCtx.login(idToken, expirationTime.toISOString());
+            history.replace("/");
+            resetEmailInput();
+            resetPasswordInput();
+        };
+
+        sendRequest(
+            {
+                method: "post",
+                url: "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
+                data: {
+                    email: enteredEmail,
+                    password: enteredPassword,
+                    returnSecureToken: true,
+                },
             },
-            headers: { "Content-Type": "application/json" },
-        })
-            .then((response) => {
-                setIsLoading(false);
-                console.log(response.data);
-                const expirationTime = new Date(
-                    new Date().getTime() + +response.data.expiresIn * 1000
-                );
-
-                authCtx.login(
-                    response.data.idToken,
-                    expirationTime.toISOString()
-                );
-                history.replace("/");
-                resetEmailInput();
-                resetPasswordInput();
-            })
-            .catch((err) => {
-                setIsLoading(false);
-                alert("falha na authenticação");
-            });
+            receiveData
+        );
     };
 
     //dynamic styles
@@ -166,7 +166,7 @@ const Login = () => {
                                 <RiLockPasswordLine className={classes.icon} />
                                 <Input
                                     type="password"
-                                    placeholder="Password"
+                                    placeholder="Senha"
                                     className={classes.focus}
                                     onMouseEnter={passwordEnterHandler}
                                     onMouseLeave={passwordLeaveHandler}
@@ -182,7 +182,7 @@ const Login = () => {
                         <Button className={`${btn_login}`}>
                             {!isLoading && (
                                 <>
-                                    login <BsArrowRightCircle />
+                                    Entrar <BsArrowRightCircle />
                                 </>
                             )}
                             {isLoading && (
@@ -194,7 +194,7 @@ const Login = () => {
                         <p>or</p>
                         <Link to="/signup">
                             <Button className={btn_signup}>
-                                sign up <AiOutlinePlusCircle />
+                                Criar conta <AiOutlinePlusCircle />
                             </Button>
                         </Link>
                     </form>

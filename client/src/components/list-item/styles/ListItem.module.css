@@ -54,8 +54,8 @@
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
   opacity: 1;
-  background: #eeeded;
   color: #ee6060;
+  border-bottom: 1px dashed red;
   padding: 20px 5px;
 }
 
