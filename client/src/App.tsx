@@ -10,6 +10,7 @@ import Profile from "./pages/profile/Profile";
 import { useContext } from 'react';
 import { AuthContext } from "./context/auth-context/auth-context";
 
+
 function App() {
     const authCtx = useContext(AuthContext);
 
