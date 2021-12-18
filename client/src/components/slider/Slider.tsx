@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import classes from "./styles/Slider.module.css";
-import SliderItem from "./Slider-item/SliderItem";
-import { BsArrowRight } from "react-icons/bs";
-import { BsArrowLeft } from "react-icons/bs";
-import testimonial_1 from "../../assets/testimonial-1.jpg";
-import Button from '../button/Button'
+import React, { useState, useEffect } from 'react';
+import classes from './styles/Slider.module.css';
+import SliderItem from './Slider-item/SliderItem';
+import { BsArrowRight } from 'react-icons/bs';
+import { BsArrowLeft } from 'react-icons/bs';
+import testimonial_1 from '../../assets/testimonial-1.jpg';
+import Button from '../button/Button';
 
 const Slider = () => {
     const [slider, setSlider] = useState({
@@ -15,7 +15,7 @@ const Slider = () => {
 
     const moveToLeft = (event: React.FormEvent) => {
         event.preventDefault();
-        setSlider((prev) => {
+        setSlider(prev => {
             const previous = { ...prev };
             return {
                 n1: previous.n1 + 100,
@@ -26,7 +26,7 @@ const Slider = () => {
     };
 
     const moveToRight = (event: React.FormEvent) => {
-        setSlider((prev) => {
+        setSlider(prev => {
             const previous = { ...prev };
             return {
                 n1: previous.n1 - 100,
@@ -37,7 +37,7 @@ const Slider = () => {
     };
 
     const sliderTimer = () => {
-        setSlider((prev) => {
+        setSlider(prev => {
             const previous = { ...prev };
             return {
                 n1: previous.n1 + 100,
@@ -48,7 +48,7 @@ const Slider = () => {
     };
 
     const reset = (direction: string) => {
-        if (direction === "right") {
+        if (direction === 'right') {
             setSlider(() => {
                 return {
                     n1: 0,
@@ -78,11 +78,11 @@ const Slider = () => {
 
     //hardcoded slider because the "src" is not comming from  a API
     let slider_1 = {
-        transform: `translateX(${slider.n1 < 0 ? reset("left") : slider.n1}%)`,
+        transform: `translateX(${slider.n1 < 0 ? reset('left') : slider.n1}%)`,
     };
     let slider_2 = { transform: `translateX(${slider.n2}%)` };
     let slider_3 = {
-        transform: `translateX(${slider.n3 > 0 ? reset("right") : slider.n3}%)`,
+        transform: `translateX(${slider.n3 > 0 ? reset('right') : slider.n3}%)`,
     };
 
     return (
@@ -95,7 +95,7 @@ const Slider = () => {
                     <BsArrowRight />
                 </Button>
             </div>
-            <div className={classes["slide-content"]}>
+            <div className={classes['slide-content']}>
                 <SliderItem
                     className={`${classes.slider_item}`}
                     style={slider_1}

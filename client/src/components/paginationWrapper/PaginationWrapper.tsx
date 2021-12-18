@@ -1,6 +1,6 @@
-import classes from "./styles/Pagination.module.css";
-import Pagination from "../pagination/Pagination";
-import Button from '../button/Button'
+import classes from './styles/Pagination.module.css';
+import Pagination from '../pagination/Pagination';
+import Button from '../button/Button';
 
 interface IPaginationWrapper {
     pageDecrementBtn: any;
@@ -17,7 +17,7 @@ interface IPaginationWrapper {
 
 const PaginationWrapper = (props: IPaginationWrapper) => {
     return (
-        <div className={classes["navigatin-wrapper"]}>
+        <div className={classes['navigatin-wrapper']}>
             <li className={classes.pages}>
                 <Button onClick={props.prevPageHandler}>Prev </Button>
             </li>

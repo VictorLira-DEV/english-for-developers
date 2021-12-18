@@ -1,5 +1,5 @@
-import ListItem from "../list-item/ListItem";
-import { Fragment } from 'react'
+import ListItem from '../list-item/ListItem';
+import { Fragment } from 'react';
 
 interface Iprops {
     currentPosts: any;
@@ -14,7 +14,7 @@ const ListItemWrapper = (props: Iprops) => {
             {props.currentPosts.map((item: any, index: any) => {
                 return (
                     <ListItem
-                        phrasalverb={item.phrasalVerb}
+                        content={item.phrasalVerb}
                         id={item._id}
                         key={item._id}
                         onDisplayTranslation={props.displayTranslation}

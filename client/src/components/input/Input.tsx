@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface IInput {
     placeholder?: string;
@@ -8,7 +8,7 @@ interface IInput {
     onMouseEnter?: () => void;
     onMouseLeave?: () => void;
     onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
-    onBlur?: () => void 
+    onBlur?: () => void;
 }
 
 const Input = (props: IInput) => {

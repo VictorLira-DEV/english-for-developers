@@ -1,7 +1,7 @@
 import React from "react";
 
 interface IButton {
-    children: any ;
+    children: any;
     onClick?: (event: React.FormEvent) => void;
     className?: string;
     id?: string;

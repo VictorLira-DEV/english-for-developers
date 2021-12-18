@@ -1,4 +1,4 @@
-import classes from "./styles/Pagination.module.css";
+import classes from './styles/Pagination.module.css';
 
 interface IPagination {
     postsPerPage: number;
@@ -22,7 +22,7 @@ const Pagination = (props: IPagination) => {
 
     return (
         <ul className={classes.pageList}>
-            {pageNumbers.map((number) => {
+            {pageNumbers.map(number => {
                 if (
                     number < props.maxPageNumberLimit + 1 &&
                     number > props.minPageNumberLimit

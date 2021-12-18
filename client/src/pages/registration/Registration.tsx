@@ -1,25 +1,25 @@
-import Input from "../../components/input/Input";
-import classes from "./styles/Registration.module.css";
-import Button from "../../components/button/Button";
-import Footer from "../../components/footer/Footer";
-import React, { useState, useEffect } from "react";
-import useInput from "../../hooks/use-input/useInput";
-import { useHistory } from "react-router-dom";
-import useAxios from "../../hooks/use-axios/useAxios";
-import ModalSuccess from "./modal-success/ModalSuccess";
-import ModalError from "./modal-error/ModalError";
+import Input from '../../components/input/Input';
+import classes from './styles/Registration.module.css';
+import Button from '../../components/button/Button';
+import Footer from '../../components/footer/Footer';
+import React, { useState, useEffect } from 'react';
+import useInput from '../../hooks/use-input/useInput';
+import { useHistory } from 'react-router-dom';
+import useAxios from '../../hooks/use-axios/useAxios';
+import ModalSuccess from './modal-success/ModalSuccess';
+import ModalError from './modal-error/ModalError';
 
 const Registration = () => {
     const [formIsValid, setFormIsValid] = useState(false);
-    const [displayModal, setDisplayModal] = useState(false)
+    const [displayModal, setDisplayModal] = useState(false);
     const history = useHistory();
     const { sendRequest, isLoading, hasError } = useAxios();
-    console.log(hasError)
+    console.log(hasError);
     //USERNAME
     const usernameValidation = (value: string) => {
         return {
             isValid: value.trim().length > 7,
-            errorMessage: "Username deve conter pelo menos 8 caracteres",
+            errorMessage: 'Username deve conter pelo menos 8 caracteres',
         };
     };
 
@@ -36,8 +36,8 @@ const Registration = () => {
     //EMAIL
     const emailValidation = (value: string) => {
         return {
-            isValid: value.trim().includes("@"),
-            errorMessage: "E-mail invalido",
+            isValid: value.trim().includes('@'),
+            errorMessage: 'E-mail invalido',
         };
     };
 
@@ -55,7 +55,7 @@ const Registration = () => {
     const passwordValidation = (value: string) => {
         return {
             isValid: value.trim().length > 7,
-            errorMessage: "A senha deve conter pelo menos 8 caracteres",
+            errorMessage: 'A senha deve conter pelo menos 8 caracteres',
         };
     };
     const {
@@ -83,7 +83,7 @@ const Registration = () => {
     function passwordCheckValidation(value: string) {
         return {
             isValid: value === enteredPassword,
-            errorMessage: "As senhas não são iguais",
+            errorMessage: 'As senhas não são iguais',
         };
     }
 
@@ -106,13 +106,11 @@ const Registration = () => {
         if (formIsValid !== true) return;
         // setIsLoading(true);
 
-        const receiveData = (data: any) => {
-            
-        };
+        const receiveData = (data: any) => {};
         sendRequest(
             {
-                method: "post",
-                url: "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw",
+                method: 'post',
+                url: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyDhdPtWod30lodKdyjn-U5_DX8rClCz3vw',
                 data: {
                     email: enteredEmail,
                     password: enteredPassword,
@@ -121,7 +119,7 @@ const Registration = () => {
             },
             receiveData
         );
-        setDisplayModal(true)
+        setDisplayModal(true);
     };
 
     const clearInputField = () => {
@@ -129,18 +127,17 @@ const Registration = () => {
         resetEmailInput();
         resetPasswordInput();
         resetPasswordCheckInput();
-    }
+    };
 
     //closeModal
     const closeModal = (event: React.FormEvent) => {
         event.preventDefault();
-        setDisplayModal(false)
+        setDisplayModal(false);
 
-        if(hasError) return
-        clearInputField()
-        history.replace("/login");
-
-    }
+        if (hasError) return;
+        clearInputField();
+        history.replace('/login');
+    };
 
     //classes
     const usernameClasses = `${classes.input} ${
@@ -159,13 +156,23 @@ const Registration = () => {
 
     return (
         <React.Fragment>
-            {!hasError && displayModal && !isLoading && <ModalSuccess onCloseModal={closeModal}  onBackdropClick={closeModal}/>}
-            {hasError && displayModal && !isLoading &&  <ModalError onBackdropClick={closeModal} onCloseModal={closeModal} />}
-            <div className={classes["signup-container"]}>
+            {!hasError && displayModal && !isLoading && (
+                <ModalSuccess
+                    onCloseModal={closeModal}
+                    onBackdropClick={closeModal}
+                />
+            )}
+            {hasError && displayModal && !isLoading && (
+                <ModalError
+                    onBackdropClick={closeModal}
+                    onCloseModal={closeModal}
+                />
+            )}
+            <div className={classes['signup-container']}>
                 <img src="./1.svg" alt="background" />
                 <form onSubmit={formSubmitHandler} className={classes.form}>
                     <h1> Create account </h1>
-                    <div className={classes["form-control"]}>
+                    <div className={classes['form-control']}>
                         <label className={classes.label}>Username</label>
                         <Input
                             className={usernameClasses}
@@ -175,10 +182,10 @@ const Registration = () => {
                             value={enteredUsername}
                         />
                         <small>
-                            {usernameHasError && usernameErrorMessage}{" "}
+                            {usernameHasError && usernameErrorMessage}{' '}
                         </small>
                     </div>
-                    <div className={classes["form-control"]}>
+                    <div className={classes['form-control']}>
                         <label className={classes.label}>E-mail</label>
                         <Input
                             className={emailClasses}
@@ -189,7 +196,7 @@ const Registration = () => {
                         />
                         <small>{emailHasError && emailErrorMessage} </small>
                     </div>
-                    <div className={classes["form-control"]}>
+                    <div className={classes['form-control']}>
                         <label className={classes.label}>Password</label>
                         <Input
                             className={passwordClasses}
@@ -199,10 +206,10 @@ const Registration = () => {
                             value={enteredPassword}
                         />
                         <small>
-                            {passswordHasError && passwordErrorMessage}{" "}
+                            {passswordHasError && passwordErrorMessage}{' '}
                         </small>
                     </div>
-                    <div className={classes["form-control"]}>
+                    <div className={classes['form-control']}>
                         <label className={classes.label}>
                             Password confirm
                         </label>
@@ -214,7 +221,7 @@ const Registration = () => {
                             value={enteredPasswordCheck}
                         />
                         <small>
-                            {passwordCheckHasError && passwordCheckErrorMessage}{" "}
+                            {passwordCheckHasError && passwordCheckErrorMessage}{' '}
                         </small>
                     </div>
                     <Button className={`${!formIsValid && classes.invalid}`}>
