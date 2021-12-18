@@ -1,6 +1,4 @@
 .english {
-  -webkit-transition: 0.1s ease-in-out;
-  transition: 0.1s ease-in-out;
   border-bottom: 1px dashed #8d8d8d;
   margin-bottom: 5px;
   display: -webkit-box;
