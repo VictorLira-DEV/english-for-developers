@@ -1,21 +1,22 @@
 import ListItem from "../list-item/ListItem";
+import { Fragment } from 'react'
 
 interface Iprops {
     currentPosts: any;
+    currentTransationId: string;
     displayTranslation: (e: React.FormEvent) => void;
     hideTranslation: (e: React.FormEvent) => void;
-    currentTransationId: string;
 }
 
 const ListItemWrapper = (props: Iprops) => {
     return (
-        <>
+        <Fragment>
             {props.currentPosts.map((item: any, index: any) => {
                 return (
                     <ListItem
                         phrasalverb={item.phrasalVerb}
-                        id={item.id}
-                        key={item.id}
+                        id={item._id}
+                        key={item._id}
                         onDisplayTranslation={props.displayTranslation}
                         onHideTranslation={props.hideTranslation}
                         example_1={item.example_1}
@@ -26,7 +27,7 @@ const ListItemWrapper = (props: Iprops) => {
                     />
                 );
             })}
-        </>
+        </Fragment>
     );
 };
 

@@ -1,9 +1,9 @@
 import Axios from "axios";
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface IuseAxios {
-    method: any;
-    url?: any;
+    method?: any;
+    url?: string;
     data?: {};
     headers?: {};
 }
