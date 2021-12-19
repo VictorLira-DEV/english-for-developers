@@ -1,18 +1,19 @@
-.container{
+.container {
     min-height: calc(100vh - (70px + 58px));
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 100px 20px;
-
-    .profile_wraper{
+    color: rgb(143, 142, 142);
+    .profile_wraper {
         width: 400px;
-        border: 1px solid rgb(172, 172, 172);
+        border: 1px solid rgba(0, 0, 0, 0.2);
         padding: 40px;
         height: auto;
         border-radius: 4px;
-        .profile{
+        box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.2);
+        .profile {
             width: 100%;
             img {
                 width: 100px;
@@ -21,19 +22,19 @@
             }
             margin-bottom: 20px;
 
-            p{
-                &:not(:last-child){
+            p {
+                &:not(:last-child) {
                     margin-bottom: 5px;
                     color: rgb(122, 122, 122);
                 }
 
-                &:last-child{
+                &:last-child {
                     margin-top: 20px;
                 }
             }
 
-            p:nth-of-type(2){
-                &::before{
+            p:nth-of-type(2) {
+                &::before {
                     content: '';
                     display: inline-block;
                     width: 15px;
@@ -44,14 +45,15 @@
                 }
             }
         }
-    
-        form{
+
+        form {
             padding: 10px;
 
-            h2{
+            h2 {
                 margin-bottom: 20px;
+                color: rgb(143, 142, 142);
             }
-            .formControl{
+            .formControl {
                 margin-bottom: 30px;
                 .input {
                     display: block;
@@ -60,7 +62,7 @@
                     border: 1px solid #ccc;
                     margin-top: 5px;
                     font-size: 16px;
-                    &.invalid{
+                    &.invalid {
                         background: rgb(255, 228, 228);
                         border: 1px solid red;
                     }
@@ -69,26 +71,26 @@
                         outline-color: rgb(95, 210, 255);
                     }
                 }
-                
-                small{
+
+                small {
                     position: absolute;
                     color: red;
                 }
 
                 &.invalid {
-                    .input{
+                    .input {
                         background: rgb(255, 228, 228);
                         border: 1px solid red;
                     }
                 }
             }
-    
-            .button{
+
+            .button {
                 border: none;
                 font-size: inherit;
                 border-radius: 5px;
                 cursor: pointer;
-                box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+                box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
                 transition: 0.3s ease-in-out;
                 text-transform: uppercase;
                 font-weight: bolder;
@@ -99,20 +101,19 @@
                 background: rgb(2, 127, 239);
                 height: 40px;
                 margin-top: 20px;
-                &.invalidBtn{
-                    background: rgb(194, 194, 194);
-                    cursor: not-allowed ;
-                    &:hover{
+                &.invalidBtn {
+                    background: #ccc;
+                    cursor: not-allowed;
+                    &:hover {
                         background: rgb(194, 194, 194);
                     }
                 }
             }
         }
     }
-    }
-    
+}
 
-.footer{
+.footer {
     padding: 15px 60px;
     background: rgb(11, 91, 160);
     color: white;

@@ -13,6 +13,7 @@ import Footer from '../../components/footer/Footer';
 import useInput from '../../hooks/use-input/useInput';
 import { useHistory } from 'react-router-dom';
 import useAxios from '../../hooks/use-axios/useAxios';
+import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
 
 const Login = () => {
     const [formIsValid, setFormIsValid] = useState(false);
@@ -23,6 +24,9 @@ const Login = () => {
         email: false,
         password: false,
     });
+
+    const headerCtx = useContext(StickyHeaderContext);
+    headerCtx.intersectingFunction(false)
 
     //EMAIL
     const validateEmail = (value: string) => {

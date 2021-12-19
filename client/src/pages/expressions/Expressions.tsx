@@ -1,10 +1,12 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import classes from './styles/Expressions.module.css';
 import Footer from '../../components/footer/Footer';
 import Button from '../../components/button/Button';
 import PaginationWrapper from '../../components/paginationWrapper/PaginationWrapper';
 import ListItemWrapper from '../../components/list-item-wrapper/ListItemWrapper';
 import useAxios from '../../hooks/use-axios/useAxios';
+import LoadSpinner from '../../components/load-spinner/LoadSpinner';
+import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
 
 const Expressions = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -16,6 +18,9 @@ const Expressions = () => {
     const { sendRequest, hasError, isLoading, setHasError } = useAxios();
     const [expressions, setExpressions] = useState([]);
 
+    const headerCtx = useContext(StickyHeaderContext);
+    headerCtx.intersectingFunction(false)
+    
     useEffect(() => {
         const receivedData = function (data: any) {
             setExpressions(data.data);
@@ -94,6 +99,7 @@ const Expressions = () => {
 
     return (
         <div className={classes.container}>
+            {isLoading && <LoadSpinner />}
             <ul className={classes['verbs-list']}>
                 <Button className={classes['btn-title']}>Expressions</Button>
                 <ListItemWrapper
@@ -102,18 +108,20 @@ const Expressions = () => {
                     displayTranslation={displayTranslation}
                     hideTranslation={hideTranslation}
                 />
-                <PaginationWrapper
-                    minPageNumberLimit={minPageNumberLimit}
-                    maxPageNumberLimit={maxPageNumberLimit}
-                    currentPage={currentPage}
-                    pageDecrementBtn={pageDecrementBtn}
-                    pageIncrementBtn={pageIncrementBtn}
-                    postPerPage={postPerPage}
-                    totalPosts={expressions.length}
-                    prevPageHandler={prevPageHandler}
-                    paginate={paginate}
-                    nextPageHandler={nextPageHandler}
-                />
+                {!isLoading && (
+                    <PaginationWrapper
+                        minPageNumberLimit={minPageNumberLimit}
+                        maxPageNumberLimit={maxPageNumberLimit}
+                        currentPage={currentPage}
+                        pageDecrementBtn={pageDecrementBtn}
+                        pageIncrementBtn={pageIncrementBtn}
+                        postPerPage={postPerPage}
+                        totalPosts={expressions.length}
+                        prevPageHandler={prevPageHandler}
+                        paginate={paginate}
+                        nextPageHandler={nextPageHandler}
+                    />
+                )}
             </ul>
             <Footer className={classes.footer} />
         </div>

@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import classes from './styles/PhrasalVerbs.module.css';
 import Footer from '../../components/footer/Footer';
 import PaginationWrapper from '../../components/paginationWrapper/PaginationWrapper';
 import ListItemWrapper from '../../components/list-item-wrapper/ListItemWrapper';
 import Button from '../../components/button/Button';
 import useAxios from '../../hooks/use-axios/useAxios';
+import LoadSpinner from '../../components/load-spinner/LoadSpinner';
+import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
 
 const PhrasalVerbs = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -15,6 +17,9 @@ const PhrasalVerbs = () => {
     const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
     const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
     const [phrasalVerbs, setPhrasalVerbs] = useState([]);
+    const headerCtx = useContext(StickyHeaderContext);
+
+    headerCtx.intersectingFunction(false)
 
     useEffect(() => {
         setCurrentPage(currentPage);
@@ -95,6 +100,7 @@ const PhrasalVerbs = () => {
 
     return (
         <React.Fragment>
+            {isLoading && <LoadSpinner />}
             <div className={classes.container}>
                 <ul className={classes['verbs-list']}>
                     <Button className={classes['btn-title']}>
@@ -106,18 +112,20 @@ const PhrasalVerbs = () => {
                         displayTranslation={displayTranslation}
                         hideTranslation={hideTranslation}
                     />
-                    <PaginationWrapper
-                        minPageNumberLimit={minPageNumberLimit}
-                        maxPageNumberLimit={maxPageNumberLimit}
-                        currentPage={currentPage}
-                        pageDecrementBtn={pageDecrementBtn}
-                        pageIncrementBtn={pageIncrementBtn}
-                        postPerPage={postPerPage}
-                        totalPosts={phrasalVerbs.length}
-                        prevPageHandler={prevPageHandler}
-                        paginate={paginate}
-                        nextPageHandler={nextPageHandler}
-                    />
+                    {!isLoading && (
+                        <PaginationWrapper
+                            minPageNumberLimit={minPageNumberLimit}
+                            maxPageNumberLimit={maxPageNumberLimit}
+                            currentPage={currentPage}
+                            pageDecrementBtn={pageDecrementBtn}
+                            pageIncrementBtn={pageIncrementBtn}
+                            postPerPage={postPerPage}
+                            totalPosts={phrasalVerbs.length}
+                            prevPageHandler={prevPageHandler}
+                            paginate={paginate}
+                            nextPageHandler={nextPageHandler}
+                        />
+                    )}
                 </ul>
                 <Footer className={classes.footer} />
             </div>

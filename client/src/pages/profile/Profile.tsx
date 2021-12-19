@@ -8,12 +8,16 @@ import useAxios from '../../hooks/use-axios/useAxios';
 import Footer from '../../components/footer/Footer';
 import classes from './styles/Profile.module.css';
 import profile_picture from '../../assets/profile-default.png';
+import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
 
 const Profile = () => {
     const authCtx = useContext(AuthContext);
     const [formIsValid, setFormIsValid] = useState(false);
     // const history = useHistory();
     const { sendRequest, isLoading, hasError } = useAxios();
+
+    const headerCtx = useContext(StickyHeaderContext);
+    headerCtx.intersectingFunction(false);
 
     //password
     const validatePassword = (value: string) => {
@@ -88,9 +92,9 @@ const Profile = () => {
                 <div className={classes.profile_wraper}>
                     <div className={classes.profile}>
                         <img src={profile_picture} alt="profile" />
-                        <p>victorlira@gmail.com </p>
+                        <p>user</p>
                         <p> Online </p>
-                        <p>sua sessão acabará em 121232 </p>
+                        {/* <p>sua sessão acabará em 121232 </p> */}
                     </div>
                     <form onSubmit={onSubmitHandler}>
                         <h2>Mudar a senha</h2>

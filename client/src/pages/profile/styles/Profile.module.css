@@ -14,14 +14,17 @@
       -ms-flex-direction: column;
           flex-direction: column;
   padding: 100px 20px;
+  color: #8f8e8e;
 }
 
 .container .profile_wraper {
   width: 400px;
-  border: 1px solid #acacac;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 40px;
   height: auto;
   border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.2);
 }
 
 .container .profile_wraper .profile {
@@ -60,6 +63,7 @@
 
 .container .profile_wraper form h2 {
   margin-bottom: 20px;
+  color: #8f8e8e;
 }
 
 .container .profile_wraper form .formControl {
@@ -100,8 +104,8 @@
   font-size: inherit;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-          box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   text-transform: uppercase;
@@ -116,7 +120,7 @@
 }
 
 .container .profile_wraper form .button.invalidBtn {
-  background: #c2c2c2;
+  background: #ccc;
   cursor: not-allowed;
 }
 

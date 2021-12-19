@@ -18,9 +18,8 @@
 }
 
 .english .phrasal-verb {
-  font-size: 20px;
   font-weight: bolder;
-  color: #535353;
+  color: #094a82;
   margin-bottom: 10px;
 }
 
@@ -31,6 +30,7 @@
 }
 
 .english .english-example {
+  font-size: .9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,7 +41,7 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  color: #707070;
+  color: #038bbd;
 }
 
 .english .english-example .english-text-examples :not(:last-child) {
@@ -49,10 +49,11 @@
 }
 
 .portuguese {
+  font-size: .9rem;
   -webkit-transition: 0.1s ease-in-out;
   transition: 0.1s ease-in-out;
   opacity: 1;
-  color: #ee6060;
+  color: #414141;
   border-bottom: 1px dashed red;
   padding: 20px 5px;
 }

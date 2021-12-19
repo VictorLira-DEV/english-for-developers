@@ -7,10 +7,10 @@
     justify-content: center;
     flex-direction: column;
     padding: 20px 5px;
+
     .phrasal-verb {
-        font-size: 20px;
         font-weight: bolder;
-        color: rgb(83, 83, 83);
+        color: rgb(9, 74, 130);
         margin-bottom: 10px;
     }
     .drop {
@@ -20,11 +20,12 @@
     }
 
     .english-example {
+        font-size: .9rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 100%;
-        color: rgb(112, 112, 112);
+        color: rgb(3, 139, 189);
 
         .english-text-examples {
             & :not(:last-child) {
@@ -35,9 +36,11 @@
 }
 
 .portuguese {
+    font-size: .9rem;
     transition: 0.1s ease-in-out;
     opacity: 1;
-    color: rgb(238, 96, 96);
+    // color: rgb(238, 96, 96);
+    color: rgb(65, 65, 65);
     border-bottom: 1px dashed red;
     padding: 20px 5px;
     & :not(:last-child) {

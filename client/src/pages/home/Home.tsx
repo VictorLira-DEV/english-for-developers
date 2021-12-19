@@ -46,6 +46,7 @@ const Home = () => {
         const headerFunction = (entries: any) => {
             const [entry] = entries;
             headerCTX.intersectingFunction(entry.isIntersecting);
+            console.log(entry.isIntersecting)
         };
 
         const headerOptions = {
@@ -79,8 +80,7 @@ const Home = () => {
                         <h1>
                             Aprenda os phrasal verbs e as expressões mais usadas
                             do inglês, de forma
-                            <span> totalmente gratuita </span>, será necessário
-                            o{' '}
+                            <span> totalmente gratuita </span>, será necessário o -
                             <span>
                                 cadastro para ter acesso ao material sobre
                                 "expressões"
