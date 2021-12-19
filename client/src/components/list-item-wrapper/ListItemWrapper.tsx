@@ -14,7 +14,7 @@ const ListItemWrapper = (props: Iprops) => {
             {props.currentPosts.map((item: any, index: any) => {
                 return (
                     <ListItem
-                        content={item.verb}
+                        content={item.content}
                         id={item._id}
                         key={item._id}
                         onDisplayTranslation={props.displayTranslation}

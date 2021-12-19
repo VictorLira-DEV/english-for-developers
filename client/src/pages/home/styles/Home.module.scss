@@ -3,7 +3,7 @@
     background: rgb(9, 74, 130);
     color: white;
     position: relative;
-    &.sticky-header---active{
+    &.sticky-header---active {
         height: calc(100vh);
     }
     .home {
@@ -13,7 +13,7 @@
         justify-content: space-between;
         padding: 40px 60px;
         position: relative;
-        #arrow{
+        #arrow {
             position: absolute;
             width: 70px;
             right: 50%;
@@ -25,14 +25,17 @@
         }
 
         h1 {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             line-height: 1.5;
             letter-spacing: 1px;
             max-width: 650px;
             span {
                 color: rgb(18, 216, 193);
                 &:last-child {
-                    color: rgb(245, 147, 158);
+                    // font-size: 1.6rem;
+                    // color: rgb(252, 99, 117);
+                    animation: outdoor 1.5s linear infinite;
+                    transition: 0.4s ease-in-out;
                 }
             }
         }
@@ -83,7 +86,7 @@
             align-items: center;
             .section-item {
                 width: 350px;
-                box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.3);
+                box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
                 transition: 0.7s ease-in-out;
                 border-radius: 5px;
                 overflow: hidden;
@@ -114,6 +117,7 @@
                         border: 1px solid rgb(225, 54, 94);
                         h2 {
                             color: rgb(225, 54, 94);
+                            padding: 10px 0;
                         }
                     }
 
@@ -121,6 +125,7 @@
                         border: 1px solid rgb(12, 226, 249);
                         h2 {
                             color: rgb(12, 226, 249);
+                            padding: 10px 0;
                         }
                     }
 
@@ -128,6 +133,7 @@
                         border: 1px solid rgb(123, 87, 246);
                         h2 {
                             color: rgb(123, 87, 246);
+                            padding: 10px 0;
                         }
                     }
                 }
@@ -136,10 +142,24 @@
     }
 }
 
-.footer{
+.footer {
     padding: 15px 60px;
     background: rgb(11, 91, 160);
     color: white;
     bottom: 0;
     width: 100%;
+}
+
+@keyframes outdoor {
+    0% {
+        color: white;
+    }
+
+    50% {
+        color: rgb(250, 118, 118);
+    }
+
+    100% {
+        color: white;
+    }
 }

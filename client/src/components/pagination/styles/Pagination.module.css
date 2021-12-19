@@ -6,7 +6,10 @@
 }
 
 .pageList .pages {
+  cursor: pointer;
   text-align: center;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
   background: #094a82;
   border: 1px solid #fdfafa;
   text-decoration: none;
@@ -15,6 +18,10 @@
 }
 
 .pageList .pages.active {
+  background: #3d8fd6;
+}
+
+.pageList .pages:hover {
   background: #3d8fd6;
 }
 /*# sourceMappingURL=Pagination.module.css.map */

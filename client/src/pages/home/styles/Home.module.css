@@ -38,7 +38,7 @@
 }
 
 .container .home h1 {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   line-height: 1.5;
   letter-spacing: 1px;
   max-width: 650px;
@@ -49,7 +49,10 @@
 }
 
 .container .home h1 span:last-child {
-  color: #f5939e;
+  -webkit-animation: outdoor 1.5s linear infinite;
+          animation: outdoor 1.5s linear infinite;
+  -webkit-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
 }
 
 .container .home .buttons {
@@ -125,8 +128,8 @@
 
 .container section .section .section-item {
   width: 350px;
-  -webkit-box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.3);
-          box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
+          box-shadow: 6px 6px 9px rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.7s ease-in-out;
   transition: 0.7s ease-in-out;
   border-radius: 5px;
@@ -168,6 +171,7 @@
 
 .container section .section .section-item .section-text.text--1 h2 {
   color: #e1365e;
+  padding: 10px 0;
 }
 
 .container section .section .section-item .section-text.text--2 {
@@ -176,6 +180,7 @@
 
 .container section .section .section-item .section-text.text--2 h2 {
   color: #0ce2f9;
+  padding: 10px 0;
 }
 
 .container section .section .section-item .section-text.text--3 {
@@ -184,6 +189,7 @@
 
 .container section .section .section-item .section-text.text--3 h2 {
   color: #7b57f6;
+  padding: 10px 0;
 }
 
 .footer {
@@ -192,5 +198,29 @@
   color: white;
   bottom: 0;
   width: 100%;
+}
+
+@-webkit-keyframes outdoor {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #fa7676;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes outdoor {
+  0% {
+    color: white;
+  }
+  50% {
+    color: #fa7676;
+  }
+  100% {
+    color: white;
+  }
 }
 /*# sourceMappingURL=Home.module.css.map */

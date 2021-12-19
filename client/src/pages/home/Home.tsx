@@ -25,11 +25,12 @@ const Home = () => {
         };
 
         const observer = new IntersectionObserver(callbackFunction, options);
-        const containterRefCopy = containterRef.current;
-        if (containterRefCopy) observer.observe(containterRefCopy);
+        // const containterRefCopy = containterRef.current;
+        if (containterRef.current) observer.observe(containterRef.current);
 
         return () => {
-            if (containterRefCopy) observer.unobserve(containterRefCopy);
+            if (containterRef.current)
+                observer.unobserve(containterRef.current);
         };
     }, []);
 
@@ -46,7 +47,6 @@ const Home = () => {
         const headerFunction = (entries: any) => {
             const [entry] = entries;
             headerCTX.intersectingFunction(entry.isIntersecting);
-            console.log(entry.isIntersecting)
         };
 
         const headerOptions = {
@@ -80,7 +80,8 @@ const Home = () => {
                         <h1>
                             Aprenda os phrasal verbs e as expressões mais usadas
                             do inglês, de forma
-                            <span> totalmente gratuita </span>, será necessário o -
+                            <span> totalmente gratuita </span>, será necessário
+                            o <span />
                             <span>
                                 cadastro para ter acesso ao material sobre
                                 "expressões"

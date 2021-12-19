@@ -5,14 +5,16 @@
     margin-top: 60px;
 
     .pages{
-        // padding: 15px;
+        transition: .4s ease-in-out;
         height: 51px;
         width: 41px;
         text-align: center;
         line-height: 50px;
         border: 1px solid rgb(253, 250, 250);
         background: rgb(9, 74, 130);
-
+        &:hover{
+            background: rgb(61, 143, 214);
+        }
         button{
             background: none;
             color: white;

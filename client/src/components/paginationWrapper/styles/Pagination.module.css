@@ -12,12 +12,18 @@
 }
 
 .navigatin-wrapper .pages {
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
   height: 51px;
   width: 41px;
   text-align: center;
   line-height: 50px;
   border: 1px solid #fdfafa;
   background: #094a82;
+}
+
+.navigatin-wrapper .pages:hover {
+  background: #3d8fd6;
 }
 
 .navigatin-wrapper .pages button {

@@ -14,13 +14,14 @@
         margin-bottom: 10px;
     }
     .drop {
-        font-size: 35px;
+        font-size: 30px;
+        width: 50px;
         color: black;
         cursor: pointer;
     }
 
     .english-example {
-        font-size: .9rem;
+        font-size: 1rem;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -36,11 +37,11 @@
 }
 
 .portuguese {
-    font-size: .9rem;
+    font-size: 1rem;
     transition: 0.1s ease-in-out;
     opacity: 1;
     // color: rgb(238, 96, 96);
-    color: rgb(65, 65, 65);
+    color: rgb(95, 95, 95);
     border-bottom: 1px dashed red;
     padding: 20px 5px;
     & :not(:last-child) {

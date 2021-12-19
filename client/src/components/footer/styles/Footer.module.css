@@ -18,7 +18,7 @@
 }
 
 .footer .social-media {
-  font-size: 30px;
+  font-size: 23px;
 }
 
 .footer .social-media a {
@@ -28,7 +28,7 @@
 }
 
 .footer .social-media a:first-child {
-  margin: 0 5px 0 20px;
-  font-size: 32px;
+  margin: 0 7px 0 30px;
+  font-size: 25px;
 }
 /*# sourceMappingURL=Footer.module.css.map */
