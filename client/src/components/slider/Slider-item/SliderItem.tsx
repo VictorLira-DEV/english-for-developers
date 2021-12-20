@@ -8,6 +8,7 @@ interface ISliderItem {
     profession?: string;
     className: string;
     style: any;
+    sliderItem: string
 }
 
 let starNumbers = [1, 2, 3, 4, 5];
@@ -30,9 +31,7 @@ const SliderItem = (props: ISliderItem) => {
                 <p>{props.profession}</p>
             </div>
             <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut
-                ducimus libero eaque consequuntur eos, tempore illo officia
-                aliquam quia dignissimos{' '}
+                {props.sliderItem}
             </p>
         </div>
     );

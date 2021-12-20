@@ -156,6 +156,9 @@
 
 .container section .section .section-item img {
   width: 100%;
+  max-height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .container section .section .section-item .section-text {

@@ -109,7 +109,7 @@ const Home = () => {
                                 !isVisisble && classes['section-1__hidden']
                             } `}
                         >
-                            <img src="./viagem.jpg" alt="tripBG" />
+                            <img src="./grecia.png" alt="tripBG" />
                             <div
                                 className={`${classes['section-text']} ${classes['text--1']} `}
                             >
@@ -149,7 +149,7 @@ const Home = () => {
                                 !isVisisble && classes['section-3__hidden']
                             } `}
                         >
-                            <img src="./viagem.jpg" alt="trip" />
+                            <img src="./conhecimento.png" alt="trip" />
                             <div
                                 className={`${classes['section-text']} ${classes['text--3']}`}
                             >

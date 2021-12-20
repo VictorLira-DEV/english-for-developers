@@ -7,6 +7,7 @@ import Button from '../../components/button/Button';
 import useAxios from '../../hooks/use-axios/useAxios';
 import LoadSpinner from '../../components/load-spinner/LoadSpinner';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
+import SocialMedia from '../../components/social-media/SocialMedia';
 
 const PhrasalVerbs = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -129,6 +130,7 @@ const PhrasalVerbs = () => {
                 </ul>
                 <Footer className={classes.footer} />
             </div>
+            <SocialMedia />
         </React.Fragment>
     );
 };

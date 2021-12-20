@@ -99,23 +99,26 @@ const Slider = () => {
                 <SliderItem
                     className={`${classes.slider_item}`}
                     style={slider_1}
-                    src={testimonial_1}
-                    name="Pedro L."
+                    src={'https://randomuser.me/api/portraits/women/3.jpg'}
+                    name="Karol dias."
                     profession="Developer"
+                    sliderItem="Interface simples e limpa, muito obrigada, consegui aprender mais expressões para compreender os falantes nativos"
                 />
                 <SliderItem
                     className={classes.slider_item}
                     style={slider_2}
-                    src={testimonial_1}
-                    name="Guilherme"
+                    src={'https://randomuser.me/api/portraits/women/32.jpg'}
+                    name="Luna Davys"
                     profession="Lawyer"
+                    sliderItem="Continue adicionando mais phrasal verbs! esta me ajudando muito"
                 />
                 <SliderItem
                     className={classes.slider_item}
                     style={slider_3}
-                    src={testimonial_1}
-                    name="Robert Silve"
+                    src={'https://randomuser.me/api/portraits/men/3.jpg'}
+                    name="Robert Silvester"
                     profession="Designer"
+                    sliderItem="Muito bom, essas expressões e phrasal verbs realmente são muito usado no dia a dia"
                 />
             </div>
         </div>

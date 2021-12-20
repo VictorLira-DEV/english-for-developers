@@ -7,6 +7,7 @@ import ListItemWrapper from '../../components/list-item-wrapper/ListItemWrapper'
 import useAxios from '../../hooks/use-axios/useAxios';
 import LoadSpinner from '../../components/load-spinner/LoadSpinner';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
+import SocialMedia from '../../components/social-media/SocialMedia';
 
 const Expressions = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -36,7 +37,6 @@ const Expressions = () => {
 
     useEffect(() => {
         setCurrentPage(currentPage);
-        console.log(currentPage);
     }, [currentPage]);
     //get current posts
 
@@ -124,6 +124,7 @@ const Expressions = () => {
                 )}
             </ul>
             <Footer className={classes.footer} />
+            <SocialMedia />
         </div>
     );
 };

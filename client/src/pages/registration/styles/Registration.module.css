@@ -24,6 +24,12 @@
       align-self: flex-end;
 }
 
+.signup-container .img {
+  width: 50%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
 .signup-container .form {
   width: 400px;
   min-width: 400px;
