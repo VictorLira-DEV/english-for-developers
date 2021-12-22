@@ -91,7 +91,7 @@ const Home = () => {
                         <div className={classes.buttons}>
                             <motion.button
                                 whileTap={{ scale: 0.9 }}
-                                whileHover={{ scale: 1.2 }}
+                                whileHover={{ scale: 1.1 }}
                                 onClick={scroll}
                                 className={classes.about}
                             >
@@ -101,7 +101,7 @@ const Home = () => {
                                 <Link to="/login">
                                     <motion.button
                                         whileTap={{ scale: 0.9 }}
-                                        whileHover={{ scale: 1.2 }}
+                                        whileHover={{ scale: 1.1 }}
                                         className={classes.signup}
                                     >
                                         Ja tenho um conta

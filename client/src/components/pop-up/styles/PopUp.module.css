@@ -1,7 +1,6 @@
 .backdrop {
   background: rgba(0, 0, 0, 0.5);
   position: fixed;
-  height: 100vh;
   top: 0;
   right: 0;
   bottom: 0;
@@ -16,8 +15,6 @@
   border-radius: 4px;
   right: 50%;
   bottom: 50%;
-  -webkit-transform: translate(50%, 50%);
-          transform: translate(50%, 50%);
   overflow: hidden;
 }
 /*# sourceMappingURL=PopUp.module.css.map */

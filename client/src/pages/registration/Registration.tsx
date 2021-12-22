@@ -8,6 +8,7 @@ import { useHistory } from 'react-router-dom';
 import useAxios from '../../hooks/use-axios/useAxios';
 import ModalSuccess from './modal-success/ModalSuccess';
 import ModalError from './modal-error/ModalError';
+import { AnimatePresence } from 'framer-motion';
 
 const Registration = () => {
     const [formIsValid, setFormIsValid] = useState(false);
@@ -156,18 +157,31 @@ const Registration = () => {
 
     return (
         <React.Fragment>
-            {!hasError && displayModal && !isLoading && (
-                <ModalSuccess
-                    onCloseModal={closeModal}
-                    onBackdropClick={closeModal}
-                />
-            )}
-            {hasError && displayModal && !isLoading && (
-                <ModalError
-                    onBackdropClick={closeModal}
-                    onCloseModal={closeModal}
-                />
-            )}
+            <AnimatePresence
+                initial={false}
+                exitBeforeEnter={true}
+                onExitComplete={() => null}
+            >
+                {!hasError && displayModal && !isLoading && (
+                    <ModalSuccess
+                        onCloseModal={closeModal}
+                        onBackdropClick={closeModal}
+                    />
+                )}
+            </AnimatePresence>
+            <AnimatePresence
+                initial={false}
+                exitBeforeEnter={true}
+                onExitComplete={() => null}
+            >
+                {hasError && displayModal && !isLoading && (
+                    <ModalError
+                        onBackdropClick={closeModal}
+                        onCloseModal={closeModal}
+                    />
+                )}
+            </AnimatePresence>
+
             <div className={classes['signup-container']}>
                 <img src="./1.svg" alt="background" />
                 <form onSubmit={formSubmitHandler} className={classes.form}>
