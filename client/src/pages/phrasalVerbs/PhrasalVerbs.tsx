@@ -8,6 +8,7 @@ import useAxios from '../../hooks/use-axios/useAxios';
 import LoadSpinner from '../../components/load-spinner/LoadSpinner';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
 import SocialMedia from '../../components/social-media/SocialMedia';
+import ItemCounter from '../../components/item-counter/ItemCounter';
 
 const PhrasalVerbs = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -20,7 +21,7 @@ const PhrasalVerbs = () => {
     const [phrasalVerbs, setPhrasalVerbs] = useState([]);
     const headerCtx = useContext(StickyHeaderContext);
 
-    headerCtx.intersectingFunction(false)
+    headerCtx.intersectingFunction(false);
 
     useEffect(() => {
         setCurrentPage(currentPage);
@@ -104,6 +105,10 @@ const PhrasalVerbs = () => {
             {isLoading && <LoadSpinner />}
             <div className={classes.container}>
                 <ul className={classes['verbs-list']}>
+                    <ItemCounter
+                        counter={phrasalVerbs.length}
+                        text="Verbos Disponíveis"
+                    />
                     <Button className={classes['btn-title']}>
                         Phrasal Verbs
                     </Button>

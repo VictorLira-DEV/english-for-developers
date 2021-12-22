@@ -14,7 +14,6 @@ import useInput from '../../hooks/use-input/useInput';
 import { useHistory } from 'react-router-dom';
 import useAxios from '../../hooks/use-axios/useAxios';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
-import SocialMedia from '../../components/social-media/SocialMedia';
 import { motion } from 'framer-motion';
 
 const Login = () => {
@@ -147,7 +146,6 @@ const Login = () => {
             <div className={classes.login}>
                 <div className={classes.wrapper}>
                     <Slider />
-                    <SocialMedia />
                     <form className={classes.form} onSubmit={submitHandler}>
                         <h2> Login </h2>
                         <div className={classes['form-control']}>

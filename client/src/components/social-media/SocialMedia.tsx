@@ -6,15 +6,27 @@ import { AiFillLinkedin } from 'react-icons/ai';
 const SocialMedia = () => {
     return (
         <div className={classes['social-media']}>
-            <div className={classes['icon']}>
+            <a
+                href="https://github.com/VictorLira-DEV"
+                target="_blank"
+                className={classes['icon']}
+            >
                 <AiFillGithub />
-            </div>
-            <div className={`${classes['icon']} ${classes['whatsapp']}`}>
+            </a>
+            <a
+                href="https://api.whatsapp.com/send?phone=5527996483376"
+                target="blank"
+                className={`${classes['icon']} ${classes['whatsapp']}`}
+            >
                 <AiOutlineWhatsApp />
-            </div>
-            <div className={`${classes['icon']} ${classes['linkedin']} `}>
+            </a>
+            <a
+                href="https://www.linkedin.com/in/victor-lira-front-end/"
+                target="_blank"
+                className={`${classes['icon']} ${classes['linkedin']} `}
+            >
                 <AiFillLinkedin />
-            </div>
+            </a>
         </div>
     );
 };

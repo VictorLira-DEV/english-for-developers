@@ -8,6 +8,7 @@ import useAxios from '../../hooks/use-axios/useAxios';
 import LoadSpinner from '../../components/load-spinner/LoadSpinner';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
 import SocialMedia from '../../components/social-media/SocialMedia';
+import ItemCounter from '../../components/item-counter/ItemCounter';
 
 const Expressions = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -20,8 +21,8 @@ const Expressions = () => {
     const [expressions, setExpressions] = useState([]);
 
     const headerCtx = useContext(StickyHeaderContext);
-    headerCtx.intersectingFunction(false)
-    
+    headerCtx.intersectingFunction(false);
+
     useEffect(() => {
         const receivedData = function (data: any) {
             setExpressions(data.data);
@@ -101,6 +102,10 @@ const Expressions = () => {
         <div className={classes.container}>
             {isLoading && <LoadSpinner />}
             <ul className={classes['verbs-list']}>
+                <ItemCounter
+                    counter={expressions.length}
+                    text="Expressões Disponíveis"
+                />
                 <Button className={classes['btn-title']}>Expressions</Button>
                 <ListItemWrapper
                     currentPosts={currentPosts}
