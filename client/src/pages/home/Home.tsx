@@ -5,6 +5,7 @@ import Button from '../../components/button/Button';
 import Footer from '../../components/footer/Footer';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/auth-context/auth-context';
+import { motion } from 'framer-motion';
 
 const Home = () => {
     const containterRef = useRef(null);
@@ -88,14 +89,23 @@ const Home = () => {
                             </span>
                         </h1>
                         <div className={classes.buttons}>
-                            <Button onClick={scroll} className={classes.about}>
+                            <motion.button
+                                whileTap={{ scale: 0.9 }}
+                                whileHover={{ scale: 1.2 }}
+                                onClick={scroll}
+                                className={classes.about}
+                            >
                                 Sobre
-                            </Button>
+                            </motion.button>
                             {!authCtx.isLoggedIn && (
                                 <Link to="/login">
-                                    <Button className={classes.signup}>
+                                    <motion.button
+                                        whileTap={{ scale: 0.9 }}
+                                        whileHover={{ scale: 1.2 }}
+                                        className={classes.signup}
+                                    >
                                         Ja tenho um conta
-                                    </Button>
+                                    </motion.button>
                                 </Link>
                             )}
                         </div>

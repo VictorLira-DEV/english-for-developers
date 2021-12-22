@@ -15,6 +15,7 @@ import { useHistory } from 'react-router-dom';
 import useAxios from '../../hooks/use-axios/useAxios';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
 import SocialMedia from '../../components/social-media/SocialMedia';
+import { motion } from 'framer-motion';
 
 const Login = () => {
     const [formIsValid, setFormIsValid] = useState(false);
@@ -27,7 +28,7 @@ const Login = () => {
     });
 
     const headerCtx = useContext(StickyHeaderContext);
-    headerCtx.intersectingFunction(false)
+    headerCtx.intersectingFunction(false);
 
     //EMAIL
     const validateEmail = (value: string) => {
@@ -98,7 +99,7 @@ const Login = () => {
         if (formIsValid !== true) return;
 
         if (hasError) {
-            alert('Ocorreu algo de errado tente mais tarde');
+            // alert('Ocorreu algo de errado tente mais tarde');
             return;
         }
         const receiveData = async (response: any) => {
@@ -185,7 +186,10 @@ const Login = () => {
                                 )}
                             </div>
                         </div>
-                        <Button className={`${btn_login}`}>
+                        <motion.button
+                            whileTap={{ scale: 0.9 }}
+                            className={`${btn_login}`}
+                        >
                             {!isLoading && (
                                 <Fragment>
                                     Entrar <BsArrowRightCircle />
@@ -196,12 +200,15 @@ const Login = () => {
                                     Loading... <BsArrowRightCircle />
                                 </Fragment>
                             )}
-                        </Button>
+                        </motion.button>
                         <p>or</p>
                         <Link to="/signup">
-                            <Button className={btn_signup}>
+                            <motion.button
+                                whileTap={{ scale: 0.9 }}
+                                className={btn_signup}
+                            >
                                 Criar conta <AiOutlinePlusCircle />
-                            </Button>
+                            </motion.button>
                         </Link>
                     </form>
                 </div>

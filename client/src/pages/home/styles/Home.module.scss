@@ -59,16 +59,16 @@
                 &.about {
                     margin: 40px 0 20px 0;
                     background: #58cc02;
-                    transition: 0.4s ease-in-out;
-                    &:hover {
-                        background: #7cfd19;
-                        transform: scale(110%);
-                    }
+                    // transition: 0.4s ease-in-out;
+                    // &:hover {
+                    //     background: #7cfd19;
+                    //     transform: scale(110%);
+                    // }
                 }
 
                 &.signup {
                     background: #1899d6;
-                    transition: 0.4s ease-in-out;
+                    // transition: 0.4s ease-in-out;
                     &:hover {
                         background: #2eb8f8;
                         transform: scale(110%, 110%);

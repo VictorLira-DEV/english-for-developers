@@ -159,8 +159,6 @@
   cursor: pointer;
   -webkit-box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
           box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
   text-transform: uppercase;
   font-weight: bolder;
   font-size: 14px;
