@@ -110,7 +110,7 @@ const Slider = () => {
                     src={'https://randomuser.me/api/portraits/women/32.jpg'}
                     name="Luna Davys"
                     profession="Lawyer"
-                    sliderItem="Continue adicionando mais phrasal verbs! esta me ajudando muito"
+                    sliderItem="Continue adicionando mais phrasal verbs! está me ajudando muito"
                 />
                 <SliderItem
                     className={classes.slider_item}

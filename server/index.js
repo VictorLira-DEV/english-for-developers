@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-const VerbsModel = require("../server/models/Verbs");
+const VerbsModel = require("./models/Verbs");
 const ExpressionModel = require("./models/Expressions");
+require('dotenv').config();
+
 app.use(cors());
 app.use(express.json());
 
@@ -32,6 +34,6 @@ app.get("/expressions", (req, res) => {
 	});
 });
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
 	return console.log("server is running");
 });

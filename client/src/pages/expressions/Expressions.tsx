@@ -30,7 +30,7 @@ const Expressions = () => {
 
         sendRequest(
             {
-                url: 'http://localhost:3001/expressions',
+                url: 'https://english-for-devs-heroku.herokuapp.com/expressions',
             },
             receivedData
         );
@@ -101,19 +101,22 @@ const Expressions = () => {
     return (
         <div className={classes.container}>
             {isLoading && <LoadSpinner />}
-            <ul className={classes['verbs-list']}>
-                <ItemCounter
-                    counter={expressions.length}
-                    text="Expressões Disponíveis"
-                />
-                <Button className={classes['btn-title']}>Expressions</Button>
-                <ListItemWrapper
-                    currentPosts={currentPosts}
-                    currentTransationId={currentTransationId}
-                    displayTranslation={displayTranslation}
-                    hideTranslation={hideTranslation}
-                />
-                {!isLoading && (
+            {!isLoading && (
+                <ul className={classes['verbs-list']}>
+                    <ItemCounter
+                        counter={expressions.length}
+                        text="Expressões Disponíveis"
+                    />
+                    <Button className={classes['btn-title']}>
+                        Expressions
+                    </Button>
+                    <ListItemWrapper
+                        currentPosts={currentPosts}
+                        currentTransationId={currentTransationId}
+                        displayTranslation={displayTranslation}
+                        hideTranslation={hideTranslation}
+                    />
+
                     <PaginationWrapper
                         minPageNumberLimit={minPageNumberLimit}
                         maxPageNumberLimit={maxPageNumberLimit}
@@ -126,8 +129,8 @@ const Expressions = () => {
                         paginate={paginate}
                         nextPageHandler={nextPageHandler}
                     />
-                )}
-            </ul>
+                </ul>
+            )}
             <Footer className={classes.footer} />
             <SocialMedia />
         </div>

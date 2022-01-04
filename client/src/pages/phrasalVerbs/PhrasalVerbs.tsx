@@ -35,7 +35,7 @@ const PhrasalVerbs = () => {
 
         sendRequest(
             {
-                url: 'http://localhost:3001/read',
+                url: 'https://english-for-devs-heroku.herokuapp.com/read',
             },
             receivedData
         );
@@ -104,21 +104,22 @@ const PhrasalVerbs = () => {
         <React.Fragment>
             {isLoading && <LoadSpinner />}
             <div className={classes.container}>
-                <ul className={classes['verbs-list']}>
-                    <ItemCounter
-                        counter={phrasalVerbs.length}
-                        text="Verbos Disponíveis"
-                    />
-                    <Button className={classes['btn-title']}>
-                        Phrasal Verbs
-                    </Button>
-                    <ListItemWrapper
-                        currentPosts={currentPosts}
-                        currentTransationId={currentTransationId}
-                        displayTranslation={displayTranslation}
-                        hideTranslation={hideTranslation}
-                    />
-                    {!isLoading && (
+                {!isLoading && (
+                    <ul className={classes['verbs-list']}>
+                        <ItemCounter
+                            counter={phrasalVerbs.length}
+                            text="Verbos Disponíveis"
+                        />
+                        <Button className={classes['btn-title']}>
+                            Phrasal Verbs
+                        </Button>
+                        <ListItemWrapper
+                            currentPosts={currentPosts}
+                            currentTransationId={currentTransationId}
+                            displayTranslation={displayTranslation}
+                            hideTranslation={hideTranslation}
+                        />
+
                         <PaginationWrapper
                             minPageNumberLimit={minPageNumberLimit}
                             maxPageNumberLimit={maxPageNumberLimit}
@@ -131,8 +132,8 @@ const PhrasalVerbs = () => {
                             paginate={paginate}
                             nextPageHandler={nextPageHandler}
                         />
-                    )}
-                </ul>
+                    </ul>
+                )}
                 <Footer className={classes.footer} />
             </div>
             <SocialMedia />
