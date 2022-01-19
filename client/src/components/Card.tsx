@@ -22,9 +22,7 @@ export default function Card(props: Icard) {
             data-aos-duration="600"
         >
             <img src={image} alt="tripBG" />
-            <div
-                // className={`${classes['section-text']} ${classes['text--1']} `}
-            >
+            <div>
                 <h2> {title} </h2>
                 <p>
                     {text}

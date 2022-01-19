@@ -1,14 +1,15 @@
-import Input from '../../components/Input';
-import Button from '../../components/Button';
-import useInput from '../../hooks/use-input/useInput';
+import Input from '../components/Input';
+import Button from '../components/Button';
+import useInput from '../hooks/use-input/useInput';
 import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from '../../context/auth-context/auth-context';
+import { AuthContext } from '../context/auth-context/auth-context';
 // import { useHistory } from "react-router";
-import useAxios from '../../hooks/use-axios/useAxios';
-import Footer from '../../components/Footer';
-import classes from './styles/Profile.module.css';
-import profile_picture from '../../assets/profile-default.png';
-import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
+import useAxios from '../hooks/use-axios/useAxios';
+import Footer from '../components/Footer';
+// import classes from './styles/Profile.module.css';
+import profile_picture from '../assets/profile-default.png';
+import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
+import { StyledProfile, StyledProfileWrapper} from './styles/Profile.styled'
 
 const Profile = () => {
     const authCtx = useContext(AuthContext);
@@ -87,10 +88,10 @@ const Profile = () => {
     }, [passwordIsValid, passwordCheckIsValid]);
 
     return (
-        <React.Fragment>
-            <div className={classes.container}>
-                <div className={classes.profile_wraper}>
-                    <div className={classes.profile}>
+        <StyledProfileWrapper>
+            <StyledProfile>
+                <div className={'profile_wraper'}>
+                    <div className={'profile'}>
                         <img src={profile_picture} alt="profile" />
                         <p>user</p>
                         <p> Online </p>
@@ -99,8 +100,8 @@ const Profile = () => {
                     <form onSubmit={onSubmitHandler}>
                         <h2>Mudar a senha</h2>
                         <div
-                            className={`${classes.formControl} ${
-                                passwordHasError && classes.invalid
+                            className={`${'formControl'} ${
+                                passwordHasError && 'invalid'
                             }`}
                         >
                             <label>Nova senha</label>
@@ -109,20 +110,20 @@ const Profile = () => {
                                 onChange={passwordChangeHandler}
                                 onBlur={passwordBlurHandler}
                                 value={enteredPasswordValue}
-                                className={classes.input}
+                                className={'input'}
                             />
                             {passwordHasError && (
                                 <small> {passwordErrorMessage} </small>
                             )}
                         </div>
-                        <div className={classes.formControl}>
+                        <div className={'formControl'}>
                             <label>Confirme a senha</label>
                             <Input
                                 type="password"
                                 onChange={passwordCheckChangeHandler}
                                 onBlur={passwordCheckBlurHandler}
                                 value={enteredPasswordCheckValue}
-                                className={classes.input}
+                                className={'input'}
                             />
                             {passwordCheckHasError && (
                                 <small> {passwordCheckErrorMessage} </small>
@@ -130,17 +131,17 @@ const Profile = () => {
                         </div>
 
                         <Button
-                            className={`${classes.button} ${
-                                !formIsValid && classes.invalidBtn
+                            className={`${'button'} ${
+                                !formIsValid && 'invalidBtn'
                             }`}
                         >
                             {isLoading ? <p>isLoading...</p> : <p>Enviar</p>}
                         </Button>
                     </form>
                 </div>
-            </div>
-            <Footer className={classes.footer} />
-        </React.Fragment>
+            </StyledProfile>
+            <Footer className={'footer'} />
+        </StyledProfileWrapper>
     );
 };
 

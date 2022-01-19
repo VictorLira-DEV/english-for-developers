@@ -7,7 +7,6 @@ import { AuthContext } from '../context/auth-context/auth-context';
 import { StyledHeader } from './styles/Header.styled';
 
 const Header = () => {
-    const headerCtx = useContext(StickyHeaderContext);
     const authCtx = useContext(AuthContext);
     const history = useHistory();
 

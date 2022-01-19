@@ -1,4 +1,13 @@
-.signup-container {
+import styled from 'styled-components';
+
+export const StyledRegistrationWrapper = styled.div`
+    footer{
+        padding: 30px 60px;
+        background: linear-gradient(rgb(131, 214, 214), rgb(61, 99, 153));
+    }
+`
+
+export const StyledRegistration = styled.div`
     width: 100vw;
     overflow-x: hidden;
     display: flex;
@@ -91,10 +100,4 @@
             }
         }
     }
-}
-
-.footer {
-    padding: 30px 60px;
-    background: linear-gradient(rgb(131, 214, 214), rgb(61, 99, 153));
-}
-
+`

@@ -9,31 +9,28 @@ interface ISliderItem {
     profession?: string;
     className: string;
     style: any;
-    sliderItem: string
+    sliderItem: string;
 }
 
 let starNumbers = [1, 2, 3, 4, 5];
 
 const SliderItem = (props: ISliderItem) => {
+    const { className, sliderItem, style, name, profession, src } = props;
+
     return (
-        <StyledSliderItem
-            className={props.className}
-            style={props.style}
-        >
+        <StyledSliderItem className={className} style={style}>
             <FaQuoteLeft id={'quotes-mark'} />
             <div className={'profile'}>
-                <img src={props.src} alt="testimimonial-profile" />
+                <img src={src} alt="testimimonial-profile" />
                 <div>
                     {starNumbers.map(() => {
                         return <AiFillStar className={'stars'} />;
                     })}
                 </div>
-                <p>{props.name} </p>
-                <p>{props.profession}</p>
+                <p>{name} </p>
+                <p>{profession}</p>
             </div>
-            <p>
-                {props.sliderItem}
-            </p>
+            <p>{sliderItem}</p>
         </StyledSliderItem>
     );
 };

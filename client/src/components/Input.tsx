@@ -12,16 +12,27 @@ interface IInput {
 }
 
 const Input = (props: IInput) => {
+    const {
+        type,
+        className,
+        value,
+        placeholder,
+        onBlur,
+        onChange,
+        onMouseEnter,
+        onMouseLeave,
+    } = props;
+
     return (
         <input
-            placeholder={props.placeholder}
-            className={props.className}
-            type={props.type}
-            onMouseEnter={props.onMouseEnter}
-            onMouseLeave={props.onMouseLeave}
-            onChange={props.onChange}
-            onBlur={props.onBlur}
-            value={props.value}
+            placeholder={placeholder}
+            className={className}
+            type={type}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onChange={onChange}
+            onBlur={onBlur}
+            value={value}
         />
     );
 };

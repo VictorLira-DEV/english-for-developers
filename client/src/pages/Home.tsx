@@ -71,7 +71,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <img className='home__arrow' src="./arrow.png"/>
+                    <img className="home__arrow" src="./arrow.png" />
                 </About>
             </Container>
             <Cards>
@@ -109,7 +109,7 @@ const Home = () => {
                     ex nisi beatae debitis iste, quasi voluptatibus?"
                 />
             </Cards>
-            <Footer className='home__footer' />
+            <Footer className="home__footer" />
         </HomeWrapper>
     );
 };

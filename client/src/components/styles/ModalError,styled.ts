@@ -1,7 +1,9 @@
-.modal_content{
+import styled from 'styled-components';
+
+export const StyledModalError = styled.div`
     width: 400px;
     height: 300px;
-    .error{
+    .error {
         background: rgb(238, 85, 85);
         height: 50%;
         display: flex;
@@ -9,13 +11,13 @@
         align-items: center;
         position: relative;
         color: white;
-        #error_icon{
+        #error_icon {
             font-size: 70px;
             border-radius: 50%;
             border: 2px solid white;
         }
 
-        #close_icon{
+        #close_icon {
             position: absolute;
             right: 10px;
             top: 10px;
@@ -24,22 +26,22 @@
         }
     }
 
-    .error_message{
+    .error_message {
         height: 50%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         color: rgb(77, 80, 89);
-        .main_message{
+        .main_message {
             font-size: 30px;
         }
 
-        .second_message{
+        .second_message {
             margin: 10px 0 20px 0;
         }
 
-        button{
+        button {
             border: none;
             border-radius: 20px;
             padding: 10px 20px;
@@ -47,10 +49,10 @@
             color: white;
             font-size: 16px;
             cursor: pointer;
-            transition: .3s ease-in-out;
-            &:hover{
+            transition: 0.3s ease-in-out;
+            &:hover {
                 background: rgb(221, 166, 16);
             }
         }
     }
-}
+`;

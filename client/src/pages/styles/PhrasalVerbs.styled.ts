@@ -1,4 +1,6 @@
-.container {
+import styled from 'styled-components';
+
+export const StyledPhrasalVerbs = styled.div`
     overflow-y: hidden;
     padding: 100px 0 200px 0;
     min-height: 100vh;
@@ -22,8 +24,6 @@
             right: 0;
             top: -45px;
         }
-
-        
     }
 
     .footer {
@@ -33,14 +33,14 @@
         color: white;
         padding: 15px;
     }
-}
 
-.pages {
-    height: 51px;
-    width: 41px;
-    text-align: center;
-    line-height: 50px;
-    border: 1px solid rgb(253, 250, 250);
-    background: rgb(9, 74, 130);
-    color: white;
-}
+    .pages {
+        height: 51px;
+        width: 41px;
+        text-align: center;
+        line-height: 50px;
+        border: 1px solid rgb(253, 250, 250);
+        background: rgb(9, 74, 130);
+        color: white;
+    }
+`;

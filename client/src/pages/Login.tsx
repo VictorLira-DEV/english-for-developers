@@ -1,20 +1,21 @@
-import classes from './styles/Login.module.css';
-import Button from '../../components/Button';
+// import classes from './styles/Login.module.css';
+// import Button from '../components/Button';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { MdOutlineEmail } from 'react-icons/md';
 import { BsArrowRightCircle } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import React, { useState, useEffect, useContext, Fragment } from 'react';
-import { AuthContext } from '../../context/auth-context/auth-context';
-import Slider from '../../components/Slider';
-import Input from '../../components/Input';
+import { AuthContext } from '../context/auth-context/auth-context';
+import Slider from '../components/Slider';
+import Input from '../components/Input';
 import { Link } from 'react-router-dom';
-import Footer from '../../components/Footer';
-import useInput from '../../hooks/use-input/useInput';
+import Footer from '../components/Footer';
+import useInput from '../hooks/use-input/useInput';
 import { useHistory } from 'react-router-dom';
-import useAxios from '../../hooks/use-axios/useAxios';
-import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
+import useAxios from '../hooks/use-axios/useAxios';
+import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
 import { motion } from 'framer-motion';
+import { StyledLogin, StyledLoginWrapper } from './styles/Login.styled';
 
 const Login = () => {
     const [formIsValid, setFormIsValid] = useState(false);
@@ -26,10 +27,10 @@ const Login = () => {
         password: false,
     });
 
-    const headerCtx = useContext(StickyHeaderContext);
-    headerCtx.intersectingFunction(false);
+    // const headerCtx = useContext(StickyHeaderContext);
+    // headerCtx.intersectingFunction(false);
 
-    //EMAIL
+    // //EMAIL
     const validateEmail = (value: string) => {
         return {
             isValid: value.trim().includes('@'),
@@ -130,31 +131,31 @@ const Login = () => {
     };
 
     //dynamic styles
-    let emailInput = `${classes.inputWrapper} ${
-        enteredEmailHasError && classes.invalid
-    } ${focus.email && classes.focus}`;
-    let passwordInput = `${classes.inputWrapper} ${
-        passwordHasError && classes.invalid
-    } ${focus.password && classes.focus}`;
-    let btn_signup = `${classes.btn} ${classes['create-account']}`;
-    let btn_login = `${classes.btn} ${classes.login} ${
-        !formIsValid && classes.invalidBtn
+    let emailInput = `${'inputWrapper'} ${
+        enteredEmailHasError && 'invalid'
+    } ${focus.email && 'focus'}`;
+    let passwordInput = `${'inputWrapper'} ${
+        passwordHasError && 'invalid'
+    } ${focus.password && 'focus'}`;
+    let btn_signup = `${'btn'} ${'create-account'}`;
+    let btn_login = `${'btn'} ${'login'} ${
+        !formIsValid && 'invalidBtn'
     }`;
 
     return (
-        <React.Fragment>
-            <div className={classes.login}>
-                <div className={classes.wrapper}>
+        <StyledLoginWrapper>
+            <StyledLogin>
+                <div className={'wrapper'}>
                     <Slider />
-                    <form className={classes.form} onSubmit={submitHandler}>
+                    <form className={'form'} onSubmit={submitHandler}>
                         <h2> Login </h2>
-                        <div className={classes['form-control']}>
+                        <div className={'form-control'}>
                             <div className={emailInput}>
-                                <MdOutlineEmail className={classes.icon} />
+                                <MdOutlineEmail className={'icon'} />
                                 <Input
                                     type="email"
                                     placeholder="E-mail"
-                                    className={`${classes.focus} ${classes.invalid}`}
+                                    className={`${'focus'} ${'invalid'}`}
                                     onMouseEnter={emailMouseEnterHandler}
                                     onMouseLeave={emailMouseLeaveHandler}
                                     onChange={emailChangeHandler}
@@ -166,13 +167,13 @@ const Login = () => {
                                 )}
                             </div>
                         </div>
-                        <div className={classes['form-control']}>
+                        <div className={'form-control'}>
                             <div className={passwordInput}>
-                                <RiLockPasswordLine className={classes.icon} />
+                                <RiLockPasswordLine className={'icon'} />
                                 <Input
                                     type="password"
                                     placeholder="Senha"
-                                    className={classes.focus}
+                                    className={'focus'}
                                     onMouseEnter={passwordEnterHandler}
                                     onMouseLeave={passwordLeaveHandler}
                                     onChange={passwordChangeHandler}
@@ -210,9 +211,9 @@ const Login = () => {
                         </Link>
                     </form>
                 </div>
-            </div>
-            <Footer className={classes.footer} />
-        </React.Fragment>
+            </StyledLogin>
+            <Footer className={'footer'} />
+        </StyledLoginWrapper>
     );
 };
 

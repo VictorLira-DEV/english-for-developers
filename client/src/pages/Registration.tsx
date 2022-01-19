@@ -1,14 +1,18 @@
-import Input from '../../components/Input';
-import classes from './styles/Registration.module.css';
-import Button from '../../components/Button';
-import Footer from '../../components/Footer';
+import Input from '../components/Input';
+// import classes from './styles/Registration.module.css';
+import Button from '../components/Button';
+import Footer from '../components/Footer';
 import React, { useState, useEffect } from 'react';
-import useInput from '../../hooks/use-input/useInput';
+import useInput from '../hooks/use-input/useInput';
 import { useHistory } from 'react-router-dom';
-import useAxios from '../../hooks/use-axios/useAxios';
-import ModalSuccess from './modal-success/ModalSuccess';
-import ModalError from './modal-error/ModalError';
+import useAxios from '../hooks/use-axios/useAxios';
+import ModalSuccess from '../components/ModalSuccess';
+import ModalError from '../components/ModalError';
 import { AnimatePresence } from 'framer-motion';
+import {
+    StyledRegistration,
+    StyledRegistrationWrapper,
+} from './styles/Registration.styled';
 
 const Registration = () => {
     const [formIsValid, setFormIsValid] = useState(false);
@@ -141,22 +145,18 @@ const Registration = () => {
     };
 
     //classes
-    const usernameClasses = `${classes.input} ${
-        usernameHasError && classes.invalid
-    }`;
+    const usernameClasses = `${'input'} ${usernameHasError && 'invalid'}`;
 
-    const emailClasses = `${classes.input} ${emailHasError && classes.invalid}`;
+    const emailClasses = `${'input'} ${emailHasError && 'invalid'}`;
 
-    const passwordClasses = `${classes.input} ${
-        passswordHasError && classes.invalid
-    }`;
+    const passwordClasses = `${'input'} ${passswordHasError && 'invalid'}`;
 
-    const passwordCheckClasses = `${classes.input} ${
-        passwordCheckHasError && classes.invalid
+    const passwordCheckClasses = `${'input'} ${
+        passwordCheckHasError && 'invalid'
     }`;
 
     return (
-        <React.Fragment>
+        <StyledRegistrationWrapper>
             <AnimatePresence
                 initial={false}
                 exitBeforeEnter={true}
@@ -164,6 +164,9 @@ const Registration = () => {
             >
                 {!hasError && displayModal && !isLoading && (
                     <ModalSuccess
+                        title="Ótimo"
+                        message="A sua conta foi criada com sucesso"
+                        btnText="comece a explorar"
                         onCloseModal={closeModal}
                         onBackdropClick={closeModal}
                     />
@@ -176,18 +179,21 @@ const Registration = () => {
             >
                 {hasError && displayModal && !isLoading && (
                     <ModalError
+                        title="Erro de Autenticação"
+                        message="Tente novamente mais tarde"
+                        btnText="Home"
                         onBackdropClick={closeModal}
                         onCloseModal={closeModal}
                     />
                 )}
             </AnimatePresence>
 
-            <div className={classes['signup-container']}>
+            <StyledRegistration>
                 <img src="./1.svg" alt="background" />
-                <form onSubmit={formSubmitHandler} className={classes.form}>
+                <form onSubmit={formSubmitHandler} className="form">
                     <h1> Create account </h1>
-                    <div className={classes['form-control']}>
-                        <label className={classes.label}>Username</label>
+                    <div className="form-control">
+                        <label className="label">Username</label>
                         <Input
                             className={usernameClasses}
                             type="text"
@@ -199,8 +205,8 @@ const Registration = () => {
                             {usernameHasError && usernameErrorMessage}{' '}
                         </small>
                     </div>
-                    <div className={classes['form-control']}>
-                        <label className={classes.label}>E-mail</label>
+                    <div className="form-control">
+                        <label className="label">E-mail</label>
                         <Input
                             className={emailClasses}
                             type="email"
@@ -210,8 +216,8 @@ const Registration = () => {
                         />
                         <small>{emailHasError && emailErrorMessage} </small>
                     </div>
-                    <div className={classes['form-control']}>
-                        <label className={classes.label}>Password</label>
+                    <div className="form-control">
+                        <label className="label">Password</label>
                         <Input
                             className={passwordClasses}
                             type="password"
@@ -220,13 +226,11 @@ const Registration = () => {
                             value={enteredPassword}
                         />
                         <small>
-                            {passswordHasError && passwordErrorMessage}{' '}
+                            {passswordHasError && passwordErrorMessage}
                         </small>
                     </div>
-                    <div className={classes['form-control']}>
-                        <label className={classes.label}>
-                            Password confirm
-                        </label>
+                    <div className="form-control">
+                        <label className="label">Password confirm</label>
                         <Input
                             className={passwordCheckClasses}
                             type="password"
@@ -238,14 +242,14 @@ const Registration = () => {
                             {passwordCheckHasError && passwordCheckErrorMessage}{' '}
                         </small>
                     </div>
-                    <Button className={`${!formIsValid && classes.invalid}`}>
+                    <Button className={`${!formIsValid && 'invalid'}`}>
                         {!isLoading ? <p>Submit </p> : <p>Loading...</p>}
                     </Button>
                 </form>
                 <img src="./social.svg" alt="social" />
-            </div>
-            <Footer className={classes.footer} />
-        </React.Fragment>
+            </StyledRegistration>
+            <Footer />
+        </StyledRegistrationWrapper>
     );
 };
 

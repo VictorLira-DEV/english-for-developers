@@ -1,5 +1,5 @@
 import classes from './styles/ItemCounter.module.css';
-import { StyledItemCounter } from './styles/ItemCounter.styled'
+import { StyledItemCounter } from './styles/ItemCounter.styled';
 
 interface ItemCounter {
     counter: number;

@@ -1,5 +1,14 @@
-.login {
-    background: linear-gradient( rgb(9, 74, 130), rgb(88, 129, 187));
+import styled from 'styled-components';
+
+export const StyledLoginWrapper = styled.div`
+    .footer {
+        padding: 30px 60px;
+        background: linear-gradient(rgb(88, 129, 187), rgb(62, 91, 131));
+    }
+`;
+
+export const StyledLogin = styled.div`
+    background: linear-gradient(rgb(9, 74, 130), rgb(88, 129, 187));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,11 +21,11 @@
         .slider {
             width: 350px;
             position: relative;
-            .control{
+            .control {
                 position: absolute;
                 z-index: 3;
             }
-            .slider-item{
+            .slider-item {
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -47,13 +56,13 @@
                     display: flex;
                     position: relative;
                     align-items: center;
-                    &.invalid{
+                    &.invalid {
                         border-bottom-color: rgb(247, 132, 132);
-                        .icon{
+                        .icon {
                             color: rgb(247, 132, 132);
                         }
 
-                        small{
+                        small {
                             color: red;
                         }
                     }
@@ -90,7 +99,7 @@
                     height: 20px;
                     color: rgb(117, 117, 117);
                     &::after {
-                        content: "";
+                        content: '';
                         display: inline-block;
                         width: 40%;
                         margin: 0 0 3px 10px;
@@ -98,7 +107,7 @@
                         background: #ccc;
                     }
                     &::before {
-                        content: "";
+                        content: '';
                         display: inline-block;
                         margin: 0 10px 3px 0px;
                         width: 40%;
@@ -115,7 +124,7 @@
                     &:hover {
                         margin-bottom: 0;
                         &::after {
-                            content: "";
+                            content: '';
                             display: block;
                             margin: 5px auto 0 auto;
                             width: 150px;
@@ -144,10 +153,10 @@
                     height: 40px;
                     margin-top: 20px;
                     position: relative;
-                    &.invalidBtn{
+                    &.invalidBtn {
                         background: rgb(194, 194, 194);
-                        cursor: not-allowed ;
-                        &:hover{
+                        cursor: not-allowed;
+                        &:hover {
                             background: rgb(194, 194, 194);
                         }
                     }
@@ -183,7 +192,7 @@
                         background: rgb(121, 182, 81);
                     }
 
-                    a{
+                    a {
                         text-decoration: none;
                         color: inherit;
                     }
@@ -191,9 +200,4 @@
             }
         }
     }
-}
-
-.footer{
-    padding: 30px 60px;
-    background: linear-gradient(rgb(88, 129, 187) ,rgb(62, 91, 131));
-}
+`;

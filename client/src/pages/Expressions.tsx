@@ -1,14 +1,15 @@
 import { useEffect, useState, useContext } from 'react';
-import classes from './styles/Expressions.module.css';
-import Footer from '../../components/Footer';
-import Button from '../../components/Button';
-import PaginationWrapper from '../../components/PaginationWrapper';
-import ListItemWrapper from '../../components/ListItemWrapper';
-import useAxios from '../../hooks/use-axios/useAxios';
-import LoadSpinner from '../../components/LoadSpinner';
-import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
-import SocialMedia from '../../components/SocialMedia';
-import ItemCounter from '../../components/ItemCounter';
+// import classes from './styles/Expressions.module.css';
+import Footer from '../components/Footer';
+import Button from '../components/Button';
+import PaginationWrapper from '../components/PaginationWrapper';
+import ListItemWrapper from '../components/ListItemWrapper';
+import useAxios from '../hooks/use-axios/useAxios';
+import LoadSpinner from '../components/LoadSpinner';
+import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
+import SocialMedia from '../components/SocialMedia';
+import ItemCounter from '../components/ItemCounter';
+import { StyledExpression } from './styles/Expressions.styled';
 
 const Expressions = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -83,7 +84,7 @@ const Expressions = () => {
     let pageIncrementBtn = null;
     if (expressions.length > maxPageNumberLimit) {
         pageIncrementBtn = (
-            <li onClick={nextPageHandler} className={`${classes.pages}`}>
+            <li onClick={nextPageHandler} className="pages">
                 ...
             </li>
         );
@@ -92,24 +93,22 @@ const Expressions = () => {
     let pageDecrementBtn = null;
     if (expressions.length > maxPageNumberLimit) {
         pageDecrementBtn = (
-            <li onClick={prevPageHandler} className={`${classes.pages}`}>
+            <li onClick={prevPageHandler} className="pages">
                 ...
             </li>
         );
     }
 
     return (
-        <div className={classes.container}>
+        <StyledExpression>
             {isLoading && <LoadSpinner />}
             {!isLoading && (
-                <ul className={classes['verbs-list']}>
+                <ul className={'verbs-list'}>
                     <ItemCounter
                         counter={expressions.length}
                         text="Expressões Disponíveis"
                     />
-                    <Button className={classes['btn-title']}>
-                        Expressions
-                    </Button>
+                    <Button className={'btn-title'}>Expressions</Button>
                     <ListItemWrapper
                         currentPosts={currentPosts}
                         currentTransationId={currentTransationId}
@@ -131,9 +130,9 @@ const Expressions = () => {
                     />
                 </ul>
             )}
-            <Footer className={classes.footer} />
+            <Footer className={'footer'} />
             <SocialMedia />
-        </div>
+        </StyledExpression>
     );
 };
 

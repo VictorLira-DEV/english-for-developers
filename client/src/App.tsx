@@ -7,13 +7,13 @@ import { AuthContext } from './context/auth-context/auth-context';
 import LoadSpinner from './components/LoadSpinner';
 
 const Home = React.lazy(() => import('./pages/Home'));
-const Login = React.lazy(() => import('./pages/login/Login'));
-const Expressions = React.lazy(() => import('./pages/expressions/Expressions'));
-const Profile = React.lazy(() => import('./pages/profile/Profile'));
+const Login = React.lazy(() => import('./pages/Login'));
+const Expressions = React.lazy(() => import('./pages/Expressions'));
+const Profile = React.lazy(() => import('./pages/Profile'));
 const Registration = React.lazy(
-    () => import('./pages/registration/Registration')
+    () => import('./pages/Registration')
 );
-const PhrasalVerbs = React.lazy(() => import('./pages/phrasalVerbs/PhrasalVerbs'))
+const PhrasalVerbs = React.lazy(() => import('./pages/PhrasalVerbs'))
 
 function App() {
     const authCtx = useContext(AuthContext);

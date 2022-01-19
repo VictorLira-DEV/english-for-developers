@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-// import classes from './styles/Slider.module.css';
 import SliderItem from './SliderItem';
 import { BsArrowRight } from 'react-icons/bs';
 import { BsArrowLeft } from 'react-icons/bs';

@@ -1,4 +1,6 @@
-.container {
+import styled from 'styled-components';
+
+export const StyledProfile = styled.div`
     min-height: calc(100vh - (70px + 58px));
     display: flex;
     align-items: center;
@@ -111,12 +113,14 @@
             }
         }
     }
-}
+`;
 
-.footer {
-    padding: 15px 60px;
-    background: rgb(11, 91, 160);
-    color: white;
-    bottom: 0;
-    width: 100%;
-}
+export const StyledProfileWrapper = styled.section`
+    .footer {
+        padding: 15px 60px;
+        background: rgb(11, 91, 160);
+        color: white;
+        bottom: 0;
+        width: 100%;
+    }
+`;

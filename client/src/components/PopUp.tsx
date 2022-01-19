@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import classes from './styles/PopUp.module.css';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { StyledBackdrop, StyledPopUp } from './styles/PopUp.styled';
 
 const portalElement = document.getElementById('overlay')!;

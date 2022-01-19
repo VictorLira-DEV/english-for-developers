@@ -1,4 +1,6 @@
-.container{
+import styled from 'styled-components';
+
+export const StyledExpression = styled.div`
     overflow-y: hidden;
     padding: 100px 0 200px 0;
     min-height: 100vh;
@@ -67,9 +69,8 @@
         color: white;
         padding: 15px;
     }
-}
 
-.pages{
+    .pages{
         height: 51px;
         width: 41px;
         text-align: center;
@@ -77,4 +78,5 @@
         border: 1px solid rgb(253, 250, 250);
         background: rgb(9, 74, 130);
         color: white;
-}
+    }
+`

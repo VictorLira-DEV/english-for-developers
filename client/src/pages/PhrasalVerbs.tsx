@@ -1,14 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react';
-import classes from './styles/PhrasalVerbs.module.css';
-import Footer from '../../components/Footer';
-import PaginationWrapper from '../../components/PaginationWrapper';
-import ListItemWrapper from '../../components/ListItemWrapper';
-import Button from '../../components/Button';
-import useAxios from '../../hooks/use-axios/useAxios';
-import LoadSpinner from '../../components/LoadSpinner';
-import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
-import SocialMedia from '../../components/SocialMedia';
-import ItemCounter from '../../components/ItemCounter';
+// import classes from './styles/PhrasalVerbs.module.css';
+import Footer from '../components/Footer';
+import PaginationWrapper from '../components/PaginationWrapper';
+import ListItemWrapper from '../components/ListItemWrapper';
+import Button from '../components/Button';
+import useAxios from '../hooks/use-axios/useAxios';
+import LoadSpinner from '../components/LoadSpinner';
+import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
+import SocialMedia from '../components/SocialMedia';
+import ItemCounter from '../components/ItemCounter';
+import { StyledPhrasalVerbs } from './styles/PhrasalVerbs.styled';
 
 const PhrasalVerbs = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -85,7 +86,7 @@ const PhrasalVerbs = () => {
     let pageIncrementBtn = null;
     if (phrasalVerbs.length > maxPageNumberLimit) {
         pageIncrementBtn = (
-            <li onClick={nextPageHandler} className={`${classes.pages}`}>
+            <li onClick={nextPageHandler} className="pages">
                 ...
             </li>
         );
@@ -94,7 +95,7 @@ const PhrasalVerbs = () => {
     let pageDecrementBtn = null;
     if (phrasalVerbs.length > maxPageNumberLimit) {
         pageDecrementBtn = (
-            <li onClick={prevPageHandler} className={`${classes.pages}`}>
+            <li onClick={prevPageHandler} className="pages">
                 ...
             </li>
         );
@@ -103,16 +104,14 @@ const PhrasalVerbs = () => {
     return (
         <React.Fragment>
             {isLoading && <LoadSpinner />}
-            <div className={classes.container}>
+            <StyledPhrasalVerbs>
                 {!isLoading && (
-                    <ul className={classes['verbs-list']}>
+                    <ul className="verbs-list">
                         <ItemCounter
                             counter={phrasalVerbs.length}
                             text="Verbos Disponíveis"
                         />
-                        <Button className={classes['btn-title']}>
-                            Phrasal Verbs
-                        </Button>
+                        <Button className="btn-title">Phrasal Verbs</Button>
                         <ListItemWrapper
                             currentPosts={currentPosts}
                             currentTransationId={currentTransationId}
@@ -134,8 +133,8 @@ const PhrasalVerbs = () => {
                         />
                     </ul>
                 )}
-                <Footer className={classes.footer} />
-            </div>
+                <Footer className="footer" />
+            </StyledPhrasalVerbs>
             <SocialMedia />
         </React.Fragment>
     );

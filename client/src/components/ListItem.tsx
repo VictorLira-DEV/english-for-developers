@@ -1,8 +1,8 @@
-import React from "react";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import { MdOutlineKeyboardArrowUp } from "react-icons/md";
+import React from 'react';
+import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
+import { MdOutlineKeyboardArrowUp } from 'react-icons/md';
 // import classes from "./styles/ListItem.module.css";
-import { StyledListItem } from './styles/ListItem.styled'
+import { StyledListItem } from './styles/ListItem.styled';
 
 interface IListItem {
     id: string;
@@ -13,43 +13,55 @@ interface IListItem {
     example_2: string;
     translation_1: string;
     translation_2: string;
-    content: string
+    content: string;
 }
 
 const ListItem = (props: IListItem) => {
+    const {
+        id,
+        currentId,
+        example_1,
+        example_2,
+        translation_1,
+        translation_2,
+        content,
+        onDisplayTranslation,
+        onHideTranslation,
+    } = props;
+
     return (
         <StyledListItem>
-            <li className='item__english'>
-                <div className="item__phrasal-verb">{props.content}</div>
+            <li className="item__english">
+                <div className="item__phrasal-verb">{content}</div>
                 <div className="item__english-example">
                     <div className="item__english-text-examples">
-                        <p>1 - {props.example_1} </p>
-                        <p>2 - {props.example_2} </p>
+                        <p>1 - {example_1} </p>
+                        <p>2 - {example_2} </p>
                     </div>
-                    {props.id !== props.currentId && (
+                    {id !== currentId && (
                         <MdOutlineKeyboardArrowDown
-                            className='item__drop'
-                            onClick={props.onDisplayTranslation}
-                            id={props.id}
+                            className="item__drop"
+                            onClick={onDisplayTranslation}
+                            id={id}
                         />
                     )}
 
-                    {props.id === props.currentId && (
+                    {id === currentId && (
                         <MdOutlineKeyboardArrowUp
-                            className='item__drop'
-                            onClick={props.onHideTranslation}
-                            id={props.id}
+                            className="item__drop"
+                            onClick={onHideTranslation}
+                            id={id}
                         />
                     )}
                 </div>
             </li>
             <li
                 className={`${'item__portuguese'} ${
-                    props.id !== props.currentId && 'item__hide'
+                    id !== currentId && 'item__hide'
                 }`}
             >
-                <p>1 - {props.translation_1}</p>
-                <p>2 -  {props.translation_2} </p>
+                <p>1 - {translation_1}</p>
+                <p>2 - {translation_2} </p>
             </li>
         </StyledListItem>
     );

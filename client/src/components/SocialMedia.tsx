@@ -2,7 +2,7 @@
 import { AiFillGithub } from 'react-icons/ai';
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 import { AiFillLinkedin } from 'react-icons/ai';
-import { StyledSocialMedia } from './styles/SocialMedia.styled'
+import { StyledSocialMedia } from './styles/SocialMedia.styled';
 
 const SocialMedia = () => {
     return (
@@ -10,7 +10,7 @@ const SocialMedia = () => {
             <a
                 href="https://github.com/VictorLira-DEV"
                 target="_blank"
-                className='icon'
+                className="icon"
             >
                 <AiFillGithub />
             </a>
