@@ -1,5 +1,5 @@
 import classes from './styles/Login.module.css';
-import Button from '../../components/button/Button';
+import Button from '../../components/Button';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { MdOutlineEmail } from 'react-icons/md';
 import { BsArrowRightCircle } from 'react-icons/bs';
@@ -7,9 +7,9 @@ import { AiOutlinePlusCircle } from 'react-icons/ai';
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { AuthContext } from '../../context/auth-context/auth-context';
 import Slider from '../../components/slider/Slider';
-import Input from '../../components/input/Input';
+import Input from '../../components/Input';
 import { Link } from 'react-router-dom';
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/Footer';
 import useInput from '../../hooks/use-input/useInput';
 import { useHistory } from 'react-router-dom';
 import useAxios from '../../hooks/use-axios/useAxios';

@@ -4,7 +4,7 @@ import SliderItem from './Slider-item/SliderItem';
 import { BsArrowRight } from 'react-icons/bs';
 import { BsArrowLeft } from 'react-icons/bs';
 import testimonial_1 from '../../assets/testimonial-1.jpg';
-import Button from '../button/Button';
+import Button from '../Button';
 
 const Slider = () => {
     const [slider, setSlider] = useState({

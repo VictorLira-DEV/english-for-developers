@@ -1,12 +1,12 @@
 import React, { Suspense } from 'react';
-import Header from './components/header/Header';
+import Header from './components/Header';
 import './global/styles/index.css';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { useContext } from 'react';
 import { AuthContext } from './context/auth-context/auth-context';
-import LoadSpinner from './components/load-spinner/LoadSpinner';
+import LoadSpinner from './components/LoadSpinner';
 
-const Home = React.lazy(() => import('./pages/home/Home'));
+const Home = React.lazy(() => import('./pages/Home'));
 const Login = React.lazy(() => import('./pages/login/Login'));
 const Expressions = React.lazy(() => import('./pages/expressions/Expressions'));
 const Profile = React.lazy(() => import('./pages/profile/Profile'));

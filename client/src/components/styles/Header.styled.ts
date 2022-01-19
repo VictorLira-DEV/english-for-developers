@@ -1,17 +1,19 @@
-.header {
+import styled from 'styled-components';
+
+export const StyledHeader = styled.header`
     padding: 10px 60px;
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     background: rgb(9, 74, 130);
-    &.sticky {
-        position: fixed;
-        width: 100%;
-        max-width: 1440px;
-        z-index: 1;
-        background: rgba(9, 74, 130, 0.6);
-    }
+    // &.sticky {
+    //     position: fixed;
+    //     width: 100%;
+    //     max-width: 1440px;
+    //     z-index: 1;
+    //     background: rgba(9, 74, 130, 0.6);
+    // }
     h1 {
         font-weight: 600;
         letter-spacing: 1px;
@@ -39,22 +41,22 @@
                 display: flex;
                 align-items: center;
                 border-bottom: 3px solid transparent;
-                transition: .1s ease-in-out;
-                &:hover{
+                transition: 0.1s ease-in-out;
+                &:hover {
                     color: rgb(223, 221, 221);
                 }
 
-                &.active {
+                &.header__menu--active {
                     border-bottom: 3px solid white;
                 }
             }
 
-            .icon {
+            .header__icon {
                 font-size: 25px;
                 margin: 0;
                 margin-right: 5px;
             }
-            .button {
+            /* .button {
                 cursor: pointer;
                 color: inherit;
                 font-size: inherit;
@@ -62,7 +64,7 @@
                 border: none;
                 border-radius: 4px;
                 padding-left: 5px;
-            }
+            } */
         }
     }
-}
+`;

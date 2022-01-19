@@ -1,11 +1,11 @@
-import Input from '../../components/input/Input';
-import Button from '../../components/button/Button';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
 import useInput from '../../hooks/use-input/useInput';
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/auth-context/auth-context';
 // import { useHistory } from "react-router";
 import useAxios from '../../hooks/use-axios/useAxios';
-import Footer from '../../components/footer/Footer';
+import Footer from '../../components/Footer';
 import classes from './styles/Profile.module.css';
 import profile_picture from '../../assets/profile-default.png';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';

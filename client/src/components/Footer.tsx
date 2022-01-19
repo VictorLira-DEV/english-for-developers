@@ -1,18 +1,19 @@
-import classes from "./styles/Footer.module.css";
+// import classes from "./styles/Footer.module.css";
 import { AiOutlineGithub } from "react-icons/ai";
 import { BsWhatsapp } from "react-icons/bs";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
+import { StyledFooter } from './styles/Footer.styled'
 
 interface IFooter {
-	className: string;
+	className?: string;
 }
 
 const Footer = (props: IFooter) => {
 	return (
-		<footer className={`${classes.footer} ${props.className}`}>
-			Desenvolvedor <AiOutlineCopyrightCircle id={classes.copyright} />
+		<StyledFooter className={`${props.className}`}>
+			Desenvolvedor <AiOutlineCopyrightCircle id={'copyright'} />
 			Victor Lira
-			<div className={classes["social-media"]}>
+			<div className={"social-media"}>
 				<a
 					href="https://github.com/VictorLira-DEV"
 					target="_blank"
@@ -28,7 +29,7 @@ const Footer = (props: IFooter) => {
 					<BsWhatsapp />
 				</a>
 			</div>
-		</footer>
+		</StyledFooter>
 	);
 };
 

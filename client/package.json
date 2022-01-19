@@ -47,8 +47,11 @@
   },
   "devDependencies": {
     "@firebase/firestore-types": "^2.5.0",
+    "@types/aos": "^3.0.4",
     "@types/react-lazy-load-image-component": "^1.5.2",
     "@types/react-router-dom": "^5.3.2",
+    "@types/styled-components": "^5.1.20",
+    "aos": "^2.3.4",
     "react-icons": "^4.3.1"
   }
 }

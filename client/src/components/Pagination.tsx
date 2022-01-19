@@ -1,4 +1,5 @@
-import classes from './styles/Pagination.module.css';
+// import classes from './styles/Pagination.module.css';
+import { StyledPagination } from './styles/Pagination.styled';
 
 interface IPagination {
     postsPerPage: number;
@@ -21,7 +22,7 @@ const Pagination = (props: IPagination) => {
     }
 
     return (
-        <ul className={classes.pageList}>
+        <StyledPagination>
             {pageNumbers.map(number => {
                 if (
                     number < props.maxPageNumberLimit + 1 &&
@@ -30,8 +31,8 @@ const Pagination = (props: IPagination) => {
                     return (
                         <li
                             key={number}
-                            className={`${classes.pages} ${
-                                number === props.currentPage && classes.active
+                            className={`${'pages'} ${
+                                number === props.currentPage && 'active'
                             }`}
                             onClick={() => props.paginate(number)}
                         >
@@ -42,7 +43,7 @@ const Pagination = (props: IPagination) => {
                     return null;
                 }
             })}
-        </ul>
+        </StyledPagination>
     );
 };
 

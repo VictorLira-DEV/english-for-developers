@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import classes from './styles/PopUp.module.css';
+// import classes from './styles/PopUp.module.css';
 import { motion, AnimatePresence } from 'framer-motion';
+import { StyledBackdrop, StyledPopUp } from './styles/PopUp.styled';
 
 const portalElement = document.getElementById('overlay')!;
 
@@ -46,28 +47,32 @@ const dropIn = {
 
 const Backdrop = (props: IBackDrop) => {
     return (
-        <motion.div
-            className={classes.backdrop}
-            onClick={props.onClick}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-        />
+        <StyledBackdrop>
+            <motion.div
+                // className={classes.backdrop}
+                onClick={props.onClick}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+            />
+        </StyledBackdrop>
     );
 };
 
 const PopUp = (props: IPopUp) => {
     return (
+        <StyledPopUp>
             <motion.div
-                className={`${classes.popUp} ${props.className}`}
+                className={`${props.className}`}
                 variants={dropIn}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
-                onClick={(e) => e.stopPropagation()}
+                onClick={e => e.stopPropagation()}
             >
                 {props.children}
             </motion.div>
+        </StyledPopUp>
     );
 };
 

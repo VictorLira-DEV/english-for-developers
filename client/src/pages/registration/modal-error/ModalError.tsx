@@ -1,8 +1,8 @@
-import ModalOverlay from '../../../components/pop-up/PopUp';
+import ModalOverlay from '../../../components/PopUp';
 import classes from './styles/ModalError.module.css';
 import { MdOutlineError } from 'react-icons/md';
 import { RiCloseFill } from 'react-icons/ri';
-import Button from '../../../components/button/Button';
+import Button from '../../../components/Button';
 import React from 'react';
 import { Link } from 'react-router-dom';
 

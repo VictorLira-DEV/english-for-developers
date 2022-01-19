@@ -1,13 +1,13 @@
 import React, { useEffect, useState, useContext } from 'react';
 import classes from './styles/PhrasalVerbs.module.css';
-import Footer from '../../components/footer/Footer';
-import PaginationWrapper from '../../components/paginationWrapper/PaginationWrapper';
+import Footer from '../../components/Footer';
+import PaginationWrapper from '../../components/PaginationWrapper';
 import ListItemWrapper from '../../components/list-item-wrapper/ListItemWrapper';
-import Button from '../../components/button/Button';
+import Button from '../../components/Button';
 import useAxios from '../../hooks/use-axios/useAxios';
-import LoadSpinner from '../../components/load-spinner/LoadSpinner';
+import LoadSpinner from '../../components/LoadSpinner';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
-import SocialMedia from '../../components/social-media/SocialMedia';
+import SocialMedia from '../../components/SocialMedia';
 import ItemCounter from '../../components/item-counter/ItemCounter';
 
 const PhrasalVerbs = () => {

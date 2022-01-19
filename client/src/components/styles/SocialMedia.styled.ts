@@ -1,4 +1,6 @@
-.social-media {
+import styled from 'styled-components';
+
+export const StyledSocialMedia = styled.div`   
     position: fixed;
     z-index: 3;
     right: 0;
@@ -34,4 +36,4 @@
             border: 1px solid rgb(113, 201, 252);
         }
     }
-}
+`

@@ -1,13 +1,13 @@
 import { useEffect, useState, useContext } from 'react';
 import classes from './styles/Expressions.module.css';
-import Footer from '../../components/footer/Footer';
-import Button from '../../components/button/Button';
-import PaginationWrapper from '../../components/paginationWrapper/PaginationWrapper';
+import Footer from '../../components/Footer';
+import Button from '../../components/Button';
+import PaginationWrapper from '../../components/PaginationWrapper';
 import ListItemWrapper from '../../components/list-item-wrapper/ListItemWrapper';
 import useAxios from '../../hooks/use-axios/useAxios';
-import LoadSpinner from '../../components/load-spinner/LoadSpinner';
+import LoadSpinner from '../../components/LoadSpinner';
 import { StickyHeaderContext } from '../../context/sticky-header/stickyHeader';
-import SocialMedia from '../../components/social-media/SocialMedia';
+import SocialMedia from '../../components/SocialMedia';
 import ItemCounter from '../../components/item-counter/ItemCounter';
 
 const Expressions = () => {

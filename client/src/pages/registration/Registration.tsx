@@ -1,7 +1,7 @@
-import Input from '../../components/input/Input';
+import Input from '../../components/Input';
 import classes from './styles/Registration.module.css';
-import Button from '../../components/button/Button';
-import Footer from '../../components/footer/Footer';
+import Button from '../../components/Button';
+import Footer from '../../components/Footer';
 import React, { useState, useEffect } from 'react';
 import useInput from '../../hooks/use-input/useInput';
 import { useHistory } from 'react-router-dom';
