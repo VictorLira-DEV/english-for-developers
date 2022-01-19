@@ -31,8 +31,8 @@ const Pagination = (props: IPagination) => {
                     return (
                         <li
                             key={number}
-                            className={`${'pages'} ${
-                                number === props.currentPage && 'active'
+                            className={`${'pagination__pages'} ${
+                                number === props.currentPage && 'pagination__active'
                             }`}
                             onClick={() => props.paginate(number)}
                         >

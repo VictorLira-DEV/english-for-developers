@@ -1,4 +1,5 @@
 import classes from './styles/ItemCounter.module.css';
+import { StyledItemCounter } from './styles/ItemCounter.styled'
 
 interface ItemCounter {
     counter: number;
@@ -7,9 +8,9 @@ interface ItemCounter {
 
 const ItemCounter = (props: ItemCounter) => {
     return (
-        <p className={classes['verbs-available']}>
+        <StyledItemCounter>
             <span>{`${props.counter}`}</span> {props.text}
-        </p>
+        </StyledItemCounter>
     );
 };
 

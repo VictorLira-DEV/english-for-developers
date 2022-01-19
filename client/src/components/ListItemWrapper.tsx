@@ -1,4 +1,4 @@
-import ListItem from '../list-item/ListItem';
+import ListItem from './ListItem';
 import { Fragment } from 'react';
 
 interface Iprops {

@@ -1,30 +1,30 @@
-.slider-item{
+import styled from 'styled-components';
+
+export const StyledSliderItem = styled.div`
     color: white;
     padding: 40px;
     overflow: hidden;
     text-align: center;
-    #quotes-mark{
+    #quotes-mark {
         font-size: 25px;
     }
 
-    p:last-of-type{
+    p:last-of-type {
         margin-top: 20px;
         line-height: 2;
     }
-    .profile{
+    .profile {
         text-align: center;
-        img{
+        img {
             width: 100px;
             height: 100px;
             border-radius: 50%;
             border: 3px solid white;
             margin: 20px 0 10px 0;
         }
-        .stars{
+        .stars {
             color: rgb(218, 218, 40);
             margin-bottom: 10px;
         }
     }
-
-
-}
+`;

@@ -4,7 +4,7 @@ export const StyledPagination = styled.ul`
     display: flex;
     align-items: center;
     list-style: none;
-    .pages {
+    .pagination__pages {
         cursor: pointer;
         text-align: center;
         transition: 0.4s ease-in-out;
@@ -13,7 +13,7 @@ export const StyledPagination = styled.ul`
         text-decoration: none;
         padding: 15px 15px;
         color: white;
-        &.active {
+        &.pagination__active {
             background: rgb(61, 143, 214);
         }
 

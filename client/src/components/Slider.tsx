@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import classes from './styles/Slider.module.css';
-import SliderItem from './Slider-item/SliderItem';
+// import classes from './styles/Slider.module.css';
+import SliderItem from './SliderItem';
 import { BsArrowRight } from 'react-icons/bs';
 import { BsArrowLeft } from 'react-icons/bs';
-import testimonial_1 from '../../assets/testimonial-1.jpg';
-import Button from '../Button';
+import Button from './Button';
+import { StyledSlider } from './styles/Slider.styled';
 
 const Slider = () => {
     const [slider, setSlider] = useState({
@@ -86,8 +86,8 @@ const Slider = () => {
     };
 
     return (
-        <div className={classes.slider}>
-            <div className={classes.controls}>
+        <StyledSlider>
+            <div className="controls">
                 <Button id="left" onClick={moveToLeft}>
                     <BsArrowLeft />
                 </Button>
@@ -95,9 +95,9 @@ const Slider = () => {
                     <BsArrowRight />
                 </Button>
             </div>
-            <div className={classes['slide-content']}>
+            <div className={'slide-content'}>
                 <SliderItem
-                    className={`${classes.slider_item}`}
+                    className="slider_item"
                     style={slider_1}
                     src={'https://randomuser.me/api/portraits/women/3.jpg'}
                     name="Karol dias."
@@ -105,7 +105,7 @@ const Slider = () => {
                     sliderItem="Interface simples e limpa, muito obrigada, consegui aprender mais expressões para compreender os falantes nativos"
                 />
                 <SliderItem
-                    className={classes.slider_item}
+                    className="slider_item"
                     style={slider_2}
                     src={'https://randomuser.me/api/portraits/women/32.jpg'}
                     name="Luna Davys"
@@ -113,7 +113,7 @@ const Slider = () => {
                     sliderItem="Continue adicionando mais phrasal verbs! está me ajudando muito"
                 />
                 <SliderItem
-                    className={classes.slider_item}
+                    className="slider_item"
                     style={slider_3}
                     src={'https://randomuser.me/api/portraits/men/3.jpg'}
                     name="Robert Silvester"
@@ -121,7 +121,7 @@ const Slider = () => {
                     sliderItem="Muito bom, essas expressões e phrasal verbs realmente são muito usado no dia a dia"
                 />
             </div>
-        </div>
+        </StyledSlider>
     );
 };
 

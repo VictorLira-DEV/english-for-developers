@@ -6,7 +6,7 @@ import { BsArrowRightCircle } from 'react-icons/bs';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 import React, { useState, useEffect, useContext, Fragment } from 'react';
 import { AuthContext } from '../../context/auth-context/auth-context';
-import Slider from '../../components/slider/Slider';
+import Slider from '../../components/Slider';
 import Input from '../../components/Input';
 import { Link } from 'react-router-dom';
 import Footer from '../../components/Footer';

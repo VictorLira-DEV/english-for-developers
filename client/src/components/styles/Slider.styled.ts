@@ -1,4 +1,6 @@
-.slider {
+import styled from 'styled-components';
+
+export const StyledSlider = styled.div`
     width: 400px;
     height: 100%;
     position: relative;
@@ -16,7 +18,7 @@
         bottom: 50%;
         transform: translateY(50%);
 
-        button{
+        button {
             background: transparent;
             border: none;
             cursor: pointer;
@@ -36,7 +38,7 @@
         overflow: hidden;
         height: 504px;
 
-        .slider_item{
+        .slider_item {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -44,4 +46,4 @@
             height: 505px;
         }
     }
-}
+`;
