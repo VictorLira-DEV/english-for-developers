@@ -10,6 +10,7 @@ import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
 import SocialMedia from '../components/SocialMedia';
 import ItemCounter from '../components/ItemCounter';
 import { StyledPhrasalVerbs } from './styles/PhrasalVerbs.styled';
+import { scrollUp } from '../helper/scrollUp';
 
 const PhrasalVerbs = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -48,6 +49,7 @@ const PhrasalVerbs = () => {
 
     //change page
     const paginate = (pageNumber: number) => {
+        scrollUp()
         setCurrentPage(pageNumber);
         return currentPage;
     };
@@ -63,6 +65,7 @@ const PhrasalVerbs = () => {
     };
 
     const nextPageHandler = () => {
+        scrollUp()
         if (currentPage === Math.ceil(phrasalVerbs.length / postPerPage))
             return;
         setCurrentPage(currentPage + 1);
@@ -73,6 +76,7 @@ const PhrasalVerbs = () => {
     };
 
     const prevPageHandler = () => {
+        scrollUp()
         if (currentPage === 1) return;
 
         setCurrentPage(currentPage - 1);
