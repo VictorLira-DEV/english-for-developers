@@ -30,14 +30,23 @@
 <br>
 
 
-<!-- ## 📓 About
-This project was developed on the <a href="https://www.udemy.com/course/the-complete-javascript-course/" target="_blank"> Javascript </a> course using programming oriented object and MVC architecture,  the user can search for various cooking recipes, create their own recipes, add to favorites.
- -->
+ ## 📓 About
+This website was developed to gather the most used phrasal verbs and expressions in English, in this project I have the opportunity to work with styled components, React, and Typescript in the front-end, and I've created the API with Nodejs Express and used MongoDB as database, and I'll always keep updating with brand new content
 
-<!-- ## :rocket: Technologies used:
+## :star: Features
+- [x] User authentication
+- [x] Phrasal verbs page
+- [x] Expressions page
+- [x] Pagination 
+
+ ## :rocket: Technologies used:
 <p align="center">
-	<img src="https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg" alt="js" width="70" height="70"/>
-	<img src="https://github.com/devicons/devicon/blob/master/icons/sass/sass-original.svg" alt="css3" width="70" height="70"/>
+	<img src="https://github.com/devicons/devicon/blob/master/icons/typescript/typescript-original.svg" alt="ts" width="70" height="70"/>
+	<img src="https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg" alt="react" width="70" height="70"/>
+	<img src="https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg" alt="ts" width="70" height="70"/>
+	<img src="https://github.com/devicons/devicon/blob/master/icons/mongodb/mongodb-original-wordmark.svg" alt="ts" width="70" height="70"/>
+	<img src="https://github.com/devicons/devicon/blob/master/icons/firebase/firebase-plain-wordmark.svg" alt="ts" width="70" height="70"/>
+	<img src="https://www.styled-components.com/atom.png" alt="css3" width="70" height="70"/>
 	<img src="https://github.com/devicons/devicon/blob/master/icons/html5/html5-plain-wordmark.svg" alt="html5"  width="70" height="70"/>
 	<img src="https://github.com/devicons/devicon/blob/master/icons/webpack/webpack-original.svg" alt="html5"  width="70" height="70"/>
 </p>
@@ -46,6 +55,17 @@ This project was developed on the <a href="https://www.udemy.com/course/the-comp
 
 ## :information_source: Application installation
 - `https://github.com/VictorLira-DEV/forkify-app.git` to clone the repository
+# 🎲 Run application
+To run the application on the web, follow the instructions :
+- `make sure you are inside the project's folder on VScode`
+- `open up a terminal`
+- run `cd client`
+- run `yarn install` to install the client dependencies of the project
+- then run `yarn start` to run the application, will open at the address `localhost:3000`
+- `open up a new terminal`
+- run `cd server`
+- run `yarn install` to install the API dependencies of the project
+- then run `yarn start` to run the API, will open at the address `localhost:3001`
+<br>
 
 <br>
- -->
