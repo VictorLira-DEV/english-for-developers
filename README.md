@@ -22,8 +22,7 @@
 
 # 👀 Important
 
-:key: take a look --> https://english-for-developers.vercel.app/
-
+:key: take a look --> https://english-for-developers-jz4rfkg8f-victorlira.vercel.app/phrasal-verbs
 <h3 align="center"> 
 	Application status: Developed ✔️
 </h3>
