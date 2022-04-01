@@ -8,8 +8,14 @@ export const StyledFooter = styled.footer`
     color: white;
     width: 100%;
     #copyright {
-        margin: 0 3px 0 10px;
+        margin: 0 5px 0 10px;
     }
+
+    div:first-of-type {
+        display: flex;
+        align-items: center;
+    }
+
     .social-media {
         font-size: 23px;
         a {
@@ -20,6 +26,12 @@ export const StyledFooter = styled.footer`
                 margin: 0 7px 0 30px;
                 font-size: 25px;
             }
+        }
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        .social-media {
+            margin-top: 10px;
         }
     }
 `;

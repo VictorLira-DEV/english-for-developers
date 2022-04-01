@@ -14,7 +14,7 @@ import { scrollUp } from '../helper/scrollUp';
 
 const PhrasalVerbs = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
-    const { sendRequest, isLoading, } = useAxios();
+    const { sendRequest, isLoading } = useAxios();
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(10);
     const [pageNumberLimit] = useState(5);
@@ -49,7 +49,7 @@ const PhrasalVerbs = () => {
 
     //change page
     const paginate = (pageNumber: number) => {
-        scrollUp()
+        scrollUp();
         setCurrentPage(pageNumber);
         return currentPage;
     };
@@ -65,7 +65,7 @@ const PhrasalVerbs = () => {
     };
 
     const nextPageHandler = () => {
-        scrollUp()
+        scrollUp();
         if (currentPage === Math.ceil(phrasalVerbs.length / postPerPage))
             return;
         setCurrentPage(currentPage + 1);
@@ -76,7 +76,7 @@ const PhrasalVerbs = () => {
     };
 
     const prevPageHandler = () => {
-        scrollUp()
+        scrollUp();
         if (currentPage === 1) return;
 
         setCurrentPage(currentPage - 1);

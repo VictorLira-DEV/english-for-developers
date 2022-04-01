@@ -91,7 +91,7 @@ export const StyledHeader = styled.header`
             }
 
             &.header__menu--hidden {
-                transform: translatex( 100%);
+                transform: translatex(100%);
             }
 
             li {
@@ -106,8 +106,8 @@ export const StyledHeader = styled.header`
     }
 
     @media screen and (max-width: ${({ theme }) => theme.mobile}) {
-        h1{
-            font-size: 1.5rem
+        h1 {
+            font-size: 1.5rem;
         }
     }
 `;

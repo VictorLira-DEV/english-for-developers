@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledCard } from './styles/Card.styled'
+import { StyledCard } from './styles/Card.styled';
 
 interface Icard {
     aos: string;
@@ -11,7 +11,7 @@ interface Icard {
 }
 
 export default function Card(props: Icard) {
-    const { aos, aos_offset, color, text, title, image } = props
+    const { aos, aos_offset, color, text, title, image } = props;
 
     return (
         <StyledCard
@@ -24,9 +24,7 @@ export default function Card(props: Icard) {
             <img src={image} alt="tripBG" />
             <div>
                 <h2> {title} </h2>
-                <p>
-                    {text}
-                </p>
+                <p>{text}</p>
             </div>
         </StyledCard>
     );

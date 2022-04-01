@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface IButton {
     children: any;
@@ -7,9 +7,13 @@ interface IButton {
     id?: string;
 }
 const Button = (props: IButton) => {
-    const { children, className, id, onClick } = props
+    const { children, className, id, onClick } = props;
 
-    return <button id={id} onClick={onClick} className={className}>{children}</button>;
+    return (
+        <button id={id} onClick={onClick} className={className}>
+            {children}
+        </button>
+    );
 };
 
 export default Button;

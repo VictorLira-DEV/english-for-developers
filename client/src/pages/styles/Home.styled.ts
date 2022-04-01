@@ -1,15 +1,5 @@
 import styled from 'styled-components';
 
-export const HomeWrapper = styled.div`
-    .home__footer {
-        padding: 15px 60px;
-        background: rgb(11, 91, 160);
-        color: white;
-        bottom: 0;
-        width: 100%;
-    }
-`;
-
 export const About = styled.div`
     /* width: 1440px; */
     min-height: calc(100vh - 58px);
@@ -97,10 +87,62 @@ export const About = styled.div`
             color: white;
         }
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.laptop}) {
+        padding: 40px 20px;
+        height: 100vh;
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        flex-direction: column;
+        justify-content: space-evenly;
+        h1 {
+            font-size: 1.1rem;
+        }
+
+        img {
+            width: 70%;
+        }
+
+        .home__arrow {
+            width: 50px;
+            bottom: -20px;
+        }
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        img {
+            width: 90%;
+        }
+    }
 `;
 
 export const Cards = styled.section`
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
     padding: 200px 60px;
+
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        padding: 100px 20px;
+    }
+`;
+
+export const HomeWrapper = styled.div`
+    .home__footer {
+        padding: 15px 60px;
+        background: rgb(11, 91, 160);
+        color: white;
+        bottom: 0;
+        width: 100%;
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        .home__footer {
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+    }
 `;

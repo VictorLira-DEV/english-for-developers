@@ -1,7 +1,14 @@
 import styled from 'styled-components';
 
 export const StyledCard = styled.div`
-    width: 350px;
+    width: 250px;
+    min-width: 350px;
+    &:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    margin-top: 20px;
+
     border: 1px solid
         ${(props: { color: string }) =>
             (props.color === 'red' && 'rgb(225, 54, 94)') ||
@@ -27,5 +34,15 @@ export const StyledCard = styled.div`
             (props.color === 'blue' && 'rgb(12, 226, 249)') ||
             (props.color === 'purple' && 'rgb(123, 87, 246)')};
         padding: 10px 20px;
+    }
+
+    @media screen and (max-width: 819px) {
+        &:not(:last-child) {
+            margin-right: 0;
+        }
+    }
+
+    @media screen and (max-width: 380px) {
+        min-width: 100%;
     }
 `;

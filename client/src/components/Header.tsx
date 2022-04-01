@@ -6,7 +6,7 @@ import { StyledHeader } from './styles/Header.styled';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Header = () => {
-    const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+    const [toggleMobileMenu, setToggleMobileMenu] = useState(true);
     const authCtx = useContext(AuthContext);
     const history = useHistory();
 
