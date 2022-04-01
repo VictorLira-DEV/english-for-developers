@@ -1,12 +1,10 @@
-import { useEffect, useState, useContext } from 'react';
-// import classes from './styles/Expressions.module.css';
+import { useEffect, useState } from 'react';
 import Footer from '../components/Footer';
 import Button from '../components/Button';
 import PaginationWrapper from '../components/PaginationWrapper';
 import ListItemWrapper from '../components/ListItemWrapper';
 import useAxios from '../hooks/use-axios/useAxios';
 import LoadSpinner from '../components/LoadSpinner';
-import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
 import SocialMedia from '../components/SocialMedia';
 import ItemCounter from '../components/ItemCounter';
 import { StyledExpression } from './styles/Expressions.styled';
@@ -20,9 +18,6 @@ const Expressions = () => {
     const [pageNumberLimit] = useState(5);
     const { sendRequest, hasError, isLoading, setHasError } = useAxios();
     const [expressions, setExpressions] = useState([]);
-
-    const headerCtx = useContext(StickyHeaderContext);
-    headerCtx.intersectingFunction(false);
 
     useEffect(() => {
         const receivedData = function (data: any) {

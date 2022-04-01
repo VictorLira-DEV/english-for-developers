@@ -10,7 +10,7 @@ export const StyledSlider = styled.div`
         position: absolute;
         bottom: 50%;
         width: 100%;
-        z-index: 4;
+        z-index: 1;
         bottom: 32%;
         display: flex;
         justify-content: space-between;

@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-interface Iprops {
-    color: string;
-}
-
 export const StyledCard = styled.div`
     width: 350px;
     border: 1px solid

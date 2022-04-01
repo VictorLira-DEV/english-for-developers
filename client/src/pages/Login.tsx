@@ -1,5 +1,3 @@
-// import classes from './styles/Login.module.css';
-// import Button from '../components/Button';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { MdOutlineEmail } from 'react-icons/md';
 import { BsArrowRightCircle } from 'react-icons/bs';
@@ -13,7 +11,6 @@ import Footer from '../components/Footer';
 import useInput from '../hooks/use-input/useInput';
 import { useHistory } from 'react-router-dom';
 import useAxios from '../hooks/use-axios/useAxios';
-import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
 import { motion } from 'framer-motion';
 import { StyledLogin, StyledLoginWrapper } from './styles/Login.styled';
 
@@ -26,9 +23,6 @@ const Login = () => {
         email: false,
         password: false,
     });
-
-    // const headerCtx = useContext(StickyHeaderContext);
-    // headerCtx.intersectingFunction(false);
 
     // //EMAIL
     const validateEmail = (value: string) => {

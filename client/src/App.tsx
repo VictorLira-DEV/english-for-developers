@@ -11,6 +11,7 @@ import Expressions from './pages/Expressions';
 import Profile from './pages/Profile';
 import Registration from './pages/Registration';
 import PhrasalVerbs from './pages/PhrasalVerbs';
+import { ThemeProvider } from 'styled-components';
 //LAZY LOADING
 
 // const Home = React.lazy(() => import('./pages/Home'));
@@ -25,47 +26,56 @@ import PhrasalVerbs from './pages/PhrasalVerbs';
 function App() {
     const authCtx = useContext(AuthContext);
 
+    const theme = {
+        desktop: '1200px',
+        laptop: '1042px',
+        tablet: '768px',
+        mobile: '480px',
+    };
+
     return (
-        <div className="app">
-            <Header />
-            <Suspense
-                fallback={
-                    <div className="centered">
-                        <LoadSpinner />
-                    </div>
-                }
-            >
-                <Switch>
-                    <Route path="/" exact>
-                        <Home />
-                    </Route>
-                    <Route path="/phrasal-verbs">
-                        <PhrasalVerbs />
-                    </Route>
-                    {authCtx.isLoggedIn && (
-                        <Route path="/expressions">
-                            <Expressions />
+        <ThemeProvider theme={theme}>
+            <div className="app">
+                <Header />
+                <Suspense
+                    fallback={
+                        <div className="centered">
+                            <LoadSpinner />
+                        </div>
+                    }
+                >
+                    <Switch>
+                        <Route path="/" exact>
+                            <Home />
                         </Route>
-                    )}
-                    {!authCtx.isLoggedIn && (
-                        <Route path="/login">
-                            <Login />
+                        <Route path="/phrasal-verbs">
+                            <PhrasalVerbs />
                         </Route>
-                    )}
-                    <Route path="/signup">
-                        <Registration />
-                    </Route>
-                    {authCtx.isLoggedIn && (
-                        <Route path="/profile">
-                            <Profile />
+                        {authCtx.isLoggedIn && (
+                            <Route path="/expressions">
+                                <Expressions />
+                            </Route>
+                        )}
+                        {!authCtx.isLoggedIn && (
+                            <Route path="/login">
+                                <Login />
+                            </Route>
+                        )}
+                        <Route path="/signup">
+                            <Registration />
                         </Route>
-                    )}
-                    <Route path="*">
-                        <Redirect to="/" />
-                    </Route>
-                </Switch>
-            </Suspense>
-        </div>
+                        {authCtx.isLoggedIn && (
+                            <Route path="/profile">
+                                <Profile />
+                            </Route>
+                        )}
+                        <Route path="*">
+                            <Redirect to="/" />
+                        </Route>
+                    </Switch>
+                </Suspense>
+            </div>
+        </ThemeProvider>
     );
 }
 

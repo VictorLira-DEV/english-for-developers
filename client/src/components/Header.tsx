@@ -1,12 +1,12 @@
-// import classes from "./styles/Header.module.css";
 import { NavLink, useHistory } from 'react-router-dom';
-import React, { useContext } from 'react';
-import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
+import React, { useContext, useState } from 'react';
 import { IoIosContact } from 'react-icons/io';
 import { AuthContext } from '../context/auth-context/auth-context';
 import { StyledHeader } from './styles/Header.styled';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 const Header = () => {
+    const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
     const authCtx = useContext(AuthContext);
     const history = useHistory();
 
@@ -16,11 +16,24 @@ const Header = () => {
         history.replace('/login');
     };
 
+    const toggleMenu = function () {
+        setToggleMobileMenu(prev => !prev);
+    };
+
     return (
         <StyledHeader>
             <h1>English for devs</h1>
+            <GiHamburgerMenu
+                onClick={toggleMenu}
+                className="header_menu--icon"
+            />
             <nav>
-                <ul>
+                <ul
+                    onClick={toggleMenu}
+                    className={`${
+                        toggleMobileMenu ? 'header__menu--hidden' : ''
+                    }`}
+                >
                     <li>
                         <NavLink
                             to="/"

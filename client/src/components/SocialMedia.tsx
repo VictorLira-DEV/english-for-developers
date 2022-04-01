@@ -9,6 +9,7 @@ const SocialMedia = () => {
         <StyledSocialMedia>
             <a
                 href="https://github.com/VictorLira-DEV"
+                rel="noreferrer"
                 target="_blank"
                 className="icon"
             >
@@ -17,6 +18,7 @@ const SocialMedia = () => {
             <a
                 href="https://api.whatsapp.com/send?phone=5527996483376"
                 target="blank"
+                rel="noreferrer"
                 className={`${['icon']} ${['whatsapp']}`}
             >
                 <AiOutlineWhatsApp />
@@ -24,6 +26,7 @@ const SocialMedia = () => {
             <a
                 href="https://www.linkedin.com/in/victor-lira-front-end/"
                 target="_blank"
+                rel="noreferrer"
                 className={`${['icon']} ${['linkedin']} `}
             >
                 <AiFillLinkedin />

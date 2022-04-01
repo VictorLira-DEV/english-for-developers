@@ -71,7 +71,7 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                    <img className="home__arrow" src="./arrow.png" />
+                    <img className="home__arrow" alt="arrow-icon" src="./arrow.png" />
                 </About>
             </Container>
             <Cards>

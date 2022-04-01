@@ -14,7 +14,7 @@ import { scrollUp } from '../helper/scrollUp';
 
 const PhrasalVerbs = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
-    const { sendRequest, isLoading, hasError } = useAxios();
+    const { sendRequest, isLoading, } = useAxios();
     const [currentPage, setCurrentPage] = useState(1);
     const [postPerPage] = useState(10);
     const [pageNumberLimit] = useState(5);

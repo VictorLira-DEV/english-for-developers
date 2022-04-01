@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 export const HomeWrapper = styled.div`
-    .home__footer{
+    .home__footer {
         padding: 15px 60px;
         background: rgb(11, 91, 160);
         color: white;
         bottom: 0;
         width: 100%;
     }
-`
+`;
 
 export const About = styled.div`
     /* width: 1440px; */
@@ -80,6 +80,7 @@ export const About = styled.div`
         width: 70px;
         position: absolute;
         right: 50%;
+        transform: translateX(50%);
         bottom: -30px;
     }
 

@@ -1,12 +1,11 @@
-import classes from './styles/ItemCounter.module.css';
 import { StyledItemCounter } from './styles/ItemCounter.styled';
 
-interface ItemCounter {
+interface ItemCounterProps {
     counter: number;
     text: string;
 }
 
-const ItemCounter = (props: ItemCounter) => {
+const ItemCounter = (props: ItemCounterProps) => {
     return (
         <StyledItemCounter>
             <span>{`${props.counter}`}</span> {props.text}
