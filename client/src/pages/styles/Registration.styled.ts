@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledRegistrationWrapper = styled.div`
-    footer{
-        padding: 30px 60px;
-        background: linear-gradient(rgb(131, 214, 214), rgb(61, 99, 153));
-    }
-`
-
 export const StyledRegistration = styled.div`
     width: 100vw;
     overflow-x: hidden;
@@ -14,19 +7,17 @@ export const StyledRegistration = styled.div`
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    // background: rgb(189, 255, 255);
     background: linear-gradient(rgb(9, 74, 130), rgb(131, 214, 214));
     max-width: 1440px;
     padding: 40px 20px;
-    height: calc(100vh - 98px) ;
-    // filter: blur(2px);
+    height: calc(100vh - 58px);
 
     img {
         width: 30%;
         align-self: flex-end;
     }
 
-    .img{
+    .img {
         width: 50%;
         align-self: flex-end;
     }
@@ -58,7 +49,7 @@ export const StyledRegistration = styled.div`
                 border: 1px solid #ccc;
                 margin-top: 5px;
                 font-size: 16px;
-                &.invalid{
+                &.invalid {
                     background: rgb(255, 228, 228);
                     border: 1px solid red;
                 }
@@ -67,7 +58,7 @@ export const StyledRegistration = styled.div`
                     outline-color: rgb(95, 210, 255);
                 }
             }
-            small{
+            small {
                 color: red;
                 position: absolute;
             }
@@ -94,10 +85,39 @@ export const StyledRegistration = styled.div`
                 background: rgb(59, 157, 243);
             }
 
-            &.invalid{
+            &.invalid {
                 background: rgb(194, 194, 194);
-                cursor: not-allowed ;
+                cursor: not-allowed;
             }
         }
     }
-`
+
+    @media screen and (max-width: ${({ theme }) => theme.laptop}) {
+        min-height: 100vh;
+        height: auto;
+        background-color: red;
+        padding-bottom: 60px;
+        .icon {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        padding-top: 150px;
+        .form {
+            align-self: center;
+        }
+    }
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        .form {
+            min-width: 100%;
+        }
+    }
+`;
+
+export const StyledRegistrationWrapper = styled.div`
+    footer {
+        padding: 30px 20px;
+        background: linear-gradient(rgb(131, 214, 214), rgb(61, 99, 153));
+    }
+`;

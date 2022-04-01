@@ -34,4 +34,11 @@ export const StyledFooter = styled.footer`
             margin-top: 10px;
         }
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
 `;

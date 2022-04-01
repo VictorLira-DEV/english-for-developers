@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const StyledLoginWrapper = styled.div`
-    .footer {
-        padding: 30px 60px;
-        background: linear-gradient(rgb(88, 129, 187), rgb(62, 91, 131));
-    }
-`;
-
 export const StyledLogin = styled.div`
     background: linear-gradient(rgb(9, 74, 130), rgb(88, 129, 187));
     display: flex;
@@ -199,5 +192,35 @@ export const StyledLogin = styled.div`
                 }
             }
         }
+    }
+
+    @media screen and (max-width: 841px) {
+        height: auto;
+        .wrapper {
+            flex-direction: column-reverse;
+            padding: 100px 20px;
+            background: transparent;
+
+            form {
+                margin-bottom: 50px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+        }
+    }
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        .wrapper {
+            width: 100%;
+            form {
+                width: auto;
+            }
+        }
+    }
+`;
+
+export const StyledLoginWrapper = styled.div`
+    .footer {
+        padding: 30px 60px;
+        background: linear-gradient(rgb(88, 129, 187), rgb(62, 91, 131));
     }
 `;

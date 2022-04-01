@@ -72,9 +72,10 @@ export const StyledHeader = styled.header`
         .header_menu--icon {
             font-size: 40px;
             display: block;
+            cursor: pointer;
         }
         ul {
-            background: rgb(9, 74, 130);
+            background: linear-gradient(rgb(9, 74, 130), rgb(5, 194, 228));
             position: fixed;
             left: 0;
             right: 0;
@@ -85,7 +86,7 @@ export const StyledHeader = styled.header`
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            transition: 1s ease-in-out;
+            transition: .5s ease-in-out;
             & :not(:last-child) {
                 margin-right: 0;
             }

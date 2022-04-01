@@ -46,4 +46,8 @@ export const StyledSlider = styled.div`
             height: 505px;
         }
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.desktop}) {
+        width: auto;
+    }
 `;

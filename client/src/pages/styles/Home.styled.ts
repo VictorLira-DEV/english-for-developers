@@ -130,19 +130,9 @@ export const Cards = styled.section`
 
 export const HomeWrapper = styled.div`
     .home__footer {
-        padding: 15px 60px;
         background: rgb(11, 91, 160);
         color: white;
         bottom: 0;
         width: 100%;
-    }
-
-    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
-        .home__footer {
-            padding: 15px 20px;
-            display: flex;
-            justify-content: space-between;
-            flex-direction: column;
-        }
     }
 `;

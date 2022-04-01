@@ -189,7 +189,11 @@ const Registration = () => {
             </AnimatePresence>
 
             <StyledRegistration>
-                <img src="./1.svg" alt="background" />
+                <img
+                    className="icon girl_icon"
+                    src="./1.svg"
+                    alt="background"
+                />
                 <form onSubmit={formSubmitHandler} className="form">
                     <h1> Create account </h1>
                     <div className="form-control">
@@ -246,7 +250,11 @@ const Registration = () => {
                         {!isLoading ? <p>Submit </p> : <p>Loading...</p>}
                     </Button>
                 </form>
-                <img src="./social.svg" alt="social" />
+                <img
+                    className="icon cellphone_icon"
+                    src="./social.svg"
+                    alt="social"
+                />
             </StyledRegistration>
             <Footer />
         </StyledRegistrationWrapper>
