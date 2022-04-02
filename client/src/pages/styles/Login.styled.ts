@@ -195,6 +195,7 @@ export const StyledLogin = styled.div`
     }
 
     @media screen and (max-width: 841px) {
+        min-height: 100vh;
         height: auto;
         .wrapper {
             flex-direction: column-reverse;
@@ -220,7 +221,7 @@ export const StyledLogin = styled.div`
 
 export const StyledLoginWrapper = styled.div`
     .footer {
-        padding: 30px 60px;
+        padding: 30px 20px;
         background: linear-gradient(rgb(88, 129, 187), rgb(62, 91, 131));
     }
 `;
