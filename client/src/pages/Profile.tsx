@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 // import classes from './styles/Profile.module.css';
 import profile_picture from '../assets/profile-default.png';
 import { StickyHeaderContext } from '../context/sticky-header/stickyHeader';
-import { StyledProfile, StyledProfileWrapper} from './styles/Profile.styled'
+import { StyledProfile, StyledProfileWrapper } from './styles/Profile.styled';
 
 const Profile = () => {
     const authCtx = useContext(AuthContext);
@@ -93,7 +93,7 @@ const Profile = () => {
                 <div className={'profile_wraper'}>
                     <div className={'profile'}>
                         <img src={profile_picture} alt="profile" />
-                        <p>user</p>
+                        <p></p>
                         <p> Online </p>
                         {/* <p>sua sessão acabará em 121232 </p> */}
                     </div>

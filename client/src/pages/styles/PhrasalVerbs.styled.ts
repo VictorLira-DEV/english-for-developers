@@ -45,7 +45,7 @@ export const StyledPhrasalVerbs = styled.div`
     }
 
     @media screen and (max-width: ${({ theme }) => theme.tablet}) {
-        padding: 200px 0 100px 0;
+        padding: 200px 0 150px 0;
 
         .verbs-list {
             padding: 0 20px;

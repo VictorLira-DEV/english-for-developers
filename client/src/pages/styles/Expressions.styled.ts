@@ -5,14 +5,14 @@ export const StyledExpression = styled.div`
     padding: 100px 0 200px 0;
     min-height: 100vh;
     position: relative;
-    .verbs-list{
+    .verbs-list {
         position: relative;
         width: 700px;
         margin: 0 auto;
         list-style: none;
-        transition: .3s ease-in-out;
+        transition: 0.3s ease-in-out;
         border-top: 1px dashed rgb(146, 145, 145);
-        .btn-title{
+        .btn-title {
             border-top-left-radius: 20px;
             border: none;
             background: rgb(250, 187, 187);
@@ -24,13 +24,13 @@ export const StyledExpression = styled.div`
             top: -45px;
         }
 
-        .navigatin-wrapper{
+        .navigatin-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 60px;
 
-            .pages{
+            .pages {
                 // padding: 15px;
                 height: 51px;
                 width: 41px;
@@ -38,7 +38,7 @@ export const StyledExpression = styled.div`
                 line-height: 50px;
                 border: 1px solid rgb(253, 250, 250);
                 background: rgb(9, 74, 130);
-                &.pages-dots{
+                &.pages-dots {
                     color: white;
                     font-size: 20px;
                     height: 51px;
@@ -46,7 +46,7 @@ export const StyledExpression = styled.div`
                     cursor: pointer;
                 }
 
-                button{
+                button {
                     background: none;
                     color: white;
                     border: none;
@@ -54,15 +54,11 @@ export const StyledExpression = styled.div`
                     width: 100%;
                     cursor: pointer;
                 }
-
-
             }
         }
-
-        
     }
 
-    .footer{
+    .footer {
         position: absolute;
         bottom: 0;
         background: rgb(11, 91, 160);
@@ -70,7 +66,7 @@ export const StyledExpression = styled.div`
         padding: 15px;
     }
 
-    .pages{
+    .pages {
         height: 51px;
         width: 41px;
         text-align: center;
@@ -79,4 +75,22 @@ export const StyledExpression = styled.div`
         background: rgb(9, 74, 130);
         color: white;
     }
-`
+
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        padding: 200px 0 150px 0;
+        .verbs-list {
+            width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        .verbs-list {
+            .btn-title {
+                top: -154px;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 20px;
+            }
+        }
+    }
+`;

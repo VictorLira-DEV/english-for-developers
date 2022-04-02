@@ -8,6 +8,7 @@ import LoadSpinner from '../components/LoadSpinner';
 import SocialMedia from '../components/SocialMedia';
 import ItemCounter from '../components/ItemCounter';
 import { StyledExpression } from './styles/Expressions.styled';
+import { scrollUp } from '../helper/scrollUp';
 
 const Expressions = () => {
     const [currentTransationId, setCurrentTranslationId] = useState('');
@@ -33,6 +34,7 @@ const Expressions = () => {
     }, []);
 
     useEffect(() => {
+        scrollUp();
         setCurrentPage(currentPage);
     }, [currentPage]);
     //get current posts

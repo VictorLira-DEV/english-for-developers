@@ -199,7 +199,7 @@ export const StyledLogin = styled.div`
         height: auto;
         .wrapper {
             flex-direction: column-reverse;
-            padding: 100px 20px;
+            padding: 200px 20px 100px 20px;
             background: transparent;
 
             form {

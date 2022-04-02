@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledProfile = styled.div`
-    min-height: calc(100vh - (70px + 58px));
+    min-height: calc(100vh - (61px + 58px));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,11 +113,23 @@ export const StyledProfile = styled.div`
             }
         }
     }
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        min-height: 100vh;
+        height: auto;
+        padding: 200px 20px 100px 20px;
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        .profile_wraper {
+            width: 100%;
+            padding: 40px 20px;
+        }
+    }
 `;
 
 export const StyledProfileWrapper = styled.section`
     .footer {
-        padding: 15px 60px;
+        padding: 15px 20px;
         background: rgb(11, 91, 160);
         color: white;
         bottom: 0;

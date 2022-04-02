@@ -55,4 +55,8 @@ export const StyledModalError = styled.div`
             }
         }
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        width: 90vw;
+    }
 `;

@@ -25,4 +25,11 @@ export const StyledLoadSpinner = styled.div`
             transform: rotate(360deg);
         }
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        div {
+            width: 50px;
+            height: 50px;
+        }
+    }
 `;

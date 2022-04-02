@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext } from 'react';
-// import classes from './styles/PhrasalVerbs.module.css';
 import Footer from '../components/Footer';
 import PaginationWrapper from '../components/PaginationWrapper';
 import ListItemWrapper from '../components/ListItemWrapper';
@@ -26,6 +25,7 @@ const PhrasalVerbs = () => {
     headerCtx.intersectingFunction(false);
 
     useEffect(() => {
+        scrollUp();
         setCurrentPage(currentPage);
     }, [currentPage]);
     //get current posts
@@ -49,7 +49,6 @@ const PhrasalVerbs = () => {
 
     //change page
     const paginate = (pageNumber: number) => {
-        scrollUp();
         setCurrentPage(pageNumber);
         return currentPage;
     };
@@ -65,7 +64,6 @@ const PhrasalVerbs = () => {
     };
 
     const nextPageHandler = () => {
-        scrollUp();
         if (currentPage === Math.ceil(phrasalVerbs.length / postPerPage))
             return;
         setCurrentPage(currentPage + 1);
@@ -76,7 +74,6 @@ const PhrasalVerbs = () => {
     };
 
     const prevPageHandler = () => {
-        scrollUp();
         if (currentPage === 1) return;
 
         setCurrentPage(currentPage - 1);
