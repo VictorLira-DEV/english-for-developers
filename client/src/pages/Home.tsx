@@ -74,7 +74,7 @@ const Home = () => {
                     <img className="home__arrow" alt="arrow-icon" src="./arrow.png" />
                 </About>
             </Container>
-            <Cards>
+            <Cards ref={scrollIntoView}>
                 <Card
                     image="./grecia.png"
                     aos="fade-right"
