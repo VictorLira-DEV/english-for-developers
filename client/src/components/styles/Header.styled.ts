@@ -92,7 +92,7 @@ export const StyledHeader = styled.header`
             }
 
             &.header__menu--hidden {
-                transform: translatex(100%);
+                transform: translatex(200%);
             }
 
             li {

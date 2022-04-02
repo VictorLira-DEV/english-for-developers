@@ -36,4 +36,8 @@ export const StyledSocialMedia = styled.div`
             border: 1px solid rgb(113, 201, 252);
         }
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        bottom: 3%;
+    }
 `

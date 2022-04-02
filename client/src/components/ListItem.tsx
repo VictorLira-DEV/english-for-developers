@@ -33,7 +33,7 @@ const ListItem = (props: IListItem) => {
         <StyledListItem>
             <li className="item__english">
                 <div className="item__phrasal-verb">{content}</div>
-                <div className="item__english-example">
+                <div className="item__english-example" >
                     <div className="item__english-text-examples">
                         <p>1 - {example_1} </p>
                         <p>2 - {example_2} </p>

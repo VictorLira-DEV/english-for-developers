@@ -62,4 +62,16 @@ export const StyledListItem = styled.div`
             transform: translateY(-100%);
         }
     }
+
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        .item__english {
+            .item__english-example {
+                line-height: 1.5;
+            }
+        }
+
+        .item__portuguese {
+            line-height: 1.5;
+        }
+    }
 `;

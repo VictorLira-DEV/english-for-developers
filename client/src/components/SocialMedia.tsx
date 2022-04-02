@@ -16,7 +16,7 @@ const SocialMedia = () => {
                 <AiFillGithub />
             </a>
             <a
-                href="https://api.whatsapp.com/send?phone=5527996483376"
+                href="https://api.whatsapp.com/send?phone=5527997673329"
                 target="blank"
                 rel="noreferrer"
                 className={`${['icon']} ${['whatsapp']}`}

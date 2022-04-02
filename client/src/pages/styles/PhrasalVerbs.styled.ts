@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledPhrasalVerbs = styled.div`
     overflow-y: hidden;
-    padding: 100px 0 200px 0;
+    padding: 100px 0px 200px 0px;
     min-height: 100vh;
     position: relative;
     .verbs-list {
@@ -42,5 +42,25 @@ export const StyledPhrasalVerbs = styled.div`
         border: 1px solid rgb(253, 250, 250);
         background: rgb(9, 74, 130);
         color: white;
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.tablet}) {
+        padding: 200px 0 100px 0;
+
+        .verbs-list {
+            padding: 0 20px;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    @media screen and (max-width: ${({ theme }) => theme.mobile}) {
+        .verbs-list {
+            .btn-title {
+                top: -154px;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 20px;
+            }
+        }
     }
 `;
