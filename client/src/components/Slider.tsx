@@ -69,7 +69,7 @@ const Slider = () => {
     useEffect(() => {
         const timer = setInterval(() => {
             sliderTimer();
-        }, 6000);
+        }, 4000);
         return () => {
             clearInterval(timer);
         };

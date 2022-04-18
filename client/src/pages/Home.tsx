@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useContext } from 'react';
 import { Container } from '../components/styles/Container.styled';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -7,9 +7,11 @@ import Card from '../components/Card';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
+import { AuthContext } from '../context/auth-context/auth-context';
 
 const Home = () => {
     const scrollIntoView = useRef<HTMLDivElement>(null);
+    const { isLoggedIn } = useContext(AuthContext);
 
     useEffect(() => {
         Aos.init();
@@ -59,19 +61,25 @@ const Home = () => {
                                     Sobre
                                 </motion.button>
 
-                                <Link to="/login">
-                                    <motion.button
-                                        whileTap={{ scale: 0.9 }}
-                                        whileHover={{ scale: 1.1 }}
-                                        className="home__btn--signup"
-                                    >
-                                        Ja tenho um conta
-                                    </motion.button>
-                                </Link>
+                                {!isLoggedIn && (
+                                    <Link to="/login">
+                                        <motion.button
+                                            whileTap={{ scale: 0.9 }}
+                                            whileHover={{ scale: 1.1 }}
+                                            className="home__btn--signup"
+                                        >
+                                            Ja tenho um conta
+                                        </motion.button>
+                                    </Link>
+                                )}
                             </div>
                         </div>
                     </div>
-                    <img className="home__arrow" alt="arrow-icon" src="./arrow.png" />
+                    <img
+                        className="home__arrow"
+                        alt="arrow-icon"
+                        src="./arrow.png"
+                    />
                 </About>
             </Container>
             <Cards ref={scrollIntoView}>

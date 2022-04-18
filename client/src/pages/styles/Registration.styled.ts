@@ -110,6 +110,7 @@ export const StyledRegistration = styled.div`
     }
     @media screen and (max-width: ${({ theme }) => theme.mobile}) {
         .form {
+            padding: 30px 30px 40px 30px;
             min-width: 100%;
         }
     }
